@@ -1047,7 +1047,7 @@ class MCPClientOAI:
                 call_params = {
                     "model": self.MODEL_NAME,
                     "messages": messages_for_api,
-                    "max_tokens": 2048,
+                    "max_tokens": 8192,
                     "temperature": 1.0,
                 }
                 

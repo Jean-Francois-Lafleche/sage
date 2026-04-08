@@ -1,5 +1,5 @@
 {
-    "API_TOKEN": "not-needed",
-    "API_URL_QWEN": "http://localhost:8100/v1",
-    "MODEL_NAME": "Qwen/Qwen3-VL-8B-Instruct"
+    "API_TOKEN": "sk-od8CxUv-fp6nuLYM9xFnGw",
+    "API_URL_QWEN": "https://inference-api.nvidia.com/v1",
+    "MODEL_NAME": "aws/anthropic/bedrock-claude-opus-4-6"
 }
