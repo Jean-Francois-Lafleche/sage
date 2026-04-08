@@ -2,14 +2,15 @@
     "ANTHROPIC_API_KEY": "proxy-key",
     "ANTHROPIC_BASE_URL": "http://localhost:8300",
     "API_TOKEN": "not-needed",
-    "API_URL_QWEN": "http://localhost:8100/v1",
-    "API_URL_OPENAI": "http://localhost:8100/v1",
+    "API_URL_QWEN": "https://inference-api.nvidia.com/v1",
+    "API_URL_OPENAI": "https://inference-api.nvidia.com/v1",
     "MODEL_DICT": {
-        "qwen": "Qwen/Qwen3-VL-8B-Instruct",
-        "openai": "Qwen/Qwen3-VL-8B-Instruct",
-        "glmv": "Qwen/Qwen3-VL-8B-Instruct",
-        "claude": "claude-3-5-sonnet-20241022"
+        "qwen": "aws/anthropic/bedrock-claude-opus-4-6",
+        "openai": "aws/anthropic/bedrock-claude-opus-4-6",
+        "glmv": "aws/anthropic/bedrock-claude-opus-4-6",
+        "claude": "aws/anthropic/bedrock-claude-opus-4-6"
     },
+    "NVIDIA_API_KEY": "sk-od8CxUv-fp6nuLYM9xFnGw",
     "TRELLIS_SERVER_URL": "http://localhost:8200",
     "FLUX_SERVER_URL": "http://localhost:8300",
     "API_URL": "",

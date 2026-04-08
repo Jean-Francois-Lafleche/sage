@@ -27,7 +27,7 @@ with open("key.json", "r") as f:
 ANTHROPIC_API_KEY = key_dict["ANTHROPIC_API_KEY"]
 ANTHROPIC_BASE_URL = key_dict.get("ANTHROPIC_BASE_URL", None)
 
-API_TOKEN = key_dict["API_TOKEN"]
+API_TOKEN = key_dict.get("NVIDIA_API_KEY", key_dict.get("API_TOKEN", ""))
 API_URL_QWEN = key_dict["API_URL_QWEN"]
 API_URL_OPENAI = key_dict["API_URL_OPENAI"]
 

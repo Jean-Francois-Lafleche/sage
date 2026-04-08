@@ -14,6 +14,7 @@ Then set:
 
 import json
 import sys
+import os
 import argparse
 import time
 from flask import Flask, request, jsonify, Response
@@ -28,6 +29,8 @@ parser.add_argument('--model', type=str, default='Qwen/Qwen3-VL-8B-Instruct',
                     help='Model name to use on backend')
 parser.add_argument('--max-tokens-cap', type=int, default=4096,
                     help='Cap max_tokens to this value')
+parser.add_argument('--api-key', type=str, default=None,
+                    help='API key for backend authentication')
 args = parser.parse_args()
 
 app = Flask(__name__)
@@ -36,6 +39,7 @@ CORS(app)
 BACKEND_URL = args.backend
 BACKEND_MODEL = args.model
 MAX_TOKENS_CAP = args.max_tokens_cap
+BACKEND_API_KEY = args.api_key or os.environ.get('NVIDIA_API_KEY', '')
 
 request_count = 0
 error_count = 0
@@ -183,10 +187,15 @@ def messages():
         # Convert to OpenAI format
         openai_request = convert_anthropic_to_openai(anthropic_request)
         
-        # Forward to backend
+        # Forward to backend with auth
+        headers = {"Content-Type": "application/json"}
+        if BACKEND_API_KEY:
+            headers["Authorization"] = f"Bearer {BACKEND_API_KEY}"
+        
         response = requests.post(
             f"{BACKEND_URL}/chat/completions",
             json=openai_request,
+            headers=headers,
             timeout=300
         )
         
