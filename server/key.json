@@ -1,5 +1,6 @@
 {
-    "ANTHROPIC_API_KEY": "",
+    "ANTHROPIC_API_KEY": "proxy-key",
+    "ANTHROPIC_BASE_URL": "http://localhost:8300",
     "API_TOKEN": "not-needed",
     "API_URL_QWEN": "http://localhost:8100/v1",
     "API_URL_OPENAI": "http://localhost:8100/v1",

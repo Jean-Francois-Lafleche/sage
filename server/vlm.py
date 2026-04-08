@@ -507,7 +507,14 @@ def _call_claude_with_retry(
     max_retries, retry_base_delay, retry_max_delay
 ):
     """Call Claude API with retry logic."""
-    client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+    client_kwargs = {"api_key": ANTHROPIC_API_KEY}
+    try:
+        from key import ANTHROPIC_BASE_URL
+        if ANTHROPIC_BASE_URL:
+            client_kwargs["base_url"] = ANTHROPIC_BASE_URL
+    except (ImportError, AttributeError):
+        pass
+    client = anthropic.Anthropic(**client_kwargs)
     
     # Import here to avoid circular import
     from mcp_session import get_mcp_init_id
