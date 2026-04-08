@@ -1,0 +1,1051 @@
+{
+  "room_type": "playroom",
+  "room_dimensions": [
+    4.5,
+    5.0,
+    2.4
+  ],
+  "style": "industrial",
+  "vibe": {
+    "clutter_level": "cluttered",
+    "mood": "relaxed",
+    "era": "contemporary",
+    "lighting": "natural"
+  },
+  "objects": [
+    {
+      "name": "shelf",
+      "category": "furniture",
+      "description": "black metal frame shelf with wooden shelves",
+      "estimated_size": [
+        1.2,
+        1.8,
+        0.3
+      ],
+      "material": "metal and wood",
+      "style": "industrial",
+      "location_hint": "against north wall",
+      "quantity": 1,
+      "is_container": true,
+      "shelf_levels": 3
+    },
+    {
+      "name": "child",
+      "category": "person",
+      "description": "small child sitting on floor",
+      "estimated_size": [
+        0.5,
+        0.8,
+        0.5
+      ],
+      "material": "human",
+      "style": "child",
+      "location_hint": "center of room",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy_table",
+      "category": "furniture",
+      "description": "round yellow plastic table with light blue chairs",
+      "estimated_size": [
+        0.6,
+        0.5,
+        0.6
+      ],
+      "material": "plastic",
+      "style": "child-friendly",
+      "location_hint": "left side of room",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "stool",
+      "category": "furniture",
+      "description": "wooden stool with pink seat",
+      "estimated_size": [
+        0.3,
+        0.4,
+        0.3
+      ],
+      "material": "wood",
+      "style": "modern",
+      "location_hint": "center of room",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "plant",
+      "category": "decor",
+      "description": "large green leafy plant in terracotta pot",
+      "estimated_size": [
+        0.8,
+        1.5,
+        0.6
+      ],
+      "material": "ceramic",
+      "style": "tropical",
+      "location_hint": "against east wall",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic building blocks",
+      "estimated_size": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "educational",
+      "location_hint": "scattered on floor",
+      "quantity": 50,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "stuffed tiger toy",
+      "estimated_size": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "material": "fabric",
+      "style": "soft",
+      "location_hint": "on shelf",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "stuffed cow toy",
+      "estimated_size": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "material": "fabric",
+      "style": "soft",
+      "location_hint": "on shelf",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful balls",
+      "estimated_size": [
+        0.05,
+        0.05,
+        0.05
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "scattered on floor",
+      "quantity": 30,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic shapes",
+      "estimated_size": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "educational",
+      "location_hint": "scattered on floor",
+      "quantity": 20,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "wooden blocks",
+      "estimated_size": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "material": "wood",
+      "style": "classic",
+      "location_hint": "scattered on floor",
+      "quantity": 15,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic puzzle",
+      "estimated_size": [
+        0.2,
+        0.1,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "educational",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy car",
+      "estimated_size": [
+        0.1,
+        0.05,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy train",
+      "estimated_size": [
+        0.2,
+        0.05,
+        0.2
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy boat",
+      "estimated_size": [
+        0.1,
+        0.05,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy airplane",
+      "estimated_size": [
+        0.1,
+        0.05,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy helicopter",
+      "estimated_size": [
+        0.1,
+        0.05,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy rocket",
+      "estimated_size": [
+        0.1,
+        0.05,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy dinosaur",
+      "estimated_size": [
+        0.1,
+        0.05,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy robot",
+      "estimated_size": [
+        0.1,
+        0.05,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy castle",
+      "estimated_size": [
+        0.2,
+        0.1,
+        0.2
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy house",
+      "estimated_size": [
+        0.1,
+        0.05,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy car",
+      "estimated_size": [
+        0.1,
+        0.05,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy train",
+      "estimated_size": [
+        0.2,
+        0.05,
+        0.2
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy boat",
+      "estimated_size": [
+        0.1,
+        0.05,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy airplane",
+      "estimated_size": [
+        0.1,
+        0.05,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy helicopter",
+      "estimated_size": [
+        0.1,
+        0.05,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy rocket",
+      "estimated_size": [
+        0.1,
+        0.05,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy dinosaur",
+      "estimated_size": [
+        0.1,
+        0.05,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy robot",
+      "estimated_size": [
+        0.1,
+        0.05,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy castle",
+      "estimated_size": [
+        0.2,
+        0.1,
+        0.2
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "toy",
+      "category": "decor",
+      "description": "colorful plastic toy house",
+      "estimated_size": [
+        0.1,
+        0.05,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "play",
+      "location_hint": "on floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    }
+  ],
+  "spatial_graph": {
+    "nodes": {
+      "obj_000": {
+        "id": "obj_000",
+        "name": "shelf",
+        "category": "furniture",
+        "estimated_size": [
+          1.2,
+          1.8,
+          0.3
+        ],
+        "material": "metal and wood",
+        "style": "industrial",
+        "is_container": true,
+        "shelf_levels": 3
+      },
+      "obj_001": {
+        "id": "obj_001",
+        "name": "child",
+        "category": "person",
+        "estimated_size": [
+          0.5,
+          0.8,
+          0.5
+        ],
+        "material": "human",
+        "style": "child",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_002": {
+        "id": "obj_002",
+        "name": "toy_table",
+        "category": "furniture",
+        "estimated_size": [
+          0.6,
+          0.5,
+          0.6
+        ],
+        "material": "plastic",
+        "style": "child-friendly",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_003": {
+        "id": "obj_003",
+        "name": "stool",
+        "category": "furniture",
+        "estimated_size": [
+          0.3,
+          0.4,
+          0.3
+        ],
+        "material": "wood",
+        "style": "modern",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_004": {
+        "id": "obj_004",
+        "name": "plant",
+        "category": "decor",
+        "estimated_size": [
+          0.8,
+          1.5,
+          0.6
+        ],
+        "material": "ceramic",
+        "style": "tropical",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_005": {
+        "id": "obj_005",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.1,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "educational",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_006": {
+        "id": "obj_006",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.3,
+          0.3,
+          0.3
+        ],
+        "material": "fabric",
+        "style": "soft",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_007": {
+        "id": "obj_007",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.2,
+          0.2,
+          0.2
+        ],
+        "material": "fabric",
+        "style": "soft",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_008": {
+        "id": "obj_008",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.05,
+          0.05,
+          0.05
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_009": {
+        "id": "obj_009",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.1,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "educational",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_010": {
+        "id": "obj_010",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.1,
+          0.1
+        ],
+        "material": "wood",
+        "style": "classic",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_011": {
+        "id": "obj_011",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.2,
+          0.1,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "educational",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_012": {
+        "id": "obj_012",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.05,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_013": {
+        "id": "obj_013",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.2,
+          0.05,
+          0.2
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_014": {
+        "id": "obj_014",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.05,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_015": {
+        "id": "obj_015",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.05,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_016": {
+        "id": "obj_016",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.05,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_017": {
+        "id": "obj_017",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.05,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_018": {
+        "id": "obj_018",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.05,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_019": {
+        "id": "obj_019",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.05,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_020": {
+        "id": "obj_020",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.2,
+          0.1,
+          0.2
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_021": {
+        "id": "obj_021",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.05,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_022": {
+        "id": "obj_022",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.05,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_023": {
+        "id": "obj_023",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.2,
+          0.05,
+          0.2
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_024": {
+        "id": "obj_024",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.05,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_025": {
+        "id": "obj_025",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.05,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_026": {
+        "id": "obj_026",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.05,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_027": {
+        "id": "obj_027",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.05,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_028": {
+        "id": "obj_028",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.05,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_029": {
+        "id": "obj_029",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.05,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_030": {
+        "id": "obj_030",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.2,
+          0.1,
+          0.2
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_031": {
+        "id": "obj_031",
+        "name": "toy",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.05,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "play",
+        "is_container": false,
+        "shelf_levels": 0
+      }
+    },
+    "relations": [
+      {
+        "subject": "toy_table",
+        "relation": "on_top_of",
+        "reference": "floor",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "stool",
+        "relation": "on_top_of",
+        "reference": "floor",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "plant",
+        "relation": "against_wall",
+        "reference": "east wall",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "shelf",
+        "relation": "against_wall",
+        "reference": "north wall",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "toy",
+        "relation": "on_shelf_level",
+        "reference": "shelf",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "toy",
+        "relation": "on_shelf_level",
+        "reference": "shelf",
+        "confidence": 1.0,
+        "metadata": {
+          "level": "1"
+        }
+      },
+      {
+        "subject": "toy",
+        "relation": "on_shelf_level",
+        "reference": "shelf",
+        "confidence": 1.0,
+        "metadata": {
+          "level": "2"
+        }
+      }
+    ]
+  },
+  "shelf_configs": [
+    {
+      "name": "shelf",
+      "type": "bookshelf",
+      "num_levels": 3,
+      "height_m": 1.8,
+      "width_m": 1.2,
+      "items_per_level": [
+        {
+          "level": 0
+        }
+      ]
+    }
+  ],
+  "confidence": 0.8
+}

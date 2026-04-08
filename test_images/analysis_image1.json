@@ -1,0 +1,1014 @@
+{
+  "room_type": "warehouse",
+  "room_dimensions": [
+    15,
+    30,
+    8
+  ],
+  "style": "industrial",
+  "vibe": {
+    "clutter_level": "tidy",
+    "mood": "professional",
+    "era": "contemporary",
+    "lighting": "natural"
+  },
+  "objects": [
+    {
+      "name": "warehouse_rack",
+      "category": "storage",
+      "description": "blue and red metal shelving unit",
+      "estimated_size": [
+        1.2,
+        6.5,
+        0.8
+      ],
+      "material": "metal",
+      "style": "industrial",
+      "location_hint": "center aisle",
+      "quantity": 1,
+      "is_container": true,
+      "shelf_levels": 4
+    },
+    {
+      "name": "warehouse_rack",
+      "category": "storage",
+      "description": "blue and red metal shelving unit",
+      "estimated_size": [
+        1.2,
+        6.5,
+        0.8
+      ],
+      "material": "metal",
+      "style": "industrial",
+      "location_hint": "left wall",
+      "quantity": 3,
+      "is_container": true,
+      "shelf_levels": 4
+    },
+    {
+      "name": "warehouse_rack",
+      "category": "storage",
+      "description": "blue and red metal shelving unit",
+      "estimated_size": [
+        1.2,
+        6.5,
+        0.8
+      ],
+      "material": "metal",
+      "style": "industrial",
+      "location_hint": "right wall",
+      "quantity": 3,
+      "is_container": true,
+      "shelf_levels": 4
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cardboard_box",
+      "category": "storage",
+      "description": "brown cardboard box with 'FRAGILE' label",
+      "estimated_size": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "material": "cardboard",
+      "style": "standard",
+      "location_hint": "on warehouse_rack",
+      "quantity": 20,
+      "is_container": true,
+      "shelf_levels": 0
+    }
+  ],
+  "spatial_graph": {
+    "nodes": {
+      "obj_000": {
+        "id": "obj_000",
+        "name": "warehouse_rack",
+        "category": "storage",
+        "estimated_size": [
+          1.2,
+          6.5,
+          0.8
+        ],
+        "material": "metal",
+        "style": "industrial",
+        "is_container": true,
+        "shelf_levels": 4
+      },
+      "obj_001": {
+        "id": "obj_001",
+        "name": "warehouse_rack",
+        "category": "storage",
+        "estimated_size": [
+          1.2,
+          6.5,
+          0.8
+        ],
+        "material": "metal",
+        "style": "industrial",
+        "is_container": true,
+        "shelf_levels": 4
+      },
+      "obj_002": {
+        "id": "obj_002",
+        "name": "warehouse_rack",
+        "category": "storage",
+        "estimated_size": [
+          1.2,
+          6.5,
+          0.8
+        ],
+        "material": "metal",
+        "style": "industrial",
+        "is_container": true,
+        "shelf_levels": 4
+      },
+      "obj_003": {
+        "id": "obj_003",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_004": {
+        "id": "obj_004",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_005": {
+        "id": "obj_005",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_006": {
+        "id": "obj_006",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_007": {
+        "id": "obj_007",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_008": {
+        "id": "obj_008",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_009": {
+        "id": "obj_009",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_010": {
+        "id": "obj_010",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_011": {
+        "id": "obj_011",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_012": {
+        "id": "obj_012",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_013": {
+        "id": "obj_013",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_014": {
+        "id": "obj_014",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_015": {
+        "id": "obj_015",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_016": {
+        "id": "obj_016",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_017": {
+        "id": "obj_017",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_018": {
+        "id": "obj_018",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_019": {
+        "id": "obj_019",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_020": {
+        "id": "obj_020",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_021": {
+        "id": "obj_021",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_022": {
+        "id": "obj_022",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_023": {
+        "id": "obj_023",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_024": {
+        "id": "obj_024",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_025": {
+        "id": "obj_025",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_026": {
+        "id": "obj_026",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_027": {
+        "id": "obj_027",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_028": {
+        "id": "obj_028",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_029": {
+        "id": "obj_029",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_030": {
+        "id": "obj_030",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_031": {
+        "id": "obj_031",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_032": {
+        "id": "obj_032",
+        "name": "cardboard_box",
+        "category": "storage",
+        "estimated_size": [
+          0.5,
+          0.5,
+          0.4
+        ],
+        "material": "cardboard",
+        "style": "standard",
+        "is_container": true,
+        "shelf_levels": 0
+      }
+    },
+    "relations": []
+  },
+  "shelf_configs": [],
+  "confidence": 0.8
+}

@@ -1,0 +1,527 @@
+{
+  "room_type": "grocery store aisle",
+  "room_dimensions": [
+    3.5,
+    12.0,
+    3.5
+  ],
+  "style": "industrial contemporary",
+  "vibe": {
+    "clutter_level": "tidy",
+    "mood": "professional",
+    "era": "contemporary",
+    "lighting": "bright"
+  },
+  "objects": [
+    {
+      "name": "shelf",
+      "category": "storage",
+      "description": "metallic gray industrial shelving unit",
+      "estimated_size": [
+        3.5,
+        3.0,
+        0.2
+      ],
+      "material": "metal",
+      "style": "industrial",
+      "location_hint": "along left wall",
+      "quantity": 2,
+      "is_container": true,
+      "shelf_levels": 6
+    },
+    {
+      "name": "shelf",
+      "category": "storage",
+      "description": "metallic gray industrial shelving unit",
+      "estimated_size": [
+        3.5,
+        3.0,
+        0.2
+      ],
+      "material": "metal",
+      "style": "industrial",
+      "location_hint": "along right wall",
+      "quantity": 2,
+      "is_container": true,
+      "shelf_levels": 6
+    },
+    {
+      "name": "refrigerator",
+      "category": "appliance",
+      "description": "glass-door commercial refrigerator with LED lighting",
+      "estimated_size": [
+        1.8,
+        1.8,
+        0.6
+      ],
+      "material": "glass, metal",
+      "style": "modern",
+      "location_hint": "center of aisle",
+      "quantity": 1,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "sign",
+      "category": "decor",
+      "description": "black rectangular overhead sign with white text",
+      "estimated_size": [
+        0.8,
+        0.3,
+        0.05
+      ],
+      "material": "metal",
+      "style": "modern",
+      "location_hint": "hanging from ceiling",
+      "quantity": 4,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "light_fixture",
+      "category": "lighting",
+      "description": "track lighting with adjustable spotlights",
+      "estimated_size": [
+        0.1,
+        0.15,
+        0.1
+      ],
+      "material": "metal",
+      "style": "industrial",
+      "location_hint": "mounted on ceiling",
+      "quantity": 6,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "floor",
+      "category": "flooring",
+      "description": "polished gray concrete floor",
+      "estimated_size": [
+        3.5,
+        12.0,
+        0.05
+      ],
+      "material": "concrete",
+      "style": "industrial",
+      "location_hint": "entire floor area",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "ceiling",
+      "category": "structural",
+      "description": "exposed black metal beams and ductwork",
+      "estimated_size": [
+        3.5,
+        3.5,
+        0.05
+      ],
+      "material": "metal",
+      "style": "industrial",
+      "location_hint": "above entire room",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "price_tag",
+      "category": "decor",
+      "description": "red and white promotional price tag",
+      "estimated_size": [
+        0.05,
+        0.1,
+        0.02
+      ],
+      "material": "paper",
+      "style": "modern",
+      "location_hint": "attached to shelf",
+      "quantity": 10,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "product_box",
+      "category": "decor",
+      "description": "various cereal and snack boxes",
+      "estimated_size": [
+        0.1,
+        0.2,
+        0.05
+      ],
+      "material": "cardboard",
+      "style": "commercial",
+      "location_hint": "on shelf",
+      "quantity": 50,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "product_can",
+      "category": "decor",
+      "description": "various canned goods",
+      "estimated_size": [
+        0.05,
+        0.15,
+        0.05
+      ],
+      "material": "metal",
+      "style": "commercial",
+      "location_hint": "in refrigerator",
+      "quantity": 50,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "product_bottle",
+      "category": "decor",
+      "description": "various bottled beverages",
+      "estimated_size": [
+        0.05,
+        0.2,
+        0.05
+      ],
+      "material": "plastic",
+      "style": "commercial",
+      "location_hint": "in refrigerator",
+      "quantity": 50,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "product_bag",
+      "category": "decor",
+      "description": "various snack bags",
+      "estimated_size": [
+        0.1,
+        0.15,
+        0.05
+      ],
+      "material": "plastic",
+      "style": "commercial",
+      "location_hint": "on shelf",
+      "quantity": 50,
+      "is_container": false,
+      "shelf_levels": 0
+    }
+  ],
+  "spatial_graph": {
+    "nodes": {
+      "obj_000": {
+        "id": "obj_000",
+        "name": "shelf",
+        "category": "storage",
+        "estimated_size": [
+          3.5,
+          3.0,
+          0.2
+        ],
+        "material": "metal",
+        "style": "industrial",
+        "is_container": true,
+        "shelf_levels": 6
+      },
+      "obj_001": {
+        "id": "obj_001",
+        "name": "shelf",
+        "category": "storage",
+        "estimated_size": [
+          3.5,
+          3.0,
+          0.2
+        ],
+        "material": "metal",
+        "style": "industrial",
+        "is_container": true,
+        "shelf_levels": 6
+      },
+      "obj_002": {
+        "id": "obj_002",
+        "name": "refrigerator",
+        "category": "appliance",
+        "estimated_size": [
+          1.8,
+          1.8,
+          0.6
+        ],
+        "material": "glass, metal",
+        "style": "modern",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_003": {
+        "id": "obj_003",
+        "name": "sign",
+        "category": "decor",
+        "estimated_size": [
+          0.8,
+          0.3,
+          0.05
+        ],
+        "material": "metal",
+        "style": "modern",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_004": {
+        "id": "obj_004",
+        "name": "light_fixture",
+        "category": "lighting",
+        "estimated_size": [
+          0.1,
+          0.15,
+          0.1
+        ],
+        "material": "metal",
+        "style": "industrial",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_005": {
+        "id": "obj_005",
+        "name": "floor",
+        "category": "flooring",
+        "estimated_size": [
+          3.5,
+          12.0,
+          0.05
+        ],
+        "material": "concrete",
+        "style": "industrial",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_006": {
+        "id": "obj_006",
+        "name": "ceiling",
+        "category": "structural",
+        "estimated_size": [
+          3.5,
+          3.5,
+          0.05
+        ],
+        "material": "metal",
+        "style": "industrial",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_007": {
+        "id": "obj_007",
+        "name": "price_tag",
+        "category": "decor",
+        "estimated_size": [
+          0.05,
+          0.1,
+          0.02
+        ],
+        "material": "paper",
+        "style": "modern",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_008": {
+        "id": "obj_008",
+        "name": "product_box",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.2,
+          0.05
+        ],
+        "material": "cardboard",
+        "style": "commercial",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_009": {
+        "id": "obj_009",
+        "name": "product_can",
+        "category": "decor",
+        "estimated_size": [
+          0.05,
+          0.15,
+          0.05
+        ],
+        "material": "metal",
+        "style": "commercial",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_010": {
+        "id": "obj_010",
+        "name": "product_bottle",
+        "category": "decor",
+        "estimated_size": [
+          0.05,
+          0.2,
+          0.05
+        ],
+        "material": "plastic",
+        "style": "commercial",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_011": {
+        "id": "obj_011",
+        "name": "product_bag",
+        "category": "decor",
+        "estimated_size": [
+          0.1,
+          0.15,
+          0.05
+        ],
+        "material": "plastic",
+        "style": "commercial",
+        "is_container": false,
+        "shelf_levels": 0
+      }
+    },
+    "relations": [
+      {
+        "subject": "sign",
+        "relation": "hanging_from",
+        "reference": "ceiling",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "product_box",
+        "relation": "on_shelf_level",
+        "reference": "shelf",
+        "confidence": 1.0,
+        "metadata": {
+          "level": "2"
+        }
+      },
+      {
+        "subject": "product_can",
+        "relation": "inside",
+        "reference": "refrigerator",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "product_bottle",
+        "relation": "inside",
+        "reference": "refrigerator",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "product_bag",
+        "relation": "on_shelf_level",
+        "reference": "shelf",
+        "confidence": 1.0,
+        "metadata": {
+          "level": "3"
+        }
+      }
+    ]
+  },
+  "shelf_configs": [
+    {
+      "name": "left_shelf",
+      "type": "warehouse_rack",
+      "num_levels": 6,
+      "height_m": 3.0,
+      "width_m": 3.5,
+      "items_per_level": [
+        {
+          "level": 0,
+          "items": [
+            "product_box",
+            "product_bag"
+          ]
+        },
+        {
+          "level": 1,
+          "items": [
+            "product_box",
+            "product_bag"
+          ]
+        },
+        {
+          "level": 2,
+          "items": [
+            "product_box",
+            "product_bag"
+          ]
+        },
+        {
+          "level": 3,
+          "items": [
+            "product_box",
+            "product_bag"
+          ]
+        },
+        {
+          "level": 4,
+          "items": [
+            "product_box",
+            "product_bag"
+          ]
+        },
+        {
+          "level": 5,
+          "items": [
+            "product_box",
+            "product_bag"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "right_shelf",
+      "type": "warehouse_rack",
+      "num_levels": 6,
+      "height_m": 3.0,
+      "width_m": 3.5,
+      "items_per_level": [
+        {
+          "level": 0,
+          "items": [
+            "product_box",
+            "product_bag"
+          ]
+        },
+        {
+          "level": 1,
+          "items": [
+            "product_box",
+            "product_bag"
+          ]
+        },
+        {
+          "level": 2,
+          "items": [
+            "product_box",
+            "product_bag"
+          ]
+        },
+        {
+          "level": 3,
+          "items": [
+            "product_box",
+            "product_bag"
+          ]
+        },
+        {
+          "level": 4,
+          "items": [
+            "product_box",
+            "product_bag"
+          ]
+        },
+        {
+          "level": 5,
+          "items": [
+            "product_box",
+            "product_bag"
+          ]
+        }
+      ]
+    }
+  ],
+  "confidence": 0.8
+}

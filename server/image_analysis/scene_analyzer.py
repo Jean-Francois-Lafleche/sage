@@ -369,6 +369,50 @@ List at least 10-20 objects for a typical room, more for cluttered/complex scene
         # Parse response
         return self._parse_response(response_text)
 
+    def _recover_truncated_json(self, json_str: str) -> Optional[Dict]:
+        """Attempt to recover a truncated JSON string.
+        
+        The VLM sometimes generates JSON that gets cut off at the token limit.
+        This tries progressively more aggressive truncation + closing.
+        """
+        import re
+        
+        # Strategy 1: Find the last complete object in the "objects" array
+        # and close everything after it
+        for trim_point in range(len(json_str), max(0, len(json_str) - 2000), -1):
+            candidate = json_str[:trim_point]
+            # Try closing with various bracket combinations
+            for closer in [
+                '}]}]}',  # close object, objects array, shelf_configs, root
+                '}]}',    # close object, array, root  
+                '}]',     # close object, array
+                ']}',     # close array, root
+                '}',      # close root
+                ']}'      # close array, root
+            ]:
+                try:
+                    result = json.loads(candidate + closer)
+                    if isinstance(result, dict) and 'room_type' in result:
+                        print(f"  Recovered JSON at position {trim_point} with closer '{closer}'", file=sys.stderr)
+                        return result
+                except json.JSONDecodeError:
+                    continue
+        
+        # Strategy 2: Extract just the top-level fields before "objects"
+        try:
+            # Find the objects array start
+            obj_start = json_str.find('"objects"')
+            if obj_start > 0:
+                prefix = json_str[:obj_start].rstrip().rstrip(',')
+                result = json.loads(prefix + '}')
+                if isinstance(result, dict):
+                    print(f"  Recovered partial JSON (no objects)", file=sys.stderr)
+                    return result
+        except json.JSONDecodeError:
+            pass
+        
+        return None
+
     def _parse_response(self, response_text: str) -> SceneAnalysis:
         """Parse VLM response into SceneAnalysis object.
         
@@ -392,16 +436,18 @@ List at least 10-20 objects for a typical room, more for cluttered/complex scene
         try:
             data = json.loads(json_str)
         except json.JSONDecodeError as e:
-            print(f"Warning: Failed to parse VLM response as JSON: {e}")
-            print(f"Response: {response_text[:500]}...")
-            # Return default analysis
-            return SceneAnalysis(
-                room_type="unknown",
-                room_dimensions=(4.0, 4.0, 2.7),
-                style="modern",
-                raw_response=response_text,
-                confidence=0.3,
-            )
+            # Try to salvage truncated JSON by closing open structures
+            print(f"Warning: JSON parse error: {e}. Attempting truncated JSON recovery...", file=sys.stderr)
+            data = self._recover_truncated_json(json_str)
+            if data is None:
+                print(f"Could not recover JSON. Response: {response_text[:300]}...", file=sys.stderr)
+                return SceneAnalysis(
+                    room_type="unknown",
+                    room_dimensions=(4.0, 4.0, 2.7),
+                    style="modern",
+                    raw_response=response_text,
+                    confidence=0.3,
+                )
         
         # Extract room info
         dims = data.get("room_dimensions", {})
