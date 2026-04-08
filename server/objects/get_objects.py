@@ -26,6 +26,19 @@ from foundation_models import get_clip_models, get_sbert_model
 import sys
 import numpy as np
 from constants import RESULTS_DIR
+
+# Sequential mode support
+try:
+    from sequential_mode import sequential_enabled, prepare_for_trellis, release_trellis
+except ImportError:
+    def sequential_enabled(): return False
+    def prepare_for_trellis(): pass
+    def release_trellis(): pass
+
+# Lazy initialization of CLIP/SBERT (in sequential mode, defer to avoid GPU memory at startup)
+def _get_models():
+    return get_clip_models(), get_sbert_model()
+
 clip_model, clip_preprocess, clip_tokenizer = get_clip_models()
 sbert_model = get_sbert_model()
 
@@ -171,7 +184,10 @@ def get_object_candidates(object_info: dict, source: str = "generation"):
         temp_file_path = os.path.join(temp_dir, f"generated_object_{object_random_id}.glb")
         caption = f"{object_description}"
         time.sleep(random.random() * 4)
+        # Sequential mode: prepare TRELLIS for 3D generation
+        prepare_for_trellis()
         mesh_dict = generate_model_from_text(caption, temp_file_path, reference_object_size=object_size)
+        release_trellis()
 
         if object_location == "wall":
             # print(f"rotating wall mesh", file=sys.stderr)

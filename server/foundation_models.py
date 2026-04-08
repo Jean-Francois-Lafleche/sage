@@ -41,14 +41,62 @@ def init_sbert():
 
 
 
-clip_model, clip_preprocess, clip_tokenizer = init_clip()
-sbert_model = init_sbert()
+# --- Sequential mode support ---
+# In sequential mode, models are loaded lazily and can be unloaded
+try:
+    from sequential_mode import sequential_enabled, SequentialManager
+    _seq_available = True
+except ImportError:
+    _seq_available = False
+    def sequential_enabled(): return False
+
+clip_model = None
+clip_preprocess = None
+clip_tokenizer = None
+sbert_model = None
+_models_initialized = False
+
+
+def _ensure_models_loaded():
+    """Lazy initialization of models. In sequential mode, only loads when needed."""
+    global clip_model, clip_preprocess, clip_tokenizer, sbert_model, _models_initialized
+    if not _models_initialized:
+        clip_model, clip_preprocess, clip_tokenizer = init_clip()
+        sbert_model = init_sbert()
+        _models_initialized = True
+        # Register with sequential manager
+        if _seq_available and sequential_enabled():
+            mgr = SequentialManager.instance()
+            mgr.register_stage("clip", loader=_load_clip_to_gpu, unloader=_unload_clip_from_gpu)
+
+
+def _load_clip_to_gpu():
+    """Move CLIP model to GPU."""
+    global clip_model
+    _ensure_models_loaded()
+    if clip_model is not None:
+        clip_model = clip_model.cuda()
+
+
+def _unload_clip_from_gpu():
+    """Move CLIP model back to CPU to free GPU memory."""
+    global clip_model
+    if clip_model is not None:
+        clip_model = clip_model.cpu()
 
 
 def get_clip_models():
     global clip_model, clip_preprocess, clip_tokenizer
+    _ensure_models_loaded()
     return clip_model, clip_preprocess, clip_tokenizer
+
 
 def get_sbert_model():
     global sbert_model
+    _ensure_models_loaded()
     return sbert_model
+
+
+# Eagerly initialize if NOT in sequential mode (preserves original behavior)
+if not (_seq_available and sequential_enabled()):
+    _ensure_models_loaded()

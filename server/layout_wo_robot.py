@@ -99,6 +99,24 @@ from utils import extract_json_from_response
 from floor_plan_materials.flux_generator import (
     generate_image_from_prompt
 )
+# Sequential mode support
+try:
+    from sequential_mode import (
+        sequential_enabled, prepare_for_clip, release_clip,
+        prepare_for_trellis, release_trellis,
+        prepare_for_flux, release_flux,
+        prepare_for_render, release_render,
+    )
+except ImportError:
+    def sequential_enabled(): return False
+    def prepare_for_clip(): pass
+    def release_clip(): pass
+    def prepare_for_trellis(): pass
+    def release_trellis(): pass
+    def prepare_for_flux(): pass
+    def release_flux(): pass
+    def prepare_for_render(): pass
+    def release_render(): pass
 try:
     from floor_plan_materials.material_generator import (
         material_generate_from_prompt
@@ -611,6 +629,8 @@ async def select_materials_for_rooms(floor_plan: FloorPlan) -> FloorPlan:
     """
     try:
         from floor_plan_materials.room_material import HOLODECK_BASE_DATA_DIR
+        # Sequential mode: prepare CLIP for material selection
+        prepare_for_clip()
         # Initialize MaterialSelector
         clip_model, clip_preprocess, clip_tokenizer = get_clip_models()
         material_selector = MaterialSelector(clip_model, clip_preprocess, clip_tokenizer)
@@ -682,9 +702,12 @@ async def select_materials_for_rooms(floor_plan: FloorPlan) -> FloorPlan:
                     wall.material = wall_material
 
         
+        # Sequential mode: release CLIP
+        release_clip()
         return floor_plan
         
     except Exception as e:
+        release_clip()  # Always release even on error
         print(f"Warning: Material selection failed: {e}. Using default materials.", file=sys.stderr)
         # Use default materials if material selection fails
         for room in floor_plan.rooms:
@@ -3342,6 +3365,9 @@ async def room_semantic_critic(
         import tempfile
         from PIL import Image as PILImage
         
+        # Sequential mode: prepare for rendering
+        prepare_for_render()
+        
         # Step 1: Render the room from four top views
         try:
             all_rgb = render_room_four_edges_view(current_layout, room_id, resolution=1920)
@@ -3855,6 +3881,17 @@ def get_current_layout():
     return current_layout
 
 if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="SAGE MCP Server")
+    parser.add_argument("--sequential", action="store_true",
+                        help="Enable sequential mode for single-GPU operation")
+    args, unknown = parser.parse_known_args()
+    
+    if args.sequential:
+        os.environ["SAGE_SEQUENTIAL"] = "1"
+        from sequential_mode import enable_sequential
+        enable_sequential()
+
     def slurm_job_id_to_port(job_id, port_start=8080, port_end=18000):
         """
         Hash-based mapping function to convert SLURM job ID to a port number.
