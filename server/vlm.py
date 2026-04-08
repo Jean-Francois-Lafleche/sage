@@ -510,7 +510,7 @@ def _call_claude_with_retry(
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
     
     # Import here to avoid circular import
-    from layout import get_mcp_init_id
+    from mcp_session import get_mcp_init_id
     
     log_file = f"{LOG_DIR}/{get_mcp_init_id()}.json"
 
@@ -551,7 +551,7 @@ def _call_openai_with_retry(
     )
     
     # Import here to avoid circular import
-    from layout import get_mcp_init_id
+    from mcp_session import get_mcp_init_id
     
     log_file = f"{LOG_DIR}/{get_mcp_init_id()}.json"
     
