@@ -735,25 +735,38 @@ class MCPClientOAI:
 
             try:
                 if is_python:
-                    # Run Python scripts with conda environment and required env vars
+                    # Run Python scripts with environment and required env vars
                     import os
                     abs_script_path = os.path.abspath(server_script_path)
                     
-                    # Create a bash command that sets up conda env and runs the script
-                    bash_command = (
-                        f"source ~/.bashrc && "
-                        f"conda activate simgen && "
-                        f"cd {SERVER_DIR} && "
-                        f"export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH && "
-                        f"export LIBRARY_PATH=$CONDA_PREFIX/lib:$LIBRARY_PATH && "
-                        f"export CPATH=$CONDA_PREFIX/include:$CPATH && "
-                        f"export PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH && "
-                        f"export SLURM_JOB_ID={os.environ.get('SLURM_JOB_ID')} && "
-                        f"export PHYSICS_CRITIC_ENABLED={os.environ.get('PHYSICS_CRITIC_ENABLED', 'true')} && "
-                        f"export SEMANTIC_CRITIC_ENABLED={os.environ.get('SEMANTIC_CRITIC_ENABLED', 'true')} && "
-                        f"export SLURM_JOB_ID={os.environ.get('SLURM_JOB_ID')} && "
-                        f"python {abs_script_path}"
-                    )
+                    # Check for venv vs conda environment
+                    venv_path = os.path.join(SERVER_DIR, '.venv')
+                    if os.path.exists(venv_path):
+                        # Use venv
+                        bash_command = (
+                            f"cd {SERVER_DIR} && "
+                            f"source .venv/bin/activate && "
+                            f"export SLURM_JOB_ID={os.environ.get('SLURM_JOB_ID', 'local')} && "
+                            f"export PHYSICS_CRITIC_ENABLED={os.environ.get('PHYSICS_CRITIC_ENABLED', 'true')} && "
+                            f"export SEMANTIC_CRITIC_ENABLED={os.environ.get('SEMANTIC_CRITIC_ENABLED', 'true')} && "
+                            f"python {abs_script_path}"
+                        )
+                    else:
+                        # Use conda (original behavior)
+                        bash_command = (
+                            f"source ~/.bashrc && "
+                            f"conda activate simgen && "
+                            f"cd {SERVER_DIR} && "
+                            f"export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH && "
+                            f"export LIBRARY_PATH=$CONDA_PREFIX/lib:$LIBRARY_PATH && "
+                            f"export CPATH=$CONDA_PREFIX/include:$CPATH && "
+                            f"export PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH && "
+                            f"export SLURM_JOB_ID={os.environ.get('SLURM_JOB_ID')} && "
+                            f"export PHYSICS_CRITIC_ENABLED={os.environ.get('PHYSICS_CRITIC_ENABLED', 'true')} && "
+                            f"export SEMANTIC_CRITIC_ENABLED={os.environ.get('SEMANTIC_CRITIC_ENABLED', 'true')} && "
+                            f"export SLURM_JOB_ID={os.environ.get('SLURM_JOB_ID')} && "
+                            f"python {abs_script_path}"
+                        )
                     
                     command = "bash"
                     args = ["-c", bash_command]
@@ -1034,7 +1047,7 @@ class MCPClientOAI:
                 call_params = {
                     "model": self.MODEL_NAME,
                     "messages": messages_for_api,
-                    "max_tokens": 40960,
+                    "max_tokens": 2048,
                     "temperature": 1.0,
                 }
                 

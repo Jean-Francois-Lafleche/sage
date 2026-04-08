@@ -840,7 +840,7 @@ Focus on visual details for realistic AI texture generation."""
         response = call_vlm(
             vlm_type="openai",
             model="openai/gpt-oss-120b",
-            max_tokens=8000,
+            max_tokens=4096,
             temperature=0.5,
             messages=[
                 {
@@ -1246,7 +1246,7 @@ Generate at least 20 diverse object proposals."""
         response = call_vlm(
             vlm_type="openai",
             model="openai/gpt-oss-120b",
-            max_tokens=20000,
+            max_tokens=4096,
             temperature=0.3,
             messages=[
                 {
@@ -2470,7 +2470,7 @@ Focus on physical details for 3D generation."""
             response = call_vlm(
                 vlm_type="openai",
                 model="openai/gpt-oss-120b",
-                max_tokens=8000,
+                max_tokens=4096,
                 temperature=0.1,
                 messages=[
                     {
@@ -3649,7 +3649,7 @@ At most 1-2 object adjustment analysis recommendations.
         response = call_vlm(
             vlm_type="qwen",
             model="claude-sonnet-4-20250514",
-            max_tokens=12000,
+            max_tokens=4096,
             temperature=0.4,
             messages=[
                 {

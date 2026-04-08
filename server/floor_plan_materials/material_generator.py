@@ -14,26 +14,41 @@
 # limitations under the License.
 from constants import MATFUSE_ROOT_DIR
 import os
-# Use importlib.util to import a function named generate_texture_map_from_prompt from the generate.py file in MATFUSE_ROOT_DIR
-import importlib.util
 import sys
 import random
-# Create the full path to the generate.py file
-generate_py_path = os.path.join(MATFUSE_ROOT_DIR, "generate.py")
 
-# Load the module from the file path
-spec = importlib.util.spec_from_file_location("generate_module", generate_py_path)
-generate_module = importlib.util.module_from_spec(spec)
-sys.modules["generate_module"] = generate_module
-spec.loader.exec_module(generate_module)
+# Check if matfuse checkpoint exists before trying to load
+_matfuse_ckpt = os.path.join(MATFUSE_ROOT_DIR, "ckpts", "matfuse-full.ckpt")
+_matfuse_available = os.path.exists(_matfuse_ckpt)
 
-# Import the specific function
-generate_texture_map_from_prompt = generate_module.generate_texture_map_from_prompt
-generate_texture_map_from_prompt_and_sketch = generate_module.generate_texture_map_from_prompt_and_sketch
-generate_texture_map_from_prompt_and_sketch_and_image = generate_module.generate_texture_map_from_prompt_and_sketch_and_image
-generate_texture_map_from_prompt_and_color = generate_module.generate_texture_map_from_prompt_and_color
-generate_texture_map_from_prompt_and_color_and_sketch = generate_module.generate_texture_map_from_prompt_and_color_and_sketch
-generate_texture_map_from_prompt_and_color_palette = generate_module.generate_texture_map_from_prompt_and_color_palette
+if _matfuse_available:
+    # Use importlib.util to import a function named generate_texture_map_from_prompt from the generate.py file in MATFUSE_ROOT_DIR
+    import importlib.util
+    # Create the full path to the generate.py file
+    generate_py_path = os.path.join(MATFUSE_ROOT_DIR, "generate.py")
+
+    # Load the module from the file path
+    spec = importlib.util.spec_from_file_location("generate_module", generate_py_path)
+    generate_module = importlib.util.module_from_spec(spec)
+    sys.modules["generate_module"] = generate_module
+    spec.loader.exec_module(generate_module)
+
+    # Import the specific function
+    generate_texture_map_from_prompt = generate_module.generate_texture_map_from_prompt
+    generate_texture_map_from_prompt_and_sketch = generate_module.generate_texture_map_from_prompt_and_sketch
+    generate_texture_map_from_prompt_and_sketch_and_image = generate_module.generate_texture_map_from_prompt_and_sketch_and_image
+    generate_texture_map_from_prompt_and_color = generate_module.generate_texture_map_from_prompt_and_color
+    generate_texture_map_from_prompt_and_color_and_sketch = generate_module.generate_texture_map_from_prompt_and_color_and_sketch
+    generate_texture_map_from_prompt_and_color_palette = generate_module.generate_texture_map_from_prompt_and_color_palette
+else:
+    print(f"⚠️ MatFuse checkpoint not found at {_matfuse_ckpt}. Material generation disabled.", file=sys.stderr)
+    # Stub functions
+    def generate_texture_map_from_prompt(*args, **kwargs): return None
+    def generate_texture_map_from_prompt_and_sketch(*args, **kwargs): return None
+    def generate_texture_map_from_prompt_and_sketch_and_image(*args, **kwargs): return None
+    def generate_texture_map_from_prompt_and_color(*args, **kwargs): return None
+    def generate_texture_map_from_prompt_and_color_and_sketch(*args, **kwargs): return None
+    def generate_texture_map_from_prompt_and_color_palette(*args, **kwargs): return None
 
 def material_generate_from_prompt(prompts):
     results = []

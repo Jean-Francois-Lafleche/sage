@@ -617,7 +617,7 @@ Generate a room-only layout that truly reflects the input description with appro
         response = call_vlm(
             vlm_type="openai",
             model="claude-sonnet-4-20250514",  # Using Claude Sonnet 4 as specified
-            max_tokens=16000,  # Increased significantly for better results
+            max_tokens=4096,  # Increased significantly for better results
             temperature=1.0,
             thinking=True,
             messages=[
@@ -1044,7 +1044,7 @@ Focus on creating an efficient, logical flow that serves the original request: "
         traffic_response = call_vlm(
             vlm_type="qwen",
             model="claude-sonnet-4-20250514",
-            max_tokens=8000,
+            max_tokens=4096,
             temperature=0.2,
             messages=[
                 {
@@ -2385,7 +2385,7 @@ Generate room specifications and adjacency graph that truly reflects the input d
         response = call_vlm(
             vlm_type="openai",
             model="claude-sonnet-4-20250514",
-            max_tokens=16000,
+            max_tokens=4096,
             temperature=1.0,
             thinking=True,
             messages=[
@@ -3340,7 +3340,7 @@ Colors should be consistent with the window appearance description.
         response = call_vlm(
             vlm_type="openai",
             model="claude-sonnet-4-20250514",
-            max_tokens=8000,
+            max_tokens=4096,
             temperature=0.2,
             messages=[
                 {
