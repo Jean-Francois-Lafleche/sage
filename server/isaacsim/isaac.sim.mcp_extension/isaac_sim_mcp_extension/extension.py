@@ -922,7 +922,19 @@ class MCPExtension(omni.ext.IExt):
                 )
 
             # Add lighting based on room type
-            self._add_scene_lighting(stage, room_data)
+            # Get room data from the floor plan
+            target_room = next((r for r in floor_plan.rooms if r.id == room_id), None)
+            room_data_for_lighting = None
+            if target_room:
+                room_data_for_lighting = {
+                    "room_type": getattr(target_room, 'room_type', getattr(target_room, 'type', 'generic')),
+                    "dimensions": {
+                        "width": target_room.dimensions.width if hasattr(target_room, 'dimensions') else 5.0,
+                        "length": target_room.dimensions.length if hasattr(target_room, 'dimensions') else 5.0,
+                        "height": target_room.ceiling_height if hasattr(target_room, 'ceiling_height') else 2.7
+                    }
+                }
+            self._add_scene_lighting(stage, room_data_for_lighting)
 
             cache = UsdUtils.StageCache.Get()
             stage_id = cache.Insert(stage).ToLongInt()
