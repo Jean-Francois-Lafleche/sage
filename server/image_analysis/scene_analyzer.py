@@ -53,6 +53,10 @@ class SceneAnalysis:
     vibe: Dict[str, str] = field(default_factory=dict)
     # e.g., {"clutter_level": "messy", "era": "contemporary", "mood": "cozy"}
     
+    # Environment details (flooring, walls, ceiling, lighting)
+    environment: Dict[str, Any] = field(default_factory=dict)
+    # e.g., {"flooring": {...}, "walls": {...}, "ceiling": {...}, "lighting": {...}}
+    
     # Detected objects
     objects: List[ObjectInfo] = field(default_factory=list)
     
@@ -167,6 +171,7 @@ class SceneAnalysis:
             "room_dimensions": self.room_dimensions,
             "style": self.style,
             "vibe": self.vibe,
+            "environment": self.environment,
             "objects": [
                 {
                     "name": o.name,
@@ -214,6 +219,42 @@ Return a JSON object with the following fields:
         "height_m": estimated ceiling height in meters
     },
     "style": "overall design style (e.g., modern minimalist, industrial, rustic, contemporary)",
+    "environment": {
+        "flooring": {
+            "type": "concrete|tile|hardwood|carpet|linoleum|epoxy|laminate|vinyl|stone|other",
+            "color": "primary color (gray, beige, brown, etc.)",
+            "material": "specific material description (polished concrete, ceramic tile, oak wood, etc.)",
+            "pattern": "solid|checkered|striped|wood_grain|marble|speckled|none",
+            "condition": "new|worn|damaged|clean|dirty"
+        },
+        "walls": {
+            "type": "drywall|concrete|brick|metal|glass|paneling|other",
+            "color": "primary color",
+            "material": "specific material description",
+            "finish": "matte|glossy|textured|rough|smooth",
+            "features": ["windows", "signage", "shelving_mounted", "pipes_visible", "outlets", "etc."]
+        },
+        "ceiling": {
+            "type": "drop_ceiling|exposed|drywall|metal|industrial|vaulted|other",
+            "color": "primary color",
+            "height_style": "standard|high|low|variable",
+            "features": ["ducts", "pipes", "sprinklers", "lights", "skylights", "fans", "etc."]
+        },
+        "lighting": {
+            "type": "fluorescent|led|natural|incandescent|mixed|industrial",
+            "brightness": "bright|moderate|dim|variable",
+            "color_temperature": "warm|neutral|cool|daylight",
+            "sources": [
+                {
+                    "type": "overhead|window|lamp|track|pendant|recessed|strip",
+                    "description": "brief description",
+                    "location": "ceiling|wall|floor|window"
+                }
+            ],
+            "shadows": "harsh|soft|mixed|none",
+            "natural_light": true|false
+        }
+    },
     "vibe": {
         "clutter_level": "sparse|tidy|moderate|cluttered|chaotic",
         "mood": "cozy|professional|casual|formal|relaxed|energetic",
@@ -263,6 +304,7 @@ Return a JSON object with the following fields:
 
 Be thorough but realistic. Estimate dimensions based on typical object sizes and room proportions.
 For warehouse/storage scenes, pay special attention to shelf configurations and stacked items.
+Pay close attention to the ENVIRONMENT section - flooring, walls, ceiling, and lighting are critical for accurate scene reconstruction.
 List at least 10-20 objects for a typical room, more for cluttered/complex scenes.
 """
 
@@ -551,6 +593,7 @@ List at least 10-20 objects for a typical room, more for cluttered/complex scene
             room_dimensions=room_dimensions,
             style=data.get("style", "modern"),
             vibe=data.get("vibe", {}),
+            environment=data.get("environment", {}),
             objects=objects,
             spatial_graph=spatial_graph,
             shelf_configs=data.get("shelf_configurations", []),
