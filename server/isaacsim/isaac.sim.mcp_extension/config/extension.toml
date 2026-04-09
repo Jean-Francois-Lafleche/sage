@@ -7,9 +7,9 @@ category = "Robotics"
 keywords = ["mcp", "server", "socket", "simulation", "robotics"]
 
 [dependencies]
-"omni.isaac.core" = {}
+"isaacsim.core.api" = {}
 "omni.kit.uiapp" = {}
-"omni.isaac.ui" = {}
+"isaacsim.gui.components" = {}
 
 
 
