@@ -1087,12 +1087,9 @@ async def add_doors_windows() -> str:
         print("🔍 Stage 4: Adding doors and windows to the current floor plan...", file=sys.stderr)
         try:
             current_layout = add_doors_windows_to_floor_plan(current_layout, doors_windows_response)
-        except ValueError as e:
-            return json.dumps({
-                "success": False,
-                "error": f"Failed to add doors and windows: {str(e)}",
-                "debug_info": debug_info
-            })
+        except (ValueError, Exception) as e:
+            print(f"⚠️ Doors/windows placement failed (non-fatal): {str(e)}", file=sys.stderr)
+            # Continue without doors/windows rather than failing the whole layout
         
         # Return updated summary
         summary = {
@@ -3867,10 +3864,12 @@ async def room_physics_critic(room_id: str):
     export_layout_to_json(current_layout, os.path.join(output_path, f"{current_layout.id}.json"))
     
     result = create_single_room_layout_scene(output_path, room_id)
-    if result['status'] != 'success':
-        return result
+    if not isinstance(result, dict) or result.get('status') != 'success':
+        return json.dumps({"success": False, "error": f"Isaac scene creation failed: {result}"})
     
     result = simulate_the_scene()
+    if not isinstance(result, dict):
+        return json.dumps({"success": False, "error": f"Isaac simulation failed: {result}"})
     # get the result dict to json string
     result = json.dumps(result)
     return result

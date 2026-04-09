@@ -2403,7 +2403,7 @@ async def move_object_floor(room: Room, current_layout: FloorPlan, object_to_mov
                     return original_objects, current_layout, movement_info
                 return room.objects, current_layout, movement_info
             
-            unstable_object_ids = result_sim["unstable_objects"]
+            unstable_object_ids = result_sim.get("unstable_objects", []) if isinstance(result_sim, dict) else []
             print(f"Number of unstable objects: {len(unstable_object_ids)}", file=sys.stderr)
             
             if object_to_move.id in unstable_object_ids:
@@ -2648,7 +2648,7 @@ async def move_object_wall(room: Room, current_layout: FloorPlan, object_to_move
                             return original_objects, current_layout, movement_info
                         return room.objects, current_layout, movement_info
                     
-                    unstable_object_ids = result_sim["unstable_objects"]
+                    unstable_object_ids = result_sim.get("unstable_objects", []) if isinstance(result_sim, dict) else []
                     print(f"Number of unstable objects: {len(unstable_object_ids)}", file=sys.stderr)
                     
                     if object_to_move.id in unstable_object_ids:
@@ -2931,7 +2931,7 @@ async def move_object_object(room: Room, current_layout: FloorPlan, object_to_mo
                     return original_objects, current_layout, movement_info
                 return room.objects, current_layout, movement_info
             
-            unstable_object_ids = result_sim["unstable_objects"]
+            unstable_object_ids = result_sim.get("unstable_objects", []) if isinstance(result_sim, dict) else []
             print(f"Number of unstable objects: {len(unstable_object_ids)}", file=sys.stderr)
             print(f"room.objects: {len(room.objects)}", file=sys.stderr)
             

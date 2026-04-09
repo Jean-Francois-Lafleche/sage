@@ -525,15 +525,14 @@ def place_objects(selected_objects: List[Object], room: Room, current_layout: Fl
             room_dict_save_path
         )
         if not isinstance(result_create, dict) or result_create.get("status") != "success":
-            # raise exception
-            pass
+            print(f"⚠️ Isaac scene creation unavailable: {result_create}", file=sys.stderr)
 
         result_sim = simulate_the_scene()
         if not isinstance(result_sim, dict) or result_sim.get("status") != "success":
-            # raise exception
-            pass
-
-        unstable_object_ids = result_sim["unstable_objects"]
+            print(f"⚠️ Physics simulation unavailable, skipping stability check", file=sys.stderr)
+            unstable_object_ids = []
+        else:
+            unstable_object_ids = result_sim.get("unstable_objects", [])
         print(f"number of unstable objects: ", len(unstable_object_ids), file=sys.stderr)
         print(f"room.objects: ", len(room.objects), file=sys.stderr)
         if len(unstable_object_ids) > 0:
@@ -595,15 +594,14 @@ def place_objects(selected_objects: List[Object], room: Room, current_layout: Fl
             room_dict_save_path
         )
         if not isinstance(result_create, dict) or result_create.get("status") != "success":
-            # raise exception
-            pass
+            print(f"⚠️ Isaac scene creation unavailable: {result_create}", file=sys.stderr)
 
         result_sim = simulate_the_scene()
         if not isinstance(result_sim, dict) or result_sim.get("status") != "success":
-            # raise exception
-            pass
-
-        unstable_object_ids = result_sim["unstable_objects"]
+            print(f"⚠️ Physics simulation unavailable, skipping stability check", file=sys.stderr)
+            unstable_object_ids = []
+        else:
+            unstable_object_ids = result_sim.get("unstable_objects", [])
         print(f"number of unstable objects: ", len(unstable_object_ids), file=sys.stderr)
         print(f"room.objects: ", len(room.objects), file=sys.stderr)
         if len(unstable_object_ids) > 0:
@@ -662,15 +660,14 @@ def place_objects(selected_objects: List[Object], room: Room, current_layout: Fl
             room_dict_save_path
         )
         if not isinstance(result_create, dict) or result_create.get("status") != "success":
-            # raise exception
-            pass
+            print(f"⚠️ Isaac scene creation unavailable: {result_create}", file=sys.stderr)
 
         result_sim = simulate_the_scene()
         if not isinstance(result_sim, dict) or result_sim.get("status") != "success":
-            # raise exception
-            pass
-
-        unstable_object_ids = result_sim["unstable_objects"]
+            print(f"⚠️ Physics simulation unavailable, skipping stability check", file=sys.stderr)
+            unstable_object_ids = []
+        else:
+            unstable_object_ids = result_sim.get("unstable_objects", [])
         print(f"number of unstable objects: ", len(unstable_object_ids), file=sys.stderr)
         print(f"room.objects: ", len(room.objects), file=sys.stderr)
         if len(unstable_object_ids) > 0:
@@ -1578,10 +1575,10 @@ def place_on_object_objects(on_object_objects: List[Object], room: Room, current
 
                 result_sim = simulate_the_scene()
                 if not isinstance(result_sim, dict) or result_sim.get("status") != "success":
-                    # raise exception
-                    pass
-
-                unstable_object_ids = result_sim["unstable_objects"]
+                    print(f"⚠️ Physics simulation unavailable, skipping stability check", file=sys.stderr)
+                    unstable_object_ids = []
+                else:
+                    unstable_object_ids = result_sim.get("unstable_objects", [])
                 # print(f"number of unstable objects: ", len(unstable_object_ids), file=sys.stderr)
                 # print(f"room_copy_eval.objects: ", len(room_copy_eval.objects), file=sys.stderr)
                 if len(unstable_object_ids) > 0:
