@@ -271,7 +271,18 @@ def slurm_job_id_to_port(job_id, port_start=8080, port_end=40000):
 
 
 def get_port():
+    # Check for explicit port override first
+    explicit_port = os.environ.get("ISAAC_MCP_PORT")
+    if explicit_port:
+        port = int(explicit_port)
+        print(f"Isaacsim MCP server port (from ISAAC_MCP_PORT): {port}", file=sys.stderr)
+        return port
     slurm_job_id = os.environ.get("SLURM_JOB_ID")
+    if slurm_job_id is None:
+        # Default to 8766 (Isaac Sim MCP extension default) when not on Slurm
+        port = 8766
+        print(f"Isaacsim MCP server port (default, no SLURM_JOB_ID): {port}", file=sys.stderr)
+        return port
     port = slurm_job_id_to_port(slurm_job_id)
     print(f"Isaacsim MCP server port: {port}", file=sys.stderr)
     return port
