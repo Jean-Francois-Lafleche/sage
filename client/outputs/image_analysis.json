@@ -1,0 +1,990 @@
+{
+  "room_type": "supermarket aisle",
+  "room_dimensions": [
+    3.0,
+    15.0,
+    4.0
+  ],
+  "style": "modern commercial retail",
+  "vibe": {
+    "clutter_level": "cluttered",
+    "mood": "energetic",
+    "era": "contemporary",
+    "lighting": "artificial"
+  },
+  "objects": [
+    {
+      "name": "shelving_unit_left",
+      "category": "storage",
+      "description": "Multi-tier metal retail shelving unit, left side",
+      "estimated_size": [
+        12.0,
+        2.2,
+        0.6
+      ],
+      "material": "metal",
+      "style": "commercial",
+      "location_hint": "left wall",
+      "quantity": 1,
+      "is_container": true,
+      "shelf_levels": 6
+    },
+    {
+      "name": "shelving_unit_right",
+      "category": "storage",
+      "description": "Multi-tier metal retail shelving unit, right side",
+      "estimated_size": [
+        12.0,
+        2.2,
+        0.6
+      ],
+      "material": "metal",
+      "style": "commercial",
+      "location_hint": "right wall",
+      "quantity": 1,
+      "is_container": true,
+      "shelf_levels": 6
+    },
+    {
+      "name": "refrigerator_case",
+      "category": "appliance",
+      "description": "Glass-door commercial refrigerated display case",
+      "estimated_size": [
+        3.0,
+        2.5,
+        0.8
+      ],
+      "material": "metal and glass",
+      "style": "commercial",
+      "location_hint": "back wall center",
+      "quantity": 1,
+      "is_container": true,
+      "shelf_levels": 5
+    },
+    {
+      "name": "aisle_sign",
+      "category": "decor",
+      "description": "Black hanging aisle marker sign with green number 4",
+      "estimated_size": [
+        0.6,
+        0.4,
+        0.05
+      ],
+      "material": "plastic",
+      "style": "commercial",
+      "location_hint": "center ceiling",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "category_sign_tea",
+      "category": "decor",
+      "description": "Black category sign reading 'Tea'",
+      "estimated_size": [
+        0.8,
+        0.2,
+        0.03
+      ],
+      "material": "plastic",
+      "style": "commercial",
+      "location_hint": "top of left shelving unit, front section",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "category_sign_coffee",
+      "category": "decor",
+      "description": "Black category sign reading 'Coffee'",
+      "estimated_size": [
+        0.8,
+        0.2,
+        0.03
+      ],
+      "material": "plastic",
+      "style": "commercial",
+      "location_hint": "top of left shelving unit, mid section",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "category_sign_breakfast",
+      "category": "decor",
+      "description": "Black category sign reading 'Breakfast'",
+      "estimated_size": [
+        0.8,
+        0.2,
+        0.03
+      ],
+      "material": "plastic",
+      "style": "commercial",
+      "location_hint": "top of right shelving unit, front section",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "category_sign_cereal",
+      "category": "decor",
+      "description": "Black category sign reading 'Cereal'",
+      "estimated_size": [
+        0.8,
+        0.2,
+        0.03
+      ],
+      "material": "plastic",
+      "style": "commercial",
+      "location_hint": "top of right shelving unit, mid section",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "category_sign_muesli",
+      "category": "decor",
+      "description": "Black category sign reading 'Muesli'",
+      "estimated_size": [
+        0.8,
+        0.2,
+        0.03
+      ],
+      "material": "plastic",
+      "style": "commercial",
+      "location_hint": "top of right shelving unit, rear section",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "track_light",
+      "category": "lighting",
+      "description": "Black track-mounted LED spotlights on ceiling",
+      "estimated_size": [
+        2.0,
+        0.15,
+        0.1
+      ],
+      "material": "metal",
+      "style": "modern commercial",
+      "location_hint": "ceiling center",
+      "quantity": 3,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "price_tag_dropped",
+      "category": "decor",
+      "description": "Red 'Prices Dropped' promotional signage",
+      "estimated_size": [
+        0.15,
+        0.1,
+        0.01
+      ],
+      "material": "cardboard",
+      "style": "commercial",
+      "location_hint": "on shelving units various positions",
+      "quantity": 5,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "tea_boxes",
+      "category": "storage",
+      "description": "Assorted boxed tea products various brands",
+      "estimated_size": [
+        0.1,
+        0.15,
+        0.06
+      ],
+      "material": "cardboard",
+      "style": "commercial packaging",
+      "location_hint": "left shelving unit upper levels",
+      "quantity": 80,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "coffee_products",
+      "category": "storage",
+      "description": "Assorted coffee jars, bags, and boxes",
+      "estimated_size": [
+        0.1,
+        0.2,
+        0.1
+      ],
+      "material": "glass and cardboard",
+      "style": "commercial packaging",
+      "location_hint": "left shelving unit middle levels",
+      "quantity": 60,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cereal_boxes",
+      "category": "storage",
+      "description": "Assorted breakfast cereal boxes various brands",
+      "estimated_size": [
+        0.2,
+        0.3,
+        0.07
+      ],
+      "material": "cardboard",
+      "style": "commercial packaging",
+      "location_hint": "right shelving unit all levels",
+      "quantity": 100,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "ovaltine_container",
+      "category": "storage",
+      "description": "Orange Ovaltine branded drink mix containers",
+      "estimated_size": [
+        0.1,
+        0.18,
+        0.1
+      ],
+      "material": "plastic",
+      "style": "commercial packaging",
+      "location_hint": "left shelving unit lower level",
+      "quantity": 4,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "milo_tin",
+      "category": "storage",
+      "description": "Green Milo chocolate malt drink tins",
+      "estimated_size": [
+        0.12,
+        0.2,
+        0.12
+      ],
+      "material": "metal",
+      "style": "commercial packaging",
+      "location_hint": "left shelving unit lower levels",
+      "quantity": 6,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "price_label_strip",
+      "category": "decor",
+      "description": "Yellow and white shelf-edge price label strips",
+      "estimated_size": [
+        0.9,
+        0.04,
+        0.01
+      ],
+      "material": "plastic",
+      "style": "commercial",
+      "location_hint": "edge of all shelf levels",
+      "quantity": 24,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "cornflakes_box",
+      "category": "storage",
+      "description": "Yellow Crunchy Nut Cornflakes large boxes",
+      "estimated_size": [
+        0.22,
+        0.32,
+        0.08
+      ],
+      "material": "cardboard",
+      "style": "commercial packaging",
+      "location_hint": "right shelving unit mid-rear section",
+      "quantity": 6,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "bushells_tea",
+      "category": "storage",
+      "description": "Blue Bushells branded tea box",
+      "estimated_size": [
+        0.12,
+        0.15,
+        0.08
+      ],
+      "material": "cardboard",
+      "style": "commercial packaging",
+      "location_hint": "left shelving unit upper mid section",
+      "quantity": 3,
+      "is_container": true,
+      "shelf_levels": 0
+    },
+    {
+      "name": "exposed_ductwork",
+      "category": "decor",
+      "description": "Silver exposed HVAC ducts on ceiling",
+      "estimated_size": [
+        0.4,
+        0.3,
+        10.0
+      ],
+      "material": "metal",
+      "style": "industrial",
+      "location_hint": "ceiling",
+      "quantity": 2,
+      "is_container": false,
+      "shelf_levels": 0
+    },
+    {
+      "name": "floor",
+      "category": "decor",
+      "description": "Polished grey concrete floor, highly reflective",
+      "estimated_size": [
+        3.0,
+        0.0,
+        15.0
+      ],
+      "material": "polished concrete",
+      "style": "modern industrial",
+      "location_hint": "floor",
+      "quantity": 1,
+      "is_container": false,
+      "shelf_levels": 0
+    }
+  ],
+  "spatial_graph": {
+    "nodes": {
+      "obj_000": {
+        "id": "obj_000",
+        "name": "shelving_unit_left",
+        "category": "storage",
+        "estimated_size": [
+          12.0,
+          2.2,
+          0.6
+        ],
+        "material": "metal",
+        "style": "commercial",
+        "is_container": true,
+        "shelf_levels": 6
+      },
+      "obj_001": {
+        "id": "obj_001",
+        "name": "shelving_unit_right",
+        "category": "storage",
+        "estimated_size": [
+          12.0,
+          2.2,
+          0.6
+        ],
+        "material": "metal",
+        "style": "commercial",
+        "is_container": true,
+        "shelf_levels": 6
+      },
+      "obj_002": {
+        "id": "obj_002",
+        "name": "refrigerator_case",
+        "category": "appliance",
+        "estimated_size": [
+          3.0,
+          2.5,
+          0.8
+        ],
+        "material": "metal and glass",
+        "style": "commercial",
+        "is_container": true,
+        "shelf_levels": 5
+      },
+      "obj_003": {
+        "id": "obj_003",
+        "name": "aisle_sign",
+        "category": "decor",
+        "estimated_size": [
+          0.6,
+          0.4,
+          0.05
+        ],
+        "material": "plastic",
+        "style": "commercial",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_004": {
+        "id": "obj_004",
+        "name": "category_sign_tea",
+        "category": "decor",
+        "estimated_size": [
+          0.8,
+          0.2,
+          0.03
+        ],
+        "material": "plastic",
+        "style": "commercial",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_005": {
+        "id": "obj_005",
+        "name": "category_sign_coffee",
+        "category": "decor",
+        "estimated_size": [
+          0.8,
+          0.2,
+          0.03
+        ],
+        "material": "plastic",
+        "style": "commercial",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_006": {
+        "id": "obj_006",
+        "name": "category_sign_breakfast",
+        "category": "decor",
+        "estimated_size": [
+          0.8,
+          0.2,
+          0.03
+        ],
+        "material": "plastic",
+        "style": "commercial",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_007": {
+        "id": "obj_007",
+        "name": "category_sign_cereal",
+        "category": "decor",
+        "estimated_size": [
+          0.8,
+          0.2,
+          0.03
+        ],
+        "material": "plastic",
+        "style": "commercial",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_008": {
+        "id": "obj_008",
+        "name": "category_sign_muesli",
+        "category": "decor",
+        "estimated_size": [
+          0.8,
+          0.2,
+          0.03
+        ],
+        "material": "plastic",
+        "style": "commercial",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_009": {
+        "id": "obj_009",
+        "name": "track_light",
+        "category": "lighting",
+        "estimated_size": [
+          2.0,
+          0.15,
+          0.1
+        ],
+        "material": "metal",
+        "style": "modern commercial",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_010": {
+        "id": "obj_010",
+        "name": "price_tag_dropped",
+        "category": "decor",
+        "estimated_size": [
+          0.15,
+          0.1,
+          0.01
+        ],
+        "material": "cardboard",
+        "style": "commercial",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_011": {
+        "id": "obj_011",
+        "name": "tea_boxes",
+        "category": "storage",
+        "estimated_size": [
+          0.1,
+          0.15,
+          0.06
+        ],
+        "material": "cardboard",
+        "style": "commercial packaging",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_012": {
+        "id": "obj_012",
+        "name": "coffee_products",
+        "category": "storage",
+        "estimated_size": [
+          0.1,
+          0.2,
+          0.1
+        ],
+        "material": "glass and cardboard",
+        "style": "commercial packaging",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_013": {
+        "id": "obj_013",
+        "name": "cereal_boxes",
+        "category": "storage",
+        "estimated_size": [
+          0.2,
+          0.3,
+          0.07
+        ],
+        "material": "cardboard",
+        "style": "commercial packaging",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_014": {
+        "id": "obj_014",
+        "name": "ovaltine_container",
+        "category": "storage",
+        "estimated_size": [
+          0.1,
+          0.18,
+          0.1
+        ],
+        "material": "plastic",
+        "style": "commercial packaging",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_015": {
+        "id": "obj_015",
+        "name": "milo_tin",
+        "category": "storage",
+        "estimated_size": [
+          0.12,
+          0.2,
+          0.12
+        ],
+        "material": "metal",
+        "style": "commercial packaging",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_016": {
+        "id": "obj_016",
+        "name": "price_label_strip",
+        "category": "decor",
+        "estimated_size": [
+          0.9,
+          0.04,
+          0.01
+        ],
+        "material": "plastic",
+        "style": "commercial",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_017": {
+        "id": "obj_017",
+        "name": "cornflakes_box",
+        "category": "storage",
+        "estimated_size": [
+          0.22,
+          0.32,
+          0.08
+        ],
+        "material": "cardboard",
+        "style": "commercial packaging",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_018": {
+        "id": "obj_018",
+        "name": "bushells_tea",
+        "category": "storage",
+        "estimated_size": [
+          0.12,
+          0.15,
+          0.08
+        ],
+        "material": "cardboard",
+        "style": "commercial packaging",
+        "is_container": true,
+        "shelf_levels": 0
+      },
+      "obj_019": {
+        "id": "obj_019",
+        "name": "exposed_ductwork",
+        "category": "decor",
+        "estimated_size": [
+          0.4,
+          0.3,
+          10.0
+        ],
+        "material": "metal",
+        "style": "industrial",
+        "is_container": false,
+        "shelf_levels": 0
+      },
+      "obj_020": {
+        "id": "obj_020",
+        "name": "floor",
+        "category": "decor",
+        "estimated_size": [
+          3.0,
+          0.0,
+          15.0
+        ],
+        "material": "polished concrete",
+        "style": "modern industrial",
+        "is_container": false,
+        "shelf_levels": 0
+      }
+    },
+    "relations": [
+      {
+        "subject": "shelving_unit_left",
+        "relation": "against_wall",
+        "reference": "left wall",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "shelving_unit_right",
+        "relation": "against_wall",
+        "reference": "right wall",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "refrigerator_case",
+        "relation": "behind",
+        "reference": "shelving_unit_left",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "refrigerator_case",
+        "relation": "behind",
+        "reference": "shelving_unit_right",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "aisle_sign",
+        "relation": "on_top_of",
+        "reference": "aisle center ceiling",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "category_sign_tea",
+        "relation": "on_top_of",
+        "reference": "shelving_unit_left",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "category_sign_coffee",
+        "relation": "right_of",
+        "reference": "category_sign_tea",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "category_sign_breakfast",
+        "relation": "on_top_of",
+        "reference": "shelving_unit_right",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "category_sign_cereal",
+        "relation": "right_of",
+        "reference": "category_sign_breakfast",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "category_sign_muesli",
+        "relation": "right_of",
+        "reference": "category_sign_cereal",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "tea_boxes",
+        "relation": "on_shelf_level",
+        "reference": "shelving_unit_left",
+        "confidence": 1.0,
+        "metadata": {
+          "level": "5"
+        }
+      },
+      {
+        "subject": "coffee_products",
+        "relation": "on_shelf_level",
+        "reference": "shelving_unit_left",
+        "confidence": 1.0,
+        "metadata": {
+          "level": "3"
+        }
+      },
+      {
+        "subject": "ovaltine_container",
+        "relation": "on_shelf_level",
+        "reference": "shelving_unit_left",
+        "confidence": 1.0,
+        "metadata": {
+          "level": "1"
+        }
+      },
+      {
+        "subject": "milo_tin",
+        "relation": "on_shelf_level",
+        "reference": "shelving_unit_left",
+        "confidence": 1.0,
+        "metadata": {
+          "level": "1"
+        }
+      },
+      {
+        "subject": "cereal_boxes",
+        "relation": "on_shelf_level",
+        "reference": "shelving_unit_right",
+        "confidence": 1.0,
+        "metadata": {
+          "level": "4"
+        }
+      },
+      {
+        "subject": "cornflakes_box",
+        "relation": "on_shelf_level",
+        "reference": "shelving_unit_right",
+        "confidence": 1.0,
+        "metadata": {
+          "level": "3"
+        }
+      },
+      {
+        "subject": "track_light",
+        "relation": "on_top_of",
+        "reference": "ceiling",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "exposed_ductwork",
+        "relation": "on_top_of",
+        "reference": "ceiling",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "price_label_strip",
+        "relation": "in_front_of",
+        "reference": "shelving_unit_left",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "price_label_strip",
+        "relation": "in_front_of",
+        "reference": "shelving_unit_right",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "price_tag_dropped",
+        "relation": "on_top_of",
+        "reference": "shelving_unit_right",
+        "confidence": 1.0,
+        "metadata": {}
+      },
+      {
+        "subject": "bushells_tea",
+        "relation": "on_shelf_level",
+        "reference": "shelving_unit_left",
+        "confidence": 1.0,
+        "metadata": {
+          "level": "4"
+        }
+      },
+      {
+        "subject": "shelving_unit_left",
+        "relation": "left_of",
+        "reference": "shelving_unit_right",
+        "confidence": 1.0,
+        "metadata": {}
+      }
+    ]
+  },
+  "shelf_configs": [
+    {
+      "name": "shelving_unit_left",
+      "type": "display_shelf",
+      "num_levels": 6,
+      "height_m": 2.2,
+      "width_m": 12.0,
+      "items_per_level": [
+        {
+          "level": 0,
+          "items": [
+            "hot_chocolate_mixes",
+            "milo_tins",
+            "ovaltine_containers"
+          ]
+        },
+        {
+          "level": 1,
+          "items": [
+            "drinking_chocolate",
+            "malted_drinks",
+            "cocoa_powder"
+          ]
+        },
+        {
+          "level": 2,
+          "items": [
+            "instant_coffee_jars",
+            "coffee_capsules",
+            "ground_coffee"
+          ]
+        },
+        {
+          "level": 3,
+          "items": [
+            "coffee_sachets",
+            "specialty_coffee",
+            "coffee_bags"
+          ]
+        },
+        {
+          "level": 4,
+          "items": [
+            "bushells_tea",
+            "herbal_tea_boxes",
+            "black_tea"
+          ]
+        },
+        {
+          "level": 5,
+          "items": [
+            "specialty_tea",
+            "green_tea",
+            "tea_variety_packs"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "shelving_unit_right",
+      "type": "display_shelf",
+      "num_levels": 6,
+      "height_m": 2.2,
+      "width_m": 12.0,
+      "items_per_level": [
+        {
+          "level": 0,
+          "items": [
+            "porridge_oats",
+            "breakfast_bars",
+            "small_cereal_boxes"
+          ]
+        },
+        {
+          "level": 1,
+          "items": [
+            "muesli_bags",
+            "granola_packs",
+            "oat_products"
+          ]
+        },
+        {
+          "level": 2,
+          "items": [
+            "medium_cereal_boxes",
+            "bran_cereals",
+            "wheat_cereals"
+          ]
+        },
+        {
+          "level": 3,
+          "items": [
+            "cornflakes",
+            "crunchy_nut",
+            "rice_cereals"
+          ]
+        },
+        {
+          "level": 4,
+          "items": [
+            "large_cereal_boxes",
+            "family_size_cereals",
+            "coco_pops"
+          ]
+        },
+        {
+          "level": 5,
+          "items": [
+            "value_cereal_boxes",
+            "bulk_cereal_packs",
+            "promotional_items"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "refrigerator_case",
+      "type": "display_shelf",
+      "num_levels": 5,
+      "height_m": 2.5,
+      "width_m": 3.0,
+      "items_per_level": [
+        {
+          "level": 0,
+          "items": [
+            "yogurt_tubs",
+            "dairy_products"
+          ]
+        },
+        {
+          "level": 1,
+          "items": [
+            "flavored_milk",
+            "cream_products"
+          ]
+        },
+        {
+          "level": 2,
+          "items": [
+            "dips",
+            "spreads",
+            "chilled_items"
+          ]
+        },
+        {
+          "level": 3,
+          "items": [
+            "chilled_beverages",
+            "juice_bottles"
+          ]
+        },
+        {
+          "level": 4,
+          "items": [
+            "ready_meals",
+            "chilled_snacks"
+          ]
+        }
+      ]
+    }
+  ],
+  "confidence": 0.8
+}
