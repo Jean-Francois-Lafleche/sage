@@ -562,8 +562,148 @@ class MCPExtension(omni.ext.IExt):
         self.robot_prim = robot_prim
         
         return {"status": "success", "message": f"{robot_type} robot created"}
-    
-    
+
+    @staticmethod
+    def _add_scene_lighting(stage, room_data=None):
+        """Add realistic lighting to the USD stage based on room type.
+        
+        Adds a combination of ambient (dome) light and area/spot lights
+        appropriate for the room type, with correct color temperature,
+        intensity, placement, and count.
+        """
+        from pxr import UsdLux, Gf, UsdGeom
+
+        # Extract room info
+        room_type = "generic"
+        dims = {"width": 5.0, "length": 5.0, "height": 2.7}  # meters
+        if room_data:
+            room_type = room_data.get("room_type", room_data.get("type", "generic")).lower()
+            if "dimensions" in room_data:
+                d = room_data["dimensions"]
+                dims = {
+                    "width": d.get("width", 5.0),
+                    "length": d.get("length", 5.0),
+                    "height": d.get("height", 2.7),
+                }
+            elif "dimensions_cm" in room_data:
+                d = room_data["dimensions_cm"]
+                dims = {
+                    "width": d.get("width", 500.0) / 100.0,
+                    "length": d.get("length", 500.0) / 100.0,
+                    "height": d.get("height", 270.0) / 100.0,
+                }
+
+        w, l, h = dims["width"], dims["length"], dims["height"]
+
+        # Lighting presets by room type
+        # color_temp in Kelvin → converted to RGB approximation
+        presets = {
+            # Commercial / retail
+            "supermarket": {"temp": 4000, "ambient": 200, "key_intensity": 800, "fill": True, "type": "rect"},
+            "store": {"temp": 4000, "ambient": 200, "key_intensity": 800, "fill": True, "type": "rect"},
+            "retail": {"temp": 4000, "ambient": 200, "key_intensity": 800, "fill": True, "type": "rect"},
+            "grocery": {"temp": 4000, "ambient": 200, "key_intensity": 800, "fill": True, "type": "rect"},
+            "aisle": {"temp": 4000, "ambient": 200, "key_intensity": 800, "fill": True, "type": "rect"},
+            # Industrial
+            "warehouse": {"temp": 5000, "ambient": 150, "key_intensity": 1200, "fill": False, "type": "rect"},
+            "factory": {"temp": 5000, "ambient": 150, "key_intensity": 1200, "fill": False, "type": "rect"},
+            "industrial": {"temp": 5000, "ambient": 150, "key_intensity": 1200, "fill": False, "type": "rect"},
+            # Residential warm
+            "bedroom": {"temp": 2700, "ambient": 100, "key_intensity": 400, "fill": True, "type": "sphere"},
+            "living": {"temp": 3000, "ambient": 120, "key_intensity": 500, "fill": True, "type": "sphere"},
+            "playroom": {"temp": 3500, "ambient": 150, "key_intensity": 500, "fill": True, "type": "sphere"},
+            "nursery": {"temp": 3000, "ambient": 130, "key_intensity": 400, "fill": True, "type": "sphere"},
+            # Residential neutral
+            "kitchen": {"temp": 4000, "ambient": 150, "key_intensity": 600, "fill": True, "type": "rect"},
+            "bathroom": {"temp": 4000, "ambient": 150, "key_intensity": 500, "fill": True, "type": "rect"},
+            "office": {"temp": 4000, "ambient": 180, "key_intensity": 600, "fill": True, "type": "rect"},
+            # Outdoor-ish
+            "garage": {"temp": 5000, "ambient": 100, "key_intensity": 800, "fill": False, "type": "rect"},
+        }
+
+        # Find best matching preset
+        preset = presets.get("generic", {"temp": 4000, "ambient": 150, "key_intensity": 600, "fill": True, "type": "rect"})
+        for key in presets:
+            if key in room_type:
+                preset = presets[key]
+                break
+
+        # Convert color temperature (Kelvin) to approximate RGB
+        def kelvin_to_rgb(temp):
+            t = temp / 100.0
+            # Red
+            if t <= 66:
+                r = 1.0
+            else:
+                r = min(1.0, max(0.0, 1.292936 * ((t - 60) ** -0.1332047592)))
+            # Green
+            if t <= 66:
+                g = min(1.0, max(0.0, 0.39008158 * (t - 2) ** 0.20 - 0.05 if t > 2 else 0.0))
+            else:
+                g = min(1.0, max(0.0, 1.129891 * ((t - 60) ** -0.0755148492)))
+            # Blue
+            if t >= 66:
+                b = 1.0
+            elif t <= 19:
+                b = 0.0
+            else:
+                b = min(1.0, max(0.0, 0.54320679 * (t - 10) ** 0.15 - 0.15 if t > 10 else 0.0))
+            return Gf.Vec3f(r, g, b)
+
+        color = kelvin_to_rgb(preset["temp"])
+
+        # 1. Dome light (ambient fill)
+        dome = UsdLux.DomeLight.Define(stage, "/World/Lights/DomeLight")
+        dome.CreateIntensityAttr(preset["ambient"])
+        dome.CreateColorAttr(color)
+
+        # 2. Ceiling lights — compute grid based on room area
+        area = w * l
+        # Roughly 1 light per 15 sq meters, minimum 1, max 12
+        n_lights = max(1, min(12, int(area / 15.0 + 0.5)))
+
+        # Arrange in a grid
+        import math
+        cols = max(1, int(math.sqrt(n_lights * w / max(l, 0.01))))
+        rows = max(1, int(math.ceil(n_lights / cols)))
+        actual_count = rows * cols
+
+        ceiling_z = h * 0.95  # slightly below ceiling
+        light_intensity = preset["key_intensity"] / max(1, actual_count) * 2  # distribute
+
+        for row in range(rows):
+            for col in range(cols):
+                idx = row * cols + col
+                x = w * (col + 0.5) / cols
+                y = l * (row + 0.5) / rows
+
+                light_path = f"/World/Lights/CeilingLight_{idx}"
+                if preset["type"] == "rect":
+                    light = UsdLux.RectLight.Define(stage, light_path)
+                    light.CreateWidthAttr(min(w / cols * 0.6, 1.2))
+                    light.CreateHeightAttr(min(l / rows * 0.6, 1.2))
+                else:
+                    light = UsdLux.SphereLight.Define(stage, light_path)
+                    light.CreateRadiusAttr(0.15)
+
+                light.CreateIntensityAttr(light_intensity)
+                light.CreateColorAttr(color)
+
+                xformable = UsdGeom.Xformable(light.GetPrim())
+                xformable.AddTranslateOp().Set(Gf.Vec3d(x, y, ceiling_z))
+
+        # 3. Optional fill light (soft, from the side) for residential/retail
+        if preset["fill"]:
+            fill = UsdLux.DistantLight.Define(stage, "/World/Lights/FillLight")
+            fill.CreateIntensityAttr(preset["key_intensity"] * 0.15)
+            fill.CreateColorAttr(Gf.Vec3f(0.9, 0.95, 1.0))  # slightly cool fill
+            fill.CreateAngleAttr(3.0)  # soft
+            xf = UsdGeom.Xformable(fill.GetPrim())
+            xf.AddRotateXYZOp().Set(Gf.Vec3f(45, 30, 0))
+
+        print(f"[Lighting] Added {actual_count} ceiling lights ({preset['type']}) + dome light for '{room_type}' "
+              f"(temp={preset['temp']}K, ambient={preset['ambient']}, key={preset['key_intensity']})")
+
     def create_room_layout_scene(self, scene_save_dir: str):
         """
         Create a room layout scene from a dictionary of mesh information.
@@ -657,6 +797,11 @@ class MCPExtension(omni.ext.IExt):
                 )
 
 
+            # Add lighting
+            try:
+                rooms = layout_data.get("rooms", []) if "layout_data" in dir() else []
+                self._add_scene_lighting(stage, rooms[0] if rooms else None)
+            except: self._add_scene_lighting(stage)
             cache = UsdUtils.StageCache.Get()
             stage_id = cache.Insert(stage).ToLongInt()
             omni.usd.get_context().attach_stage_with_callback(stage_id)
@@ -773,6 +918,9 @@ class MCPExtension(omni.ext.IExt):
                     texture_door,
                     texture_door_frame,
                 )
+
+            # Add lighting based on room type
+            self._add_scene_lighting(stage, room_data)
 
             cache = UsdUtils.StageCache.Get()
             stage_id = cache.Insert(stage).ToLongInt()
