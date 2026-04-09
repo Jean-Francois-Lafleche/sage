@@ -60,7 +60,7 @@ def Xform "World"
         def Shader "diffuseTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            asset inputs:file = @/tmp/sage-repo/results//layout_f4fb9f54/materials/hardwood.png@
+            asset inputs:file = @./materials/hardwood.png@
             float2 inputs:st.connect = </World/floor_room_743ca0f6_mat/stReader.outputs:result>
             float3 outputs:rgb
         }
@@ -117,7 +117,7 @@ def Xform "World"
         def Shader "diffuseTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            asset inputs:file = @/tmp/sage-repo/results//layout_f4fb9f54/materials/drywall.png@
+            asset inputs:file = @./materials/drywall.png@
             float2 inputs:st.connect = </World/wall_room_743ca0f6_north_30439141_mat/stReader.outputs:result>
             float3 outputs:rgb
         }
@@ -174,7 +174,7 @@ def Xform "World"
         def Shader "diffuseTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            asset inputs:file = @/tmp/sage-repo/results//layout_f4fb9f54/materials/drywall.png@
+            asset inputs:file = @./materials/drywall.png@
             float2 inputs:st.connect = </World/wall_room_743ca0f6_south_7c126ce7_mat/stReader.outputs:result>
             float3 outputs:rgb
         }
@@ -231,7 +231,7 @@ def Xform "World"
         def Shader "diffuseTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            asset inputs:file = @/tmp/sage-repo/results//layout_f4fb9f54/materials/drywall.png@
+            asset inputs:file = @./materials/drywall.png@
             float2 inputs:st.connect = </World/wall_room_743ca0f6_east_ef471475_mat/stReader.outputs:result>
             float3 outputs:rgb
         }
@@ -288,7 +288,7 @@ def Xform "World"
         def Shader "diffuseTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            asset inputs:file = @/tmp/sage-repo/results//layout_f4fb9f54/materials/drywall.png@
+            asset inputs:file = @./materials/drywall.png@
             float2 inputs:st.connect = </World/wall_room_743ca0f6_west_8aef470d_mat/stReader.outputs:result>
             float3 outputs:rgb
         }
@@ -345,7 +345,7 @@ def Xform "World"
         def Shader "diffuseTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            asset inputs:file = @/tmp/sage-repo/results//layout_f4fb9f54/materials/drywall.png@
+            asset inputs:file = @./materials/drywall.png@
             float2 inputs:st.connect = </World/floor_room_743ca0f6_ceiling_mat/stReader.outputs:result>
             float3 outputs:rgb
         }
