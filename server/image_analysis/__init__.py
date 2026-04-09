@@ -5,6 +5,7 @@
 from .scene_analyzer import SceneAnalyzer, SceneAnalysis
 from .spatial_graph import SpatialGraph, SpatialRelation
 from .shelf_placer import ShelfPlacer, ShelfConfig, ShelfLevel
+from .style_extractor import StyleDescriptor, StyleConstraint, extract_style
 
 __all__ = [
     "SceneAnalyzer",
@@ -14,4 +15,7 @@ __all__ = [
     "ShelfPlacer",
     "ShelfConfig",
     "ShelfLevel",
+    "StyleDescriptor",
+    "StyleConstraint",
+    "extract_style",
 ]

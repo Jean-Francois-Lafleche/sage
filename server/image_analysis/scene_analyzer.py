@@ -68,6 +68,45 @@ class SceneAnalysis:
     # Confidence score (0-1)
     confidence: float = 0.8
     
+    # ------------------------------------------------------------------
+    # Clutter / density helpers
+    # ------------------------------------------------------------------
+
+    _DENSITY_MAP = {
+        "sparse": 0.6,
+        "tidy": 0.8,
+        "moderate": 1.0,
+        "cluttered": 1.3,
+        "chaotic": 1.6,
+    }
+
+    def get_density_multiplier(self) -> float:
+        """Return a multiplier for object counts based on the detected clutter level.
+
+        Maps the ``vibe["clutter_level"]`` value extracted by the VLM:
+            sparse → 0.6, tidy → 0.8, moderate → 1.0, cluttered → 1.3, chaotic → 1.6
+
+        Falls back to 1.0 when the clutter level is missing or unrecognised.
+        """
+        level = (self.vibe.get("clutter_level") or "").strip().lower()
+        return self._DENSITY_MAP.get(level, 1.0)
+
+    def get_min_spacing(self) -> float:
+        """Return the minimum spacing (metres) between objects for this clutter level.
+
+        Higher clutter → smaller minimum spacing:
+            sparse → 0.5 m, tidy → 0.4 m, moderate → 0.3 m, cluttered → 0.15 m, chaotic → 0.08 m
+        """
+        _spacing = {
+            "sparse": 0.5,
+            "tidy": 0.4,
+            "moderate": 0.3,
+            "cluttered": 0.15,
+            "chaotic": 0.08,
+        }
+        level = (self.vibe.get("clutter_level") or "").strip().lower()
+        return _spacing.get(level, 0.3)
+
     def to_room_description(self) -> str:
         """Convert the analysis to a SAGE-compatible room description string."""
         parts = []

@@ -27,7 +27,7 @@ from pytorch3d.io import save_obj
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 
-def process_single_object(object_name: str, object_info: dict, room: Room, object_save_dir: str, selection_source = "generation"):
+def process_single_object(object_name: str, object_info: dict, room: Room, object_save_dir: str, selection_source = "generation", style_constraint=None):
     """
     Process a single object type and return selected objects and updated recommendations.
     
@@ -53,7 +53,7 @@ def process_single_object(object_name: str, object_info: dict, room: Room, objec
 
     
 
-    candidates = get_object_candidates(object_info, selection_source)
+    candidates = get_object_candidates(object_info, selection_source, style_constraint=style_constraint)
 
     # in each candidate, we can access the mesh by candidate["mesh"]
     # the mesh is trimesh object, with units in meters
@@ -193,10 +193,19 @@ def process_single_object(object_name: str, object_info: dict, room: Room, objec
     
     return selected_objects, updated_recommendations
 
-def select_objects(object_info_dict: dict, room: Room, existing_objects: List[Object], current_layout: FloorPlan, selection_source = "generation"):
+def select_objects(object_info_dict: dict, room: Room, existing_objects: List[Object], current_layout: FloorPlan, selection_source = "generation", style_constraint=None, density_multiplier: float = 1.0):
 
     object_save_dir = f"{RESULTS_DIR}/{current_layout.id}"
     os.makedirs(object_save_dir, exist_ok=True)
+
+    # Apply density multiplier to object quantities when doing image-based generation
+    if density_multiplier != 1.0:
+        for obj_name, obj_data in object_info_dict.items():
+            original_qty = obj_data.get("quantity", 1)
+            adjusted_qty = max(1, round(original_qty * density_multiplier))
+            if adjusted_qty != original_qty:
+                print(f"Density adjustment: {obj_name} quantity {original_qty} -> {adjusted_qty} (x{density_multiplier:.1f})", file=sys.stderr)
+                obj_data["quantity"] = adjusted_qty
 
     selected_objects = []
     updated_recommendations = []
@@ -209,7 +218,7 @@ def select_objects(object_info_dict: dict, room: Room, existing_objects: List[Ob
         
         for object_name in object_names_order:
             object_info = object_info_dict[object_name]
-            future = executor.submit(process_single_object, object_name, object_info, room, object_save_dir, selection_source)
+            future = executor.submit(process_single_object, object_name, object_info, room, object_save_dir, selection_source, style_constraint)
             future_to_object_name[future] = object_name
         
         # Collect results in the original order

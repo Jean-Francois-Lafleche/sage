@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 from models import Object, Room, FloorPlan, Point3D, Euler, Door, Window
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 import json
 from key import ANTHROPIC_API_KEY
 from vlm import call_vlm
@@ -46,6 +46,215 @@ from isaacsim.isaac_mcp.server import (
     create_room_groups_layouts,
     simulate_the_scene_groups
 )
+
+# ---------------------------------------------------------------------------
+# Image-analysis integrations: shelf placement & spatial graph
+# ---------------------------------------------------------------------------
+try:
+    from image_analysis.shelf_placer import ShelfPlacer, ShelfConfig, ShelfItem
+    from image_analysis.spatial_graph import SpatialGraph, SpatialRelation, RelationType, ObjectNode
+except ImportError:
+    # Graceful fallback when image_analysis module is not available
+    ShelfPlacer = None  # type: ignore[misc,assignment]
+    ShelfConfig = None  # type: ignore[misc,assignment]
+    ShelfItem = None  # type: ignore[misc,assignment]
+    SpatialGraph = None  # type: ignore[misc,assignment]
+    SpatialRelation = None  # type: ignore[misc,assignment]
+    RelationType = None  # type: ignore[misc,assignment]
+    ObjectNode = None  # type: ignore[misc,assignment]
+
+
+# ---------------------------------------------------------------------------
+# Shelf / rack stacking helpers
+# ---------------------------------------------------------------------------
+
+def place_on_shelf(
+    shelf_object: Object,
+    level_index: int,
+    item: Object,
+    shelf_config: "ShelfConfig",
+) -> Point3D:
+    """Compute a 3D position for *item* placed on *shelf_object* at *level_index*.
+
+    The returned position is in **world coordinates** suitable for direct use
+    by IsaacSim.  The Y-coordinate is computed from the shelf level height.
+
+    Args:
+        shelf_object: The shelf/rack :class:`Object` already placed in the scene.
+        level_index:  Zero-based shelf level (0 = bottom).
+        item:         The :class:`Object` to be placed on the shelf.
+        shelf_config: The corresponding :class:`ShelfConfig`.
+
+    Returns:
+        A :class:`Point3D` world-space position for the item.
+    """
+    if shelf_config is None or level_index < 0 or level_index >= len(shelf_config.levels):
+        # Fallback: place on top of the shelf object
+        return Point3D(
+            x=shelf_object.position.x,
+            y=shelf_object.position.y,
+            z=shelf_object.position.z + shelf_object.dimensions.height,
+        )
+
+    level = shelf_config.levels[level_index]
+
+    # X/Y stay at the shelf centre; Z = shelf base Z + level height + half item height
+    return Point3D(
+        x=shelf_object.position.x,
+        y=shelf_object.position.y,
+        z=shelf_object.position.z + level.height_from_ground + (item.dimensions.height / 2),
+    )
+
+
+def _detect_shelf_objects(
+    objects: List[Object],
+    scene_analysis: Optional[Any] = None,
+) -> Dict[str, "ShelfConfig"]:
+    """Identify which placed objects are shelves/racks and build configs.
+
+    Uses the :class:`SceneAnalysis` ``shelf_configs`` list when available,
+    otherwise falls back to a heuristic that checks object type names.
+
+    Returns:
+        Mapping of shelf object ID → :class:`ShelfConfig`.
+    """
+    if ShelfConfig is None:
+        return {}
+
+    shelf_map: Dict[str, ShelfConfig] = {}
+
+    # Try to match from scene_analysis.shelf_configs
+    if scene_analysis is not None and hasattr(scene_analysis, "shelf_configs"):
+        for sc_dict in scene_analysis.shelf_configs or []:
+            # Find the corresponding placed object by name substring
+            sc_name = sc_dict.get("name", "").lower()
+            for obj in objects:
+                if sc_name and sc_name in obj.type.lower() and obj.id not in shelf_map:
+                    config = ShelfConfig(
+                        name=obj.id,
+                        num_levels=int(sc_dict.get("num_levels", 4)),
+                        total_height=obj.dimensions.height,
+                        total_width=obj.dimensions.width,
+                        total_depth=obj.dimensions.length,
+                    )
+                    shelf_map[obj.id] = config
+                    break
+
+    # Also check spatial graph for objects with is_container + shelf_levels
+    if scene_analysis is not None and hasattr(scene_analysis, "spatial_graph") and scene_analysis.spatial_graph:
+        graph = scene_analysis.spatial_graph
+        for node_id, node in graph.nodes.items():
+            if node.is_container and node.shelf_levels > 0:
+                # Find corresponding placed Object
+                for obj in objects:
+                    name_match = node.name.lower() in obj.type.lower() or obj.type.lower() in node.name.lower()
+                    if name_match and obj.id not in shelf_map:
+                        config = ShelfConfig(
+                            name=obj.id,
+                            num_levels=node.shelf_levels,
+                            total_height=obj.dimensions.height,
+                            total_width=obj.dimensions.width,
+                            total_depth=obj.dimensions.length,
+                        )
+                        shelf_map[obj.id] = config
+                        break
+
+    # Heuristic fallback for objects whose type contains shelf/rack keywords
+    _shelf_keywords = {"shelf", "shelving", "bookshelf", "bookcase", "rack", "cabinet"}
+    for obj in objects:
+        if obj.id in shelf_map:
+            continue
+        type_lower = obj.type.lower().replace("_", " ")
+        if any(kw in type_lower for kw in _shelf_keywords):
+            # Estimate 4 levels as a reasonable default
+            config = ShelfConfig(
+                name=obj.id,
+                num_levels=4,
+                total_height=obj.dimensions.height,
+                total_width=obj.dimensions.width,
+                total_depth=obj.dimensions.length,
+            )
+            shelf_map[obj.id] = config
+
+    return shelf_map
+
+
+# ---------------------------------------------------------------------------
+# Spatial-graph → placement constraint helpers
+# ---------------------------------------------------------------------------
+
+def _spatial_relations_to_constraints(
+    obj_id: str,
+    spatial_graph: Optional["SpatialGraph"],
+    placed_object_ids: set,
+) -> List[str]:
+    """Convert spatial-graph relations for *obj_id* into SAGE constraint strings.
+
+    Only relations whose reference object is already placed are emitted so that
+    the DFS solver can resolve them.
+
+    Returns:
+        List of constraint strings compatible with the existing prompt format,
+        e.g. ``["close to, desk_001", "left of, desk_001"]``.
+    """
+    if spatial_graph is None or SpatialGraph is None or RelationType is None:
+        return []
+
+    constraints: List[str] = []
+    for rel in spatial_graph.relations:
+        if rel.subject != obj_id:
+            continue
+        # We can only reference objects that are already placed
+        if rel.reference not in placed_object_ids:
+            continue
+
+        if rel.relation == RelationType.NEXT_TO:
+            constraints.append(f"close to, {rel.reference}")
+        elif rel.relation == RelationType.ON_TOP_OF:
+            # Handled by place_id, but reinforce with a constraint
+            constraints.append(f"close to, {rel.reference}")
+        elif rel.relation == RelationType.LEFT_OF:
+            constraints.append(f"left of, {rel.reference}")
+            constraints.append(f"close to, {rel.reference}")
+        elif rel.relation == RelationType.RIGHT_OF:
+            constraints.append(f"right of, {rel.reference}")
+            constraints.append(f"close to, {rel.reference}")
+        elif rel.relation == RelationType.IN_FRONT_OF:
+            constraints.append(f"in front of, {rel.reference}")
+            constraints.append(f"near, {rel.reference}")
+        elif rel.relation == RelationType.BEHIND:
+            # No direct "behind" in SAGE constraints; use side-of + far
+            constraints.append(f"side of, {rel.reference}")
+            constraints.append(f"near, {rel.reference}")
+        elif rel.relation == RelationType.AGAINST_WALL:
+            constraints.append("edge")
+        elif rel.relation == RelationType.INSIDE:
+            constraints.append(f"close to, {rel.reference}")
+        elif rel.relation == RelationType.STACKED_ON:
+            constraints.append(f"close to, {rel.reference}")
+
+    return constraints
+
+
+def _build_spatial_placement_hints(
+    spatial_graph: Optional["SpatialGraph"],
+) -> str:
+    """Generate a text block of placement hints from the spatial graph.
+
+    This block is injected into the VLM placement prompt so that the LLM
+    considers the image-derived spatial relationships when assigning
+    constraints.
+    """
+    if spatial_graph is None or SpatialGraph is None:
+        return ""
+    hints = spatial_graph.generate_placement_hints()
+    if not hints:
+        return ""
+    lines = ["\nSPATIAL RELATIONSHIPS FROM REFERENCE IMAGE (use these to guide constraint assignment):"]
+    for h in hints[:30]:  # Cap at 30 to avoid token bloat
+        lines.append(f"  - {h}")
+    lines.append("")
+    return "\n".join(lines)
 
 def find_valid_place_id(object_to_place: Object, object_candidates: List[Object]) -> str:
     """
@@ -123,7 +332,7 @@ Return JSON with format:
     return place_id
 
 
-def place_objects(selected_objects: List[Object], room: Room, current_layout: FloorPlan) -> Tuple[List[Object], FloorPlan, Dict[str, Any]]:
+def place_objects(selected_objects: List[Object], room: Room, current_layout: FloorPlan, spatial_graph: Optional["SpatialGraph"] = None, scene_analysis: Optional[Any] = None, min_spacing: float = 0.3) -> Tuple[List[Object], FloorPlan, Dict[str, Any]]:
     """
     Place selected objects in a room using Claude API for intelligent placement.
     
@@ -131,6 +340,14 @@ def place_objects(selected_objects: List[Object], room: Room, current_layout: Fl
         selected_objects: List of objects to place
         room: Target room for placement
         current_layout: Current floor plan layout
+        spatial_graph: Optional spatial relationship graph from image analysis.
+            When provided, the placement order follows ``get_placement_order()``
+            (foundational objects first) and spatial relations are injected as
+            additional VLM placement-prompt hints.
+        scene_analysis: Optional SceneAnalysis providing shelf configs and other
+            image-derived metadata used for shelf stacking.
+        min_spacing: Minimum spacing in metres between placed objects. Derived
+            from clutter/density analysis (lower = denser scene).
         
     Returns:
         Tuple of (placed_objects, updated_layout, claude_interactions)
@@ -166,6 +383,89 @@ def place_objects(selected_objects: List[Object], room: Room, current_layout: Fl
     # print(f"floor_objects: ", floor_objects, file=sys.stderr)
     # print(f"wall_objects: ", wall_objects, file=sys.stderr)
     # print(f"on_object_objects: ", on_object_objects, file=sys.stderr)
+
+    # -----------------------------------------------------------------
+    # Shelf stacking: detect shelf objects among floor_objects and route
+    # items with ON_SHELF_LEVEL relations to shelf levels instead of the
+    # standard on-object placement.
+    # -----------------------------------------------------------------
+    shelf_configs = _detect_shelf_objects(floor_objects + on_object_objects, scene_analysis)
+    if shelf_configs:
+        print(f"Detected {len(shelf_configs)} shelf/rack object(s) for stacking", file=sys.stderr)
+
+    shelf_placed_objects: List[Object] = []
+    _remaining_on_object: List[Object] = []
+    for obj in on_object_objects:
+        target_id = obj.place_id
+        if target_id in shelf_configs:
+            cfg = shelf_configs[target_id]
+            # Determine target level from spatial graph metadata
+            level_idx = 0
+            if spatial_graph is not None and SpatialGraph is not None:
+                for rel in spatial_graph.relations:
+                    if rel.subject == obj.type or rel.subject == obj.id:
+                        if rel.relation == RelationType.ON_SHELF_LEVEL:
+                            try:
+                                level_idx = int(rel.metadata.get("level", 0))
+                            except (ValueError, TypeError):
+                                level_idx = 0
+                            break
+            # Find the already-placed shelf object to get its world position
+            shelf_obj_ref = next((o for o in floor_objects if o.id == target_id), None)
+            if shelf_obj_ref is not None:
+                pos = place_on_shelf(shelf_obj_ref, level_idx, obj, cfg)
+                shelf_item = Object(
+                    id=obj.id,
+                    room_id=room.id,
+                    type=obj.type,
+                    description=obj.description,
+                    position=pos,
+                    rotation=Euler(0, 0, 0),
+                    dimensions=obj.dimensions,
+                    source=obj.source,
+                    source_id=obj.source_id,
+                    place_id=obj.place_id,
+                    place_guidance=obj.place_guidance,
+                    mass=getattr(obj, "mass", 1.0),
+                )
+                shelf_placed_objects.append(shelf_item)
+                print(f"  Placed {obj.id} on shelf {target_id} level {level_idx} at z={pos.z:.3f}", file=sys.stderr)
+                continue
+        _remaining_on_object.append(obj)
+    on_object_objects = _remaining_on_object
+
+    # -----------------------------------------------------------------
+    # Spatial graph: reorder floor objects so foundational ones come first
+    # -----------------------------------------------------------------
+    if spatial_graph is not None and SpatialGraph is not None:
+        try:
+            placement_order = spatial_graph.get_placement_order()
+            # Build a name→object lookup for floor objects
+            _name_to_objs: Dict[str, List[Object]] = {}
+            for fobj in floor_objects:
+                key = fobj.type.lower()
+                _name_to_objs.setdefault(key, []).append(fobj)
+            reordered: List[Object] = []
+            used_ids: set = set()
+            for node_id in placement_order:
+                node = spatial_graph.nodes.get(node_id)
+                if node is None:
+                    continue
+                key = node.name.lower()
+                for fobj in _name_to_objs.get(key, []):
+                    if fobj.id not in used_ids:
+                        reordered.append(fobj)
+                        used_ids.add(fobj.id)
+                        break
+            # Append any remaining floor objects not matched by the graph
+            for fobj in floor_objects:
+                if fobj.id not in used_ids:
+                    reordered.append(fobj)
+                    used_ids.add(fobj.id)
+            floor_objects = reordered
+        except Exception as e:
+            print(f"Warning: spatial graph reordering failed: {e}", file=sys.stderr)
+
     placed_objects = []
     objects_need_to_be_placed = []
 
@@ -180,7 +480,7 @@ def place_objects(selected_objects: List[Object], room: Room, current_layout: Fl
         # print(f"floor_objects_existing: ", floor_objects_existing, file=sys.stderr)
         objects_need_to_be_placed.extend(floor_objects_need_to_be_placed)
         if len(floor_objects_need_to_be_placed) > 0:
-            floor_objects, floor_interaction = place_floor_objects(floor_objects, room, current_layout)
+            floor_objects, floor_interaction = place_floor_objects(floor_objects, room, current_layout, spatial_graph=spatial_graph, min_spacing=min_spacing)
             claude_interactions["floor_placement"] = floor_interaction
             if floor_interaction and floor_interaction.get("api_called"):
                 claude_interactions["total_api_calls"] += 1
@@ -379,6 +679,16 @@ def place_objects(selected_objects: List[Object], room: Room, current_layout: Fl
             print(f"after removing unstable objects, room.objects: ", len(room.objects), file=sys.stderr)
 
     # collect the object that failed to be placed
+    # First, add shelf-placed objects that bypassed the standard placement flow
+    if shelf_placed_objects:
+        placed_objects.extend(shelf_placed_objects)
+        for layout_room in current_layout.rooms:
+            if layout_room.id == room_id:
+                layout_room.objects = placed_objects
+                break
+        room = next((r for r in current_layout.rooms if r.id == room_id), None)
+        print(f"Added {len(shelf_placed_objects)} shelf-placed objects to room", file=sys.stderr)
+
     failed_to_be_placed_objects = [obj for obj in objects_need_to_be_placed if obj.id not in [obj.id for obj in room.objects]]
     print(f"failed_to_be_placed_objects: ", len(failed_to_be_placed_objects), file=sys.stderr)
     for obj in failed_to_be_placed_objects:
@@ -596,10 +906,18 @@ def get_room_layout_description(room: Room, current_layout: FloorPlan, floor_obj
     return "\n".join(description_parts)
 
 
-def place_floor_objects(floor_objects: List[Object], room: Room, current_layout: FloorPlan) -> Tuple[List[Object], Dict[str, Any]]:
+def place_floor_objects(floor_objects: List[Object], room: Room, current_layout: FloorPlan, spatial_graph: Optional["SpatialGraph"] = None, min_spacing: float = 0.3) -> Tuple[List[Object], Dict[str, Any]]:
     """
     Place floor objects using Claude API for constraints and DFS solver for placement.
     Handles both existing positioned objects and new objects that need placement.
+
+    Args:
+        floor_objects: List of floor objects to place.
+        room: Target room.
+        current_layout: Current floor plan.
+        spatial_graph: Optional spatial relationship graph; when provided its
+            placement hints are injected into the VLM constraint prompt.
+        min_spacing: Minimum spacing (m) between objects from density analysis.
     """
     interaction_info = {
         "api_called": False,
@@ -830,6 +1148,25 @@ Please design the layout now:"""
         prompt_text = object_constraints_prompt.format(
             room_layout=room_layout_description,
         )
+
+        # Inject spatial-graph placement hints into the prompt when available
+        spatial_hints_block = _build_spatial_placement_hints(spatial_graph)
+        if spatial_hints_block:
+            prompt_text = prompt_text.replace(
+                "Please design the layout now:",
+                spatial_hints_block + "\nPlease design the layout now:",
+            )
+
+        # Inject minimum spacing guidance from density analysis
+        if min_spacing != 0.3:  # Non-default
+            spacing_note = (
+                f"\nDENSITY GUIDANCE: Target minimum spacing between objects is "
+                f"{min_spacing * 100:.0f}cm (reference image density).\n"
+            )
+            prompt_text = prompt_text.replace(
+                "Please design the layout now:",
+                spacing_note + "Please design the layout now:",
+            )
         
         interaction_info["prompt"] = prompt_text
         interaction_info["visualization_included"] = room_visualization_base64 is not None

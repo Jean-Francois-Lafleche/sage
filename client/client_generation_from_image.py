@@ -38,6 +38,7 @@ from client_generation_room_desc import MCPClientOAI, get_task_definition_text
 # Import our image analysis module
 try:
     from image_analysis.scene_analyzer import SceneAnalyzer, SceneAnalysis
+    from image_analysis.style_extractor import extract_style
     HAS_IMAGE_ANALYSIS = True
 except ImportError:
     print("Warning: image_analysis module not found. Using basic image input only.")
@@ -79,6 +80,26 @@ def get_image_based_task_definition(analysis: "SceneAnalysis", additional_contex
             shelf_guidance = "\n\nSHELF/RACK CONFIGURATIONS:\n" + "\n".join(shelf_parts)
             shelf_guidance += "\n[IMPORTANT] Place items at appropriate shelf levels, not just on the floor."
 
+    # Extract style descriptor for consistent generation
+    style_desc = None
+    style_section = ""
+    if HAS_IMAGE_ANALYSIS:
+        try:
+            style_desc = extract_style(analysis)
+            style_parts = []
+            if style_desc.era:
+                style_parts.append(f"- Era: {style_desc.era}")
+            if style_desc.material_palette:
+                style_parts.append(f"- Dominant materials: {', '.join(style_desc.material_palette[:5])}")
+            if style_desc.dominant_colors:
+                style_parts.append(f"- Dominant colours: {', '.join(style_desc.dominant_colors[:5])}")
+            if style_desc.aesthetic_keywords:
+                style_parts.append(f"- Aesthetic: {', '.join(style_desc.aesthetic_keywords[:6])}")
+            if style_parts:
+                style_section = "\nEXTRACTED STYLE (apply to ALL generated objects):\n" + "\n".join(style_parts)
+        except Exception:
+            pass  # Style extraction is best-effort
+
     # Construct the task definition
     task_text = f"""Task: Generate a 3D scene that matches the following reference image analysis.
 
@@ -90,6 +111,7 @@ ROOM DESCRIPTION:
 DETECTED STYLE AND VIBE:
 - Style: {analysis.style}
 - Vibe: {json.dumps(analysis.vibe, indent=2) if analysis.vibe else "Not specified"}
+{style_section}
 {shelf_guidance}
 
 === PLACEMENT GUIDANCE FROM IMAGE ===
@@ -127,6 +149,18 @@ DETECTED OBJECTS TO PLACE (in priority order):
 [CRITICAL] Preserve the clutter level and mood detected in the analysis.
 
 """
+
+    # Add clutter/density guidance
+    density_mult = analysis.get_density_multiplier()
+    min_spacing = analysis.get_min_spacing()
+    clutter_level = (analysis.vibe or {}).get("clutter_level", "moderate")
+    task_text += f"""CLUTTER/DENSITY GUIDANCE:
+- Detected clutter level: {clutter_level}
+- Density multiplier: {density_mult:.1f}x (apply to proposed object counts)
+- Minimum spacing between objects: {min_spacing:.2f}m
+- {'Add extra decorative items to fill the space.' if density_mult > 1.0 else 'Keep the space open with fewer items.' if density_mult < 1.0 else 'Use standard object density.'}
+
+"""
     
     # Add the standard task definition sections
     task_text += get_task_definition_text(room_desc)
@@ -143,6 +177,8 @@ async def analyze_and_generate(
     server_paths: List[str],
     additional_context: str = "",
     vlm_api_url: str = "http://localhost:8100/v1",
+    vlm_api_key: str = "not-needed",
+    vlm_model: str = "Qwen/Qwen3-VL-8B-Instruct",
 ) -> None:
     """Analyze images and generate a matching scene.
     
@@ -160,7 +196,7 @@ async def analyze_and_generate(
     print(f"\n📷 Analyzing {len(image_paths)} image(s)...")
     
     if HAS_IMAGE_ANALYSIS:
-        analyzer = SceneAnalyzer(api_url=vlm_api_url)
+        analyzer = SceneAnalyzer(api_url=vlm_api_url, model=vlm_model, api_key=vlm_api_key)
         analysis = analyzer.analyze_images(image_paths, additional_context)
         
         print(f"\n✅ Image Analysis Complete:")
@@ -237,8 +273,35 @@ async def main():
         default="http://localhost:8100/v1",
         help="URL of the VLM API for image analysis"
     )
+    parser.add_argument(
+        "--vlm_api_key",
+        type=str,
+        default=None,
+        help="API key for the VLM API (defaults to API_TOKEN from key.json)"
+    )
+    parser.add_argument(
+        "--vlm_model",
+        type=str,
+        default=None,
+        help="Model name for VLM analysis (defaults to MODEL_NAME from key.json)"
+    )
     
     args = parser.parse_args()
+    
+    # Load defaults from key.json if not provided
+    key_json_path = os.path.join(os.path.dirname(__file__), 'key.json')
+    if os.path.exists(key_json_path):
+        with open(key_json_path) as f:
+            _kj = json.load(f)
+        if args.vlm_api_key is None:
+            args.vlm_api_key = _kj.get('API_TOKEN', 'not-needed')
+        if args.vlm_model is None:
+            args.vlm_model = _kj.get('MODEL_NAME', 'Qwen/Qwen3-VL-8B-Instruct')
+    else:
+        if args.vlm_api_key is None:
+            args.vlm_api_key = 'not-needed'
+        if args.vlm_model is None:
+            args.vlm_model = 'Qwen/Qwen3-VL-8B-Instruct'
     
     # Validate image paths
     for img_path in args.input_images:
@@ -257,6 +320,8 @@ async def main():
         server_paths=args.server_paths,
         additional_context=args.room_desc,
         vlm_api_url=args.vlm_api_url,
+        vlm_api_key=args.vlm_api_key,
+        vlm_model=args.vlm_model,
     )
 
 

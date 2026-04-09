@@ -125,7 +125,7 @@ def rotate_wall_mesh(mesh_dict):
     
 
 
-def get_object_candidates(object_info: dict, source: str = "generation"):
+def get_object_candidates(object_info: dict, source: str = "generation", style_constraint=None):
     # now only support objaverse retrieval
     
 
@@ -183,6 +183,12 @@ def get_object_candidates(object_info: dict, source: str = "generation"):
         temp_dir = tempfile.gettempdir()
         temp_file_path = os.path.join(temp_dir, f"generated_object_{object_random_id}.glb")
         caption = f"{object_description}"
+        # Enrich caption with style hints for TRELLIS when a style constraint is provided
+        if style_constraint is not None:
+            try:
+                caption = style_constraint.enrich_caption(caption)
+            except Exception:
+                pass  # If enrichment fails, use original caption
         time.sleep(random.random() * 4)
         # Sequential mode: prepare TRELLIS for 3D generation
         prepare_for_trellis()

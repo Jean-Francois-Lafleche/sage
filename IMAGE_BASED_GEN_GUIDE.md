@@ -106,10 +106,10 @@ Input Image(s)
 
 ### 1.4 Missing Capabilities Identified
 
-1. **Shelf/Rack Stacking** — Current SAGE only places objects on flat surfaces. Warehouses need objects on multiple shelves at different heights.
-2. **Style Transfer** — No mechanism to enforce style consistency from reference image.
-3. **Spatial Relationship Preservation** — No structured way to encode "A is left of B, C is on top of D" from images.
-4. **Clutter/Density Matching** — No way to match the visual density/clutter level of a reference image.
+1. **Shelf/Rack Stacking** — ✅ **IMPLEMENTED**. `ShelfPlacer` and `ShelfConfig` from `image_analysis/shelf_placer.py` are now integrated into `object_placement_planner.py`. The `place_on_shelf()` function computes 3D world-space coordinates for items at specific shelf levels, and `_detect_shelf_objects()` auto-detects shelves/racks from scene analysis or object type heuristics. Shelf-bound items bypass standard on-object sampling and are placed at computed level heights for IsaacSim.
+2. **Style Transfer** — ✅ **IMPLEMENTED**. New module `image_analysis/style_extractor.py` with `StyleDescriptor`, `StyleConstraint`, and `extract_style()`. Style is derived from VLM analysis and injected into TRELLIS generation captions via `StyleConstraint.enrich_caption()`, enriching object descriptions with era, materials, and colour palette without replacing the real TRELLIS/MatFuse pipeline. Integrated into `get_objects.py` → `object_selection_planner.py` → client.
+3. **Spatial Relationship Preservation** — ✅ **IMPLEMENTED**. `SpatialGraph` from `image_analysis/spatial_graph.py` is now wired into `object_placement_planner.py`. `get_placement_order()` determines placement sequence (foundational objects first). Spatial relations are converted to SAGE constraints (`next_to` → `close to`, `left_of` → `left of` + `close to`, `against_wall` → `edge`, etc.) and injected as VLM placement-prompt hints.
+4. **Clutter/Density Matching** — ✅ **IMPLEMENTED**. `SceneAnalysis.get_density_multiplier()` maps VLM-extracted clutter levels to quantity multipliers (sparse→0.6, cluttered→1.3, chaotic→1.6). `get_min_spacing()` provides spacing guidance. Multiplier applied in `object_selection_planner.py`, spacing injected into VLM placement prompts, and clutter guidance included in `client_generation_from_image.py` task definitions.
 
 ---
 
@@ -120,10 +120,10 @@ Input Image(s)
 ```
 image_analysis/
 ├── __init__.py
-├── scene_analyzer.py      # VLM-based structured scene analysis
+├── scene_analyzer.py      # VLM-based structured scene analysis + density helpers
 ├── depth_estimator.py     # Monocular depth estimation
 ├── object_detector.py     # Object detection + segmentation
-├── style_extractor.py     # Style/vibe extraction
+├── style_extractor.py     # Style/vibe extraction & caption enrichment for TRELLIS
 ├── spatial_graph.py       # Spatial relationship graph builder
 └── shelf_placer.py        # Multi-level shelf/rack object placement
 ```
