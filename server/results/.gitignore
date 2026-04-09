@@ -1,0 +1,9 @@
+# Only track final USD outputs + textures
+**/generation/
+**/*.ply
+**/*.obj
+**/*.mtl
+**/*.pkl
+**/*.json
+!**/final_usd/
+!**/final_usd/**
