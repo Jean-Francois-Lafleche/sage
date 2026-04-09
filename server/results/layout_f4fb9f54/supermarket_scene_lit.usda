@@ -356,14 +356,14 @@ def Xform "World"
         def DomeLight "DomeLight"
         {
             color3f inputs:color = (1, 0.94, 0.88)
-            float inputs:intensity = 200
+            float inputs:intensity = 20000
         }
 
         def RectLight "CeilingLight_0"
         {
             color3f inputs:color = (1, 0.94, 0.88)
             float inputs:height = 0.6
-            float inputs:intensity = 300
+            float inputs:intensity = 30000
             float inputs:width = 0.8
             double3 xformOp:translate = (1.5, 1.5, 2.55)
             uniform token[] xformOpOrder = ["xformOp:translate"]
@@ -373,7 +373,7 @@ def Xform "World"
         {
             color3f inputs:color = (1, 0.94, 0.88)
             float inputs:height = 0.6
-            float inputs:intensity = 300
+            float inputs:intensity = 30000
             float inputs:width = 0.8
             double3 xformOp:translate = (1.5, 3.7, 2.55)
             uniform token[] xformOpOrder = ["xformOp:translate"]
@@ -383,7 +383,7 @@ def Xform "World"
         {
             color3f inputs:color = (1, 0.94, 0.88)
             float inputs:height = 0.6
-            float inputs:intensity = 300
+            float inputs:intensity = 30000
             float inputs:width = 0.8
             double3 xformOp:translate = (1.5, 5.9, 2.55)
             uniform token[] xformOpOrder = ["xformOp:translate"]
@@ -393,7 +393,7 @@ def Xform "World"
         {
             color3f inputs:color = (1, 0.94, 0.88)
             float inputs:height = 0.6
-            float inputs:intensity = 300
+            float inputs:intensity = 30000
             float inputs:width = 0.8
             double3 xformOp:translate = (1.5, 8.100000000000001, 2.55)
             uniform token[] xformOpOrder = ["xformOp:translate"]
@@ -403,7 +403,7 @@ def Xform "World"
         {
             color3f inputs:color = (1, 0.94, 0.88)
             float inputs:height = 0.6
-            float inputs:intensity = 300
+            float inputs:intensity = 30000
             float inputs:width = 0.8
             double3 xformOp:translate = (1.5, 10.3, 2.55)
             uniform token[] xformOpOrder = ["xformOp:translate"]
@@ -413,7 +413,7 @@ def Xform "World"
         {
             color3f inputs:color = (1, 0.94, 0.88)
             float inputs:height = 0.6
-            float inputs:intensity = 300
+            float inputs:intensity = 30000
             float inputs:width = 0.8
             double3 xformOp:translate = (1.5, 12.5, 2.55)
             uniform token[] xformOpOrder = ["xformOp:translate"]
@@ -423,7 +423,7 @@ def Xform "World"
         {
             float inputs:angle = 3
             color3f inputs:color = (0.9, 0.95, 1)
-            float inputs:intensity = 80
+            float inputs:intensity = 8000
             float3 xformOp:rotateXYZ = (45, 30, 0)
             uniform token[] xformOpOrder = ["xformOp:rotateXYZ"]
         }
@@ -482,7 +482,7 @@ def "Render" (
                 rel orderedVars = </Render/Vars/LdrColor>
                 custom bool overrideClipRange = 0
                 uniform int2 resolution = (1280, 720)
-                custom uint64 viewPickingId = 4150976661241504653
+                custom uint64 viewPickingId = 9418510414658159151
                 custom int viewportHandle = 0
             }
         }

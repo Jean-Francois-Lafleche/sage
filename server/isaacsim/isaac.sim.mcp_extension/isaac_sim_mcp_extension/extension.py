@@ -599,30 +599,32 @@ class MCPExtension(omni.ext.IExt):
         # color_temp in Kelvin → converted to RGB approximation
         presets = {
             # Commercial / retail
-            "supermarket": {"temp": 4000, "ambient": 200, "key_intensity": 800, "fill": True, "type": "rect"},
-            "store": {"temp": 4000, "ambient": 200, "key_intensity": 800, "fill": True, "type": "rect"},
-            "retail": {"temp": 4000, "ambient": 200, "key_intensity": 800, "fill": True, "type": "rect"},
-            "grocery": {"temp": 4000, "ambient": 200, "key_intensity": 800, "fill": True, "type": "rect"},
-            "aisle": {"temp": 4000, "ambient": 200, "key_intensity": 800, "fill": True, "type": "rect"},
+            # Intensities in Isaac Sim physical light units (lux-scale)
+            # Commercial / retail
+            "supermarket": {"temp": 4000, "ambient": 20000, "key_intensity": 80000, "fill": True, "type": "rect"},
+            "store": {"temp": 4000, "ambient": 20000, "key_intensity": 80000, "fill": True, "type": "rect"},
+            "retail": {"temp": 4000, "ambient": 20000, "key_intensity": 80000, "fill": True, "type": "rect"},
+            "grocery": {"temp": 4000, "ambient": 20000, "key_intensity": 80000, "fill": True, "type": "rect"},
+            "aisle": {"temp": 4000, "ambient": 20000, "key_intensity": 80000, "fill": True, "type": "rect"},
             # Industrial
-            "warehouse": {"temp": 5000, "ambient": 150, "key_intensity": 1200, "fill": False, "type": "rect"},
-            "factory": {"temp": 5000, "ambient": 150, "key_intensity": 1200, "fill": False, "type": "rect"},
-            "industrial": {"temp": 5000, "ambient": 150, "key_intensity": 1200, "fill": False, "type": "rect"},
+            "warehouse": {"temp": 5000, "ambient": 15000, "key_intensity": 120000, "fill": False, "type": "rect"},
+            "factory": {"temp": 5000, "ambient": 15000, "key_intensity": 120000, "fill": False, "type": "rect"},
+            "industrial": {"temp": 5000, "ambient": 15000, "key_intensity": 120000, "fill": False, "type": "rect"},
             # Residential warm
-            "bedroom": {"temp": 2700, "ambient": 100, "key_intensity": 400, "fill": True, "type": "sphere"},
-            "living": {"temp": 3000, "ambient": 120, "key_intensity": 500, "fill": True, "type": "sphere"},
-            "playroom": {"temp": 3500, "ambient": 150, "key_intensity": 500, "fill": True, "type": "sphere"},
-            "nursery": {"temp": 3000, "ambient": 130, "key_intensity": 400, "fill": True, "type": "sphere"},
+            "bedroom": {"temp": 2700, "ambient": 10000, "key_intensity": 40000, "fill": True, "type": "sphere"},
+            "living": {"temp": 3000, "ambient": 12000, "key_intensity": 50000, "fill": True, "type": "sphere"},
+            "playroom": {"temp": 3500, "ambient": 15000, "key_intensity": 50000, "fill": True, "type": "sphere"},
+            "nursery": {"temp": 3000, "ambient": 13000, "key_intensity": 40000, "fill": True, "type": "sphere"},
             # Residential neutral
-            "kitchen": {"temp": 4000, "ambient": 150, "key_intensity": 600, "fill": True, "type": "rect"},
-            "bathroom": {"temp": 4000, "ambient": 150, "key_intensity": 500, "fill": True, "type": "rect"},
-            "office": {"temp": 4000, "ambient": 180, "key_intensity": 600, "fill": True, "type": "rect"},
+            "kitchen": {"temp": 4000, "ambient": 15000, "key_intensity": 60000, "fill": True, "type": "rect"},
+            "bathroom": {"temp": 4000, "ambient": 15000, "key_intensity": 50000, "fill": True, "type": "rect"},
+            "office": {"temp": 4000, "ambient": 18000, "key_intensity": 60000, "fill": True, "type": "rect"},
             # Outdoor-ish
-            "garage": {"temp": 5000, "ambient": 100, "key_intensity": 800, "fill": False, "type": "rect"},
+            "garage": {"temp": 5000, "ambient": 10000, "key_intensity": 80000, "fill": False, "type": "rect"},
         }
 
         # Find best matching preset
-        preset = presets.get("generic", {"temp": 4000, "ambient": 150, "key_intensity": 600, "fill": True, "type": "rect"})
+        preset = presets.get("generic", {"temp": 4000, "ambient": 15000, "key_intensity": 60000, "fill": True, "type": "rect"})
         for key in presets:
             if key in room_type:
                 preset = presets[key]
