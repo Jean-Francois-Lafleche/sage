@@ -161,7 +161,14 @@ class MCPExtension(omni.ext.IExt):
         self.track_ids = []
 
     def get_port(self):
+        # Check for explicit port override first
+        explicit_port = os.environ.get("ISAAC_MCP_PORT")
+        if explicit_port:
+            return int(explicit_port)
         slurm_job_id = os.environ.get("SLURM_JOB_ID")
+        if slurm_job_id is None:
+            # Default to 8766 (extension default) when not on Slurm
+            return 8766
         port = slurm_job_id_to_port(slurm_job_id)
         return port
 
