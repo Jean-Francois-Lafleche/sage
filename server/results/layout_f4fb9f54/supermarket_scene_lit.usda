@@ -1,0 +1,613 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    doc = """Generated from Composed Stage of root layer 
+"""
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "World"
+{
+    def Mesh "floor_room_743ca0f6" (
+        apiSchemas = ["MaterialBindingAPI", "PhysxRigidBodyAPI", "PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxSDFMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysicsMaterialAPI"]
+    )
+    {
+        float3[] extent = [(-100, -100, -100), (100, 100, 100)]
+        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+        int[] faceVertexIndices = [1, 3, 0, 4, 1, 0, 0, 3, 2, 2, 4, 0, 1, 7, 3, 5, 1, 4, 5, 7, 1, 3, 7, 2, 6, 4, 2, 2, 7, 6, 6, 5, 4, 7, 5, 6]
+        rel material:binding = </World/floor_room_743ca0f6_mat>
+        uniform token physics:approximation = "sdf"
+        float physics:dynamicFriction = 1e20
+        float physics:staticFriction = 1e20
+        float physxCollision:contactOffset = 0.005
+        float physxCollision:restOffset = 0.001
+        float physxCollision:torsionalPatchRadius = 0.01
+        float physxRigidBody:angularDamping = 10
+        float physxRigidBody:linearDamping = 10
+        float physxRigidBody:maxAngularVelocity = 0.5
+        float physxRigidBody:maxDepenetrationVelocity = 50
+        float physxRigidBody:maxLinearVelocity = 0.5
+        uniform int physxSDFMeshCollision:sdfResolution = 256
+        point3f[] points = [(0, 0, -0.1), (0, 0, 0), (0, 15, -0.1), (0, 15, 0), (3, 0, -0.1), (3, 0, 0), (3, 15, -0.1), (3, 15, 0)]
+        texCoord2f[] primvars:st = [(0.9996704, 0.9817391), (0.0932762, 0.9817391), (0.9996704, 0.9991304), (0.9581411, 0.57652175), (0.9515491, 0.09826087), (0.9581411, 0.09826087), (0.9996704, 0.9991304), (0.0932762, 0.9817391), (0.0932762, 0.9991304), (0.00032959788, 0.00086956524), (0.9067238, 0.47913045), (0.9067238, 0.00086956524), (0.94495714, 0.96086955), (0.038562953, 0.4826087), (0.038562953, 0.96086955), (0.9515491, 0.57652175), (0.9515491, 0.09826087), (0.9581411, 0.57652175), (0.94495714, 0.4826087), (0.038562953, 0.4826087), (0.94495714, 0.96086955), (0.97923535, 0.78347826), (0.97923535, 0.3052174), (0.98582727, 0.78347826), (0.00032959788, 0.47913045), (0.9067238, 0.47913045), (0.00032959788, 0.00086956524), (0.98582727, 0.78347826), (0.97923535, 0.3052174), (0.98582727, 0.3052174), (0.9429796, 0.98), (0.036585364, 0.9626087), (0.036585364, 0.98), (0.9429796, 0.9626087), (0.036585364, 0.9626087), (0.9429796, 0.98)] (
+            interpolation = "faceVarying"
+        )
+    }
+
+    def Material "floor_room_743ca0f6_mat"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:surface.connect = </World/floor_room_743ca0f6_mat/PBRShader.outputs:surface>
+
+        def Shader "PBRShader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor.connect = </World/floor_room_743ca0f6_mat/diffuseTexture.outputs:rgb>
+            float inputs:metallic = 0
+            float inputs:roughness = 1
+            bool inputs:useSpecularWorkflow = 1
+            token outputs:surface
+        }
+
+        def Shader "stReader"
+        {
+            uniform token info:id = "UsdPrimvarReader_float2"
+            token inputs:varname.connect = </World/floor_room_743ca0f6_mat.inputs:frame:stPrimvarName>
+            float2 outputs:result
+        }
+
+        def Shader "diffuseTexture"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @/tmp/sage-repo/results//layout_f4fb9f54/materials/hardwood.png@
+            float2 inputs:st.connect = </World/floor_room_743ca0f6_mat/stReader.outputs:result>
+            float3 outputs:rgb
+        }
+    }
+
+    def Mesh "wall_room_743ca0f6_north_30439141" (
+        apiSchemas = ["MaterialBindingAPI", "PhysxRigidBodyAPI", "PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxSDFMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysicsMaterialAPI"]
+    )
+    {
+        float3[] extent = [(-100, -100, -100), (100, 100, 100)]
+        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+        int[] faceVertexIndices = [1, 3, 0, 4, 1, 0, 0, 3, 2, 2, 4, 0, 1, 7, 3, 5, 1, 4, 5, 7, 1, 3, 7, 2, 6, 4, 2, 2, 7, 6, 6, 5, 4, 7, 5, 6]
+        rel material:binding = </World/wall_room_743ca0f6_north_30439141_mat>
+        uniform token physics:approximation = "sdf"
+        float physics:dynamicFriction = 1e20
+        float physics:staticFriction = 1e20
+        float physxCollision:contactOffset = 0.005
+        float physxCollision:restOffset = 0.001
+        float physxCollision:torsionalPatchRadius = 0.01
+        float physxRigidBody:angularDamping = 10
+        float physxRigidBody:linearDamping = 10
+        float physxRigidBody:maxAngularVelocity = 0.5
+        float physxRigidBody:maxDepenetrationVelocity = 50
+        float physxRigidBody:maxLinearVelocity = 0.5
+        uniform int physxSDFMeshCollision:sdfResolution = 256
+        point3f[] points = [(0, 14.95, 0), (0, 14.95, 2.7), (0, 15, 0), (0, 15, 2.7), (3, 14.95, 0), (3, 14.95, 2.7), (3, 15, 0), (3, 15, 2.7)]
+        texCoord2f[] primvars:st = [(0.9992847, 0.044757035), (0.9835479, 0.044757035), (0.9992847, 0.54347825), (0.9306152, 0.99957377), (0.0007153076, 0.5008525), (0.0007153076, 0.99957377), (0.9992847, 0.54347825), (0.9835479, 0.044757035), (0.9835479, 0.54347825), (0.93204576, 0.36530265), (0.9477826, 0.91943735), (0.9477826, 0.36530265), (0.9649499, 0.5639386), (0.94921315, 0.009803922), (0.94921315, 0.5639386), (0.9306152, 0.5008525), (0.0007153076, 0.5008525), (0.9306152, 0.99957377), (0.9649499, 0.009803922), (0.94921315, 0.009803922), (0.9649499, 0.5639386), (0.9306152, 0.00042625747), (0.0007153076, 0.00042625747), (0.9306152, 0.49914747), (0.93204576, 0.91943735), (0.9477826, 0.91943735), (0.93204576, 0.36530265), (0.9306152, 0.49914747), (0.0007153076, 0.00042625747), (0.0007153076, 0.49914747), (0.9821173, 0.6909633), (0.96638054, 0.19224212), (0.96638054, 0.6909633), (0.9821173, 0.19224212), (0.96638054, 0.19224212), (0.9821173, 0.6909633)] (
+            interpolation = "faceVarying"
+        )
+    }
+
+    def Material "wall_room_743ca0f6_north_30439141_mat"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:surface.connect = </World/wall_room_743ca0f6_north_30439141_mat/PBRShader.outputs:surface>
+
+        def Shader "PBRShader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor.connect = </World/wall_room_743ca0f6_north_30439141_mat/diffuseTexture.outputs:rgb>
+            float inputs:metallic = 0
+            float inputs:roughness = 1
+            bool inputs:useSpecularWorkflow = 1
+            token outputs:surface
+        }
+
+        def Shader "stReader"
+        {
+            uniform token info:id = "UsdPrimvarReader_float2"
+            token inputs:varname.connect = </World/wall_room_743ca0f6_north_30439141_mat.inputs:frame:stPrimvarName>
+            float2 outputs:result
+        }
+
+        def Shader "diffuseTexture"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @/tmp/sage-repo/results//layout_f4fb9f54/materials/drywall.png@
+            float2 inputs:st.connect = </World/wall_room_743ca0f6_north_30439141_mat/stReader.outputs:result>
+            float3 outputs:rgb
+        }
+    }
+
+    def Mesh "wall_room_743ca0f6_south_7c126ce7" (
+        apiSchemas = ["MaterialBindingAPI", "PhysxRigidBodyAPI", "PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxSDFMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysicsMaterialAPI"]
+    )
+    {
+        float3[] extent = [(-100, -100, -100), (100, 100, 100)]
+        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+        int[] faceVertexIndices = [1, 3, 0, 4, 1, 0, 0, 3, 2, 2, 4, 0, 1, 7, 3, 5, 1, 4, 5, 7, 1, 3, 7, 2, 6, 4, 2, 2, 7, 6, 6, 5, 4, 7, 5, 6]
+        rel material:binding = </World/wall_room_743ca0f6_south_7c126ce7_mat>
+        uniform token physics:approximation = "sdf"
+        float physics:dynamicFriction = 1e20
+        float physics:staticFriction = 1e20
+        float physxCollision:contactOffset = 0.005
+        float physxCollision:restOffset = 0.001
+        float physxCollision:torsionalPatchRadius = 0.01
+        float physxRigidBody:angularDamping = 10
+        float physxRigidBody:linearDamping = 10
+        float physxRigidBody:maxAngularVelocity = 0.5
+        float physxRigidBody:maxDepenetrationVelocity = 50
+        float physxRigidBody:maxLinearVelocity = 0.5
+        uniform int physxSDFMeshCollision:sdfResolution = 256
+        point3f[] points = [(0, 0, 0), (0, 0, 2.7), (0, 0.05, 0), (0, 0.05, 2.7), (3, 0, 0), (3, 0, 2.7), (3, 0.05, 0), (3, 0.05, 2.7)]
+        texCoord2f[] primvars:st = [(0.9992847, 0.044757035), (0.9835479, 0.044757035), (0.9992847, 0.54347825), (0.9306152, 0.99957377), (0.0007153076, 0.5008525), (0.0007153076, 0.99957377), (0.9992847, 0.54347825), (0.9835479, 0.044757035), (0.9835479, 0.54347825), (0.93204576, 0.36530265), (0.9477826, 0.91943735), (0.9477826, 0.36530265), (0.9649499, 0.5639386), (0.94921315, 0.009803922), (0.94921315, 0.5639386), (0.9306152, 0.5008525), (0.0007153076, 0.5008525), (0.9306152, 0.99957377), (0.9649499, 0.009803922), (0.94921315, 0.009803922), (0.9649499, 0.5639386), (0.9306152, 0.00042625747), (0.0007153076, 0.00042625747), (0.9306152, 0.49914747), (0.93204576, 0.91943735), (0.9477826, 0.91943735), (0.93204576, 0.36530265), (0.9306152, 0.49914747), (0.0007153076, 0.00042625747), (0.0007153076, 0.49914747), (0.9821173, 0.6909633), (0.96638054, 0.19224212), (0.96638054, 0.6909633), (0.9821173, 0.19224212), (0.96638054, 0.19224212), (0.9821173, 0.6909633)] (
+            interpolation = "faceVarying"
+        )
+    }
+
+    def Material "wall_room_743ca0f6_south_7c126ce7_mat"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:surface.connect = </World/wall_room_743ca0f6_south_7c126ce7_mat/PBRShader.outputs:surface>
+
+        def Shader "PBRShader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor.connect = </World/wall_room_743ca0f6_south_7c126ce7_mat/diffuseTexture.outputs:rgb>
+            float inputs:metallic = 0
+            float inputs:roughness = 1
+            bool inputs:useSpecularWorkflow = 1
+            token outputs:surface
+        }
+
+        def Shader "stReader"
+        {
+            uniform token info:id = "UsdPrimvarReader_float2"
+            token inputs:varname.connect = </World/wall_room_743ca0f6_south_7c126ce7_mat.inputs:frame:stPrimvarName>
+            float2 outputs:result
+        }
+
+        def Shader "diffuseTexture"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @/tmp/sage-repo/results//layout_f4fb9f54/materials/drywall.png@
+            float2 inputs:st.connect = </World/wall_room_743ca0f6_south_7c126ce7_mat/stReader.outputs:result>
+            float3 outputs:rgb
+        }
+    }
+
+    def Mesh "wall_room_743ca0f6_east_ef471475" (
+        apiSchemas = ["MaterialBindingAPI", "PhysxRigidBodyAPI", "PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxSDFMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysicsMaterialAPI"]
+    )
+    {
+        float3[] extent = [(-100, -100, -100), (100, 100, 100)]
+        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+        int[] faceVertexIndices = [1, 3, 0, 4, 1, 0, 0, 3, 2, 2, 4, 0, 1, 7, 3, 5, 1, 4, 5, 7, 1, 3, 7, 2, 6, 4, 2, 2, 7, 6, 6, 5, 4, 7, 5, 6]
+        rel material:binding = </World/wall_room_743ca0f6_east_ef471475_mat>
+        uniform token physics:approximation = "sdf"
+        float physics:dynamicFriction = 1e20
+        float physics:staticFriction = 1e20
+        float physxCollision:contactOffset = 0.005
+        float physxCollision:restOffset = 0.001
+        float physxCollision:torsionalPatchRadius = 0.01
+        float physxRigidBody:angularDamping = 10
+        float physxRigidBody:linearDamping = 10
+        float physxRigidBody:maxAngularVelocity = 0.5
+        float physxRigidBody:maxDepenetrationVelocity = 50
+        float physxRigidBody:maxLinearVelocity = 0.5
+        uniform int physxSDFMeshCollision:sdfResolution = 256
+        point3f[] points = [(3, 0, 0), (3, 0, 2.7), (2.95, 0, 0), (2.95, 0, 2.7), (3, 15, 0), (3, 15, 2.7), (2.95, 15, 0), (2.95, 15, 2.7)]
+        texCoord2f[] primvars:st = [(0.81654674, 0.16788991), (0.81654674, 0.15871559), (0.9626453, 0.16788991), (0.99363583, 0.9733945), (0.18400665, 0.4889908), (0.18400665, 0.9733945), (0.9626453, 0.16788991), (0.81654674, 0.15871559), (0.9626453, 0.15871559), (0.88959605, 0.98623854), (0.0799668, 0.9770642), (0.88959605, 0.9770642), (0.9997233, 0.99908257), (0.19009408, 0.9899083), (0.9997233, 0.9899083), (0.99363583, 0.4889908), (0.18400665, 0.4889908), (0.99363583, 0.9733945), (0.19009408, 0.99908257), (0.19009408, 0.9899083), (0.9997233, 0.99908257), (0.80990595, 0.0009174312), (0.00027670173, 0.0009174312), (0.80990595, 0.4853211), (0.0799668, 0.98623854), (0.0799668, 0.9770642), (0.88959605, 0.98623854), (0.80990595, 0.4853211), (0.00027670173, 0.0009174312), (0.00027670173, 0.4853211), (0.9687327, 0.4174312), (0.8226342, 0.4082569), (0.9687327, 0.4082569), (0.8226342, 0.4174312), (0.8226342, 0.4082569), (0.9687327, 0.4174312)] (
+            interpolation = "faceVarying"
+        )
+    }
+
+    def Material "wall_room_743ca0f6_east_ef471475_mat"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:surface.connect = </World/wall_room_743ca0f6_east_ef471475_mat/PBRShader.outputs:surface>
+
+        def Shader "PBRShader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor.connect = </World/wall_room_743ca0f6_east_ef471475_mat/diffuseTexture.outputs:rgb>
+            float inputs:metallic = 0
+            float inputs:roughness = 1
+            bool inputs:useSpecularWorkflow = 1
+            token outputs:surface
+        }
+
+        def Shader "stReader"
+        {
+            uniform token info:id = "UsdPrimvarReader_float2"
+            token inputs:varname.connect = </World/wall_room_743ca0f6_east_ef471475_mat.inputs:frame:stPrimvarName>
+            float2 outputs:result
+        }
+
+        def Shader "diffuseTexture"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @/tmp/sage-repo/results//layout_f4fb9f54/materials/drywall.png@
+            float2 inputs:st.connect = </World/wall_room_743ca0f6_east_ef471475_mat/stReader.outputs:result>
+            float3 outputs:rgb
+        }
+    }
+
+    def Mesh "wall_room_743ca0f6_west_8aef470d" (
+        apiSchemas = ["MaterialBindingAPI", "PhysxRigidBodyAPI", "PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxSDFMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysicsMaterialAPI"]
+    )
+    {
+        float3[] extent = [(-100, -100, -100), (100, 100, 100)]
+        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+        int[] faceVertexIndices = [1, 3, 0, 4, 1, 0, 0, 3, 2, 2, 4, 0, 1, 7, 3, 5, 1, 4, 5, 7, 1, 3, 7, 2, 6, 4, 2, 2, 7, 6, 6, 5, 4, 7, 5, 6]
+        rel material:binding = </World/wall_room_743ca0f6_west_8aef470d_mat>
+        uniform token physics:approximation = "sdf"
+        float physics:dynamicFriction = 1e20
+        float physics:staticFriction = 1e20
+        float physxCollision:contactOffset = 0.005
+        float physxCollision:restOffset = 0.001
+        float physxCollision:torsionalPatchRadius = 0.01
+        float physxRigidBody:angularDamping = 10
+        float physxRigidBody:linearDamping = 10
+        float physxRigidBody:maxAngularVelocity = 0.5
+        float physxRigidBody:maxDepenetrationVelocity = 50
+        float physxRigidBody:maxLinearVelocity = 0.5
+        uniform int physxSDFMeshCollision:sdfResolution = 256
+        point3f[] points = [(0.05, 0, 0), (0.05, 0, 2.7), (-4.57967e-16, 0, 0), (-4.57967e-16, 0, 2.7), (0.05, 15, 0), (0.05, 15, 2.7), (4.57967e-16, 15, 0), (4.57967e-16, 15, 2.7)]
+        texCoord2f[] primvars:st = [(0.8226342, 0.4174312), (0.8226342, 0.4082569), (0.9687327, 0.4174312), (0.99363583, 0.9733945), (0.18400665, 0.4889908), (0.18400665, 0.9733945), (0.9687327, 0.4174312), (0.8226342, 0.4082569), (0.9687327, 0.4082569), (0.88959605, 0.98623854), (0.0799668, 0.9770642), (0.88959605, 0.9770642), (0.9997233, 0.99908257), (0.19009408, 0.9899083), (0.9997233, 0.9899083), (0.99363583, 0.4889908), (0.18400665, 0.4889908), (0.99363583, 0.9733945), (0.19009408, 0.99908257), (0.19009408, 0.9899083), (0.9997233, 0.99908257), (0.00027670173, 0.4853211), (0.80990595, 0.4853211), (0.00027670173, 0.0009174312), (0.0799668, 0.98623854), (0.0799668, 0.9770642), (0.88959605, 0.98623854), (0.00027670173, 0.0009174312), (0.80990595, 0.4853211), (0.80990595, 0.0009174312), (0.16961814, 0.846789), (0.023519646, 0.8559633), (0.16961814, 0.8559633), (0.023519646, 0.846789), (0.023519646, 0.8559633), (0.16961814, 0.846789)] (
+            interpolation = "faceVarying"
+        )
+    }
+
+    def Material "wall_room_743ca0f6_west_8aef470d_mat"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:surface.connect = </World/wall_room_743ca0f6_west_8aef470d_mat/PBRShader.outputs:surface>
+
+        def Shader "PBRShader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor.connect = </World/wall_room_743ca0f6_west_8aef470d_mat/diffuseTexture.outputs:rgb>
+            float inputs:metallic = 0
+            float inputs:roughness = 1
+            bool inputs:useSpecularWorkflow = 1
+            token outputs:surface
+        }
+
+        def Shader "stReader"
+        {
+            uniform token info:id = "UsdPrimvarReader_float2"
+            token inputs:varname.connect = </World/wall_room_743ca0f6_west_8aef470d_mat.inputs:frame:stPrimvarName>
+            float2 outputs:result
+        }
+
+        def Shader "diffuseTexture"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @/tmp/sage-repo/results//layout_f4fb9f54/materials/drywall.png@
+            float2 inputs:st.connect = </World/wall_room_743ca0f6_west_8aef470d_mat/stReader.outputs:result>
+            float3 outputs:rgb
+        }
+    }
+
+    def Mesh "floor_room_743ca0f6_ceiling" (
+        apiSchemas = ["MaterialBindingAPI", "PhysxRigidBodyAPI", "PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxSDFMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysicsMaterialAPI"]
+    )
+    {
+        float3[] extent = [(-100, -100, -100), (100, 100, 100)]
+        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+        int[] faceVertexIndices = [1, 3, 0, 4, 1, 0, 0, 3, 2, 2, 4, 0, 1, 7, 3, 5, 1, 4, 5, 7, 1, 3, 7, 2, 6, 4, 2, 2, 7, 6, 6, 5, 4, 7, 5, 6]
+        rel material:binding = </World/floor_room_743ca0f6_ceiling_mat>
+        uniform token physics:approximation = "sdf"
+        float physics:dynamicFriction = 1e20
+        float physics:staticFriction = 1e20
+        float physxCollision:contactOffset = 0.005
+        float physxCollision:restOffset = 0.001
+        float physxCollision:torsionalPatchRadius = 0.01
+        float physxRigidBody:angularDamping = 10
+        float physxRigidBody:linearDamping = 10
+        float physxRigidBody:maxAngularVelocity = 0.5
+        float physxRigidBody:maxDepenetrationVelocity = 50
+        float physxRigidBody:maxLinearVelocity = 0.5
+        uniform int physxSDFMeshCollision:sdfResolution = 256
+        point3f[] points = [(0, 0, 2.7), (0, 0, 2.8), (0, 15, 2.7), (0, 15, 2.8), (3, 0, 2.7), (3, 0, 2.8), (3, 15, 2.7), (3, 15, 2.8)]
+        texCoord2f[] primvars:st = [(0.9996704, 0.9817391), (0.0932762, 0.9817391), (0.9996704, 0.9991304), (0.9581411, 0.57652175), (0.9515491, 0.09826087), (0.9581411, 0.09826087), (0.9996704, 0.9991304), (0.0932762, 0.9817391), (0.0932762, 0.9991304), (0.00032959788, 0.00086956524), (0.9067238, 0.47913045), (0.9067238, 0.00086956524), (0.94495714, 0.96086955), (0.038562953, 0.4826087), (0.038562953, 0.96086955), (0.9515491, 0.57652175), (0.9515491, 0.09826087), (0.9581411, 0.57652175), (0.94495714, 0.4826087), (0.038562953, 0.4826087), (0.94495714, 0.96086955), (0.97923535, 0.78347826), (0.97923535, 0.3052174), (0.98582727, 0.78347826), (0.00032959788, 0.47913045), (0.9067238, 0.47913045), (0.00032959788, 0.00086956524), (0.98582727, 0.78347826), (0.97923535, 0.3052174), (0.98582727, 0.3052174), (0.9429796, 0.98), (0.036585364, 0.9626087), (0.036585364, 0.98), (0.9429796, 0.9626087), (0.036585364, 0.9626087), (0.9429796, 0.98)] (
+            interpolation = "faceVarying"
+        )
+    }
+
+    def Material "floor_room_743ca0f6_ceiling_mat"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:surface.connect = </World/floor_room_743ca0f6_ceiling_mat/PBRShader.outputs:surface>
+
+        def Shader "PBRShader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor.connect = </World/floor_room_743ca0f6_ceiling_mat/diffuseTexture.outputs:rgb>
+            float inputs:metallic = 0
+            float inputs:roughness = 1
+            bool inputs:useSpecularWorkflow = 1
+            token outputs:surface
+        }
+
+        def Shader "stReader"
+        {
+            uniform token info:id = "UsdPrimvarReader_float2"
+            token inputs:varname.connect = </World/floor_room_743ca0f6_ceiling_mat.inputs:frame:stPrimvarName>
+            float2 outputs:result
+        }
+
+        def Shader "diffuseTexture"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @/tmp/sage-repo/results//layout_f4fb9f54/materials/drywall.png@
+            float2 inputs:st.connect = </World/floor_room_743ca0f6_ceiling_mat/stReader.outputs:result>
+            float3 outputs:rgb
+        }
+    }
+
+    def "Lights"
+    {
+        def DomeLight "DomeLight"
+        {
+            color3f inputs:color = (1, 0.94, 0.88)
+            float inputs:intensity = 200
+        }
+
+        def RectLight "CeilingLight_0"
+        {
+            color3f inputs:color = (1, 0.94, 0.88)
+            float inputs:height = 0.6
+            float inputs:intensity = 300
+            float inputs:width = 0.8
+            double3 xformOp:translate = (1.5, 1.5, 2.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def RectLight "CeilingLight_1"
+        {
+            color3f inputs:color = (1, 0.94, 0.88)
+            float inputs:height = 0.6
+            float inputs:intensity = 300
+            float inputs:width = 0.8
+            double3 xformOp:translate = (1.5, 3.7, 2.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def RectLight "CeilingLight_2"
+        {
+            color3f inputs:color = (1, 0.94, 0.88)
+            float inputs:height = 0.6
+            float inputs:intensity = 300
+            float inputs:width = 0.8
+            double3 xformOp:translate = (1.5, 5.9, 2.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def RectLight "CeilingLight_3"
+        {
+            color3f inputs:color = (1, 0.94, 0.88)
+            float inputs:height = 0.6
+            float inputs:intensity = 300
+            float inputs:width = 0.8
+            double3 xformOp:translate = (1.5, 8.100000000000001, 2.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def RectLight "CeilingLight_4"
+        {
+            color3f inputs:color = (1, 0.94, 0.88)
+            float inputs:height = 0.6
+            float inputs:intensity = 300
+            float inputs:width = 0.8
+            double3 xformOp:translate = (1.5, 10.3, 2.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def RectLight "CeilingLight_5"
+        {
+            color3f inputs:color = (1, 0.94, 0.88)
+            float inputs:height = 0.6
+            float inputs:intensity = 300
+            float inputs:width = 0.8
+            double3 xformOp:translate = (1.5, 12.5, 2.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def DistantLight "FillLight"
+        {
+            float inputs:angle = 3
+            color3f inputs:color = (0.9, 0.95, 1)
+            float inputs:intensity = 80
+            float3 xformOp:rotateXYZ = (45, 30, 0)
+            uniform token[] xformOpOrder = ["xformOp:rotateXYZ"]
+        }
+    }
+}
+
+def "Render" (
+    hide_in_stage_window = true
+    no_delete = true
+)
+{
+    def "OmniverseKit"
+    {
+        def "HydraTextures" (
+            hide_in_stage_window = true
+            no_delete = true
+        )
+        {
+            def RenderProduct "omni_kit_widget_viewport_ViewportTexture_0" (
+                apiSchemas = ["OmniRtxSettingsCommonAdvancedAPI_1", "OmniRtxSettingsRtAdvancedAPI_1", "OmniRtxSettingsPtAdvancedAPI_1", "OmniRtxPostColorGradingAPI_1", "OmniRtxPostChromaticAberrationAPI_1", "OmniRtxPostBloomPhysicalAPI_1", "OmniRtxPostMatteObjectAPI_1", "OmniRtxPostCompositingAPI_1", "OmniRtxPostDofAPI_1", "OmniRtxPostMotionBlurAPI_1", "OmniRtxPostTvNoiseAPI_1", "OmniRtxPostTonemapIrayReinhardAPI_1", "OmniRtxPostDebugSettingsAPI_1", "OmniRtxDebugSettingsAPI_1"]
+                hide_in_stage_window = true
+                no_delete = true
+            )
+            {
+                rel camera = </OmniverseKit_Persp>
+                token omni:rtx:ambientOcclusion:denoiserMode = "none"
+                token omni:rtx:background:source:texture:textureMode = "repeatMirrored"
+                token omni:rtx:background:source:type = "domeLight"
+                bool omni:rtx:debug:view:pixelDebug:enableFixedTextPos = 1
+                token omni:rtx:directLighting:sampledLighting:denoisingTechnique = "None"
+                bool omni:rtx:dlss:frameGeneration = 0
+                bool omni:rtx:indirectDiffuse:denoiser:enabled = 0
+                bool omni:rtx:material:db:syncLoads = 1
+                token omni:rtx:post:dlss:execMode = "performance"
+                bool omni:rtx:post:registeredCompositing:invertColorCorrection = 1
+                bool omni:rtx:post:registeredCompositing:invertToneMap = 1
+                bool omni:rtx:pt:adaptiveSampling:filterError = 0
+                uint omni:rtx:pt:adaptiveSampling:fixedSppIterations = 2
+                int omni:rtx:pt:clampSpp = 64
+                uint omni:rtx:pt:limits:maxBounces = 3
+                uint omni:rtx:pt:limits:maxGlossyBounces = 3
+                uint omni:rtx:pt:maxSamplesPerLaunch = 2073600
+                uint omni:rtx:pt:mgpu:maxPixelsPerRegionExponent = 12
+                int omni:rtx:pt:samplesPerIteration = 64
+                uint omni:rtx:pt:samplesPerPixel = 64
+                bool omni:rtx:reflections:denoiser:enabled = 0
+                token omni:rtx:rendermode = "RealTimePathTracing"
+                color3f omni:rtx:rt:ambientLight:color = (0.1, 0.1, 0.1)
+                bool omni:rtx:rt:demoire = 0
+                bool omni:rtx:rt:lightcache:spatialCache:dontResolveConflicts = 1
+                int omni:rtx:rt:sss:samples = 1
+                uint omni:rtx:rtpt:maxVolumeBounces = 15
+                float omni:rtx:rtpt:modulatingRoughnessThreshold = 0.08
+                bool omni:rtx:scene:hydra:materialSyncLoads = 1
+                bool omni:rtx:scene:hydra:mdlMaterialWarmup = 1
+                rel orderedVars = </Render/Vars/LdrColor>
+                custom bool overrideClipRange = 0
+                uniform int2 resolution = (1280, 720)
+                custom uint64 viewPickingId = 4150976661241504653
+                custom int viewportHandle = 0
+            }
+        }
+    }
+
+    def RenderSettings "OmniverseGlobalRenderSettings" (
+        apiSchemas = ["OmniRtxSettingsGlobalRtAdvancedAPI_1", "OmniRtxSettingsGlobalPtAdvancedAPI_1"]
+        no_delete = true
+    )
+    {
+        rel products = </Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0>
+    }
+
+    def "Vars"
+    {
+        def RenderVar "LdrColor" (
+            hide_in_stage_window = true
+            no_delete = true
+        )
+        {
+            uniform string sourceName = "LdrColor"
+        }
+    }
+}
+
+def Camera "OmniverseKit_Persp" (
+    apiSchemas = ["OmniRtxCameraAutoExposureAPI_1", "OmniRtxCameraExposureAPI_1"]
+    customData = {
+        dictionary omni = {
+            dictionary kit = {
+                bool hide_in_stage_window = 1
+                bool no_delete = 1
+            }
+        }
+    }
+    hide_in_stage_window = true
+    kind = "component"
+    no_delete = true
+)
+{
+    float2 clippingRange = (0.01, 10000000)
+    float exposure:fStop = 5
+    float exposure:responsivity = 1.1026709
+    float exposure:time = 0.02
+    float focalLength = 18.147562
+    float focusDistance = 400
+    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -8.660254037844386)
+    float3 xformOp:rotateXYZ = (54.73561, -6.3611094e-15, 135)
+    float3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (5, 5, 5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+}
+
+def Camera "OmniverseKit_Front" (
+    customData = {
+        dictionary omni = {
+            dictionary kit = {
+                bool hide_in_stage_window = 1
+                bool no_delete = 1
+            }
+        }
+    }
+    hide_in_stage_window = true
+    kind = "component"
+    no_delete = true
+)
+{
+    float2 clippingRange = (1, 10000000)
+    float horizontalAperture = 50
+    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -5)
+    token projection = "orthographic"
+    float verticalAperture = 50
+    float3 xformOp:rotateXYZ = (90, -1.2722219e-14, 90)
+    float3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (5, 0, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+}
+
+def Camera "OmniverseKit_Top" (
+    customData = {
+        dictionary omni = {
+            dictionary kit = {
+                bool hide_in_stage_window = 1
+                bool no_delete = 1
+            }
+        }
+    }
+    hide_in_stage_window = true
+    kind = "component"
+    no_delete = true
+)
+{
+    float2 clippingRange = (1, 10000000)
+    float horizontalAperture = 50
+    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -5)
+    token projection = "orthographic"
+    float verticalAperture = 50
+    float3 xformOp:rotateXYZ = (-1.2722219e-14, -7.016709e-15, -90)
+    float3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (0, 0, 5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+}
+
+def Camera "OmniverseKit_Right" (
+    customData = {
+        dictionary omni = {
+            dictionary kit = {
+                bool hide_in_stage_window = 1
+                bool no_delete = 1
+            }
+        }
+    }
+    hide_in_stage_window = true
+    kind = "component"
+    no_delete = true
+)
+{
+    float2 clippingRange = (1, 10000000)
+    float horizontalAperture = 50
+    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -5)
+    token projection = "orthographic"
+    float verticalAperture = 50
+    float3 xformOp:rotateXYZ = (90, -1.41245e-30, 1.2722219e-14)
+    float3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (0, -5, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+}
+
