@@ -24,8 +24,10 @@ def "World"
             def Shader "PBR"
             {
                 uniform token info:id = "UsdPreviewSurface"
-                color3f inputs:diffuseColor = (0.6, 0.6, 0.62)
-                float inputs:roughness = 0.7
+                color3f inputs:diffuseColor = (0.75, 0.73, 0.70)
+                float inputs:roughness = 0.4
+                float inputs:metallic = 0.05
+                float inputs:specularLevel = 0.3
                 token outputs:surface
             }
         }
@@ -45,10 +47,76 @@ def "World"
             def Shader "PBR"
             {
                 uniform token info:id = "UsdPreviewSurface"
-                color3f inputs:diffuseColor = (0.95, 0.95, 0.95)
-                float inputs:roughness = 0.8
+                color3f inputs:diffuseColor = (0.92, 0.92, 0.90)
+                float inputs:roughness = 0.9
                 token outputs:surface
             }
+        }
+
+        def RectLight "CeilingLight_0"
+        {
+            float inputs:width = 1.2
+            float inputs:height = 0.3
+            float inputs:intensity = 30000
+            color3f inputs:color = (1.0, 0.98, 0.95)
+            double3 xformOp:translate = (1.5, 1.25, 2.6500000000000004)
+            float3 xformOp:rotateXYZ = (180, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+        }
+
+        def RectLight "CeilingLight_1"
+        {
+            float inputs:width = 1.2
+            float inputs:height = 0.3
+            float inputs:intensity = 30000
+            color3f inputs:color = (1.0, 0.98, 0.95)
+            double3 xformOp:translate = (1.5, 3.75, 2.6500000000000004)
+            float3 xformOp:rotateXYZ = (180, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+        }
+
+        def RectLight "CeilingLight_2"
+        {
+            float inputs:width = 1.2
+            float inputs:height = 0.3
+            float inputs:intensity = 30000
+            color3f inputs:color = (1.0, 0.98, 0.95)
+            double3 xformOp:translate = (1.5, 6.25, 2.6500000000000004)
+            float3 xformOp:rotateXYZ = (180, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+        }
+
+        def RectLight "CeilingLight_3"
+        {
+            float inputs:width = 1.2
+            float inputs:height = 0.3
+            float inputs:intensity = 30000
+            color3f inputs:color = (1.0, 0.98, 0.95)
+            double3 xformOp:translate = (1.5, 8.75, 2.6500000000000004)
+            float3 xformOp:rotateXYZ = (180, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+        }
+
+        def RectLight "CeilingLight_4"
+        {
+            float inputs:width = 1.2
+            float inputs:height = 0.3
+            float inputs:intensity = 30000
+            color3f inputs:color = (1.0, 0.98, 0.95)
+            double3 xformOp:translate = (1.5, 11.25, 2.6500000000000004)
+            float3 xformOp:rotateXYZ = (180, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+        }
+
+        def RectLight "CeilingLight_5"
+        {
+            float inputs:width = 1.2
+            float inputs:height = 0.3
+            float inputs:intensity = 30000
+            color3f inputs:color = (1.0, 0.98, 0.95)
+            double3 xformOp:translate = (1.5, 13.75, 2.6500000000000004)
+            float3 xformOp:rotateXYZ = (180, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
         }
 
         def Cube "North"
@@ -66,8 +134,9 @@ def "World"
             def Shader "PBR"
             {
                 uniform token info:id = "UsdPreviewSurface"
-                color3f inputs:diffuseColor = (0.85, 0.85, 0.87)
-                float inputs:roughness = 0.8
+                color3f inputs:diffuseColor = (0.95, 0.95, 0.93)
+                float inputs:roughness = 0.6
+                float inputs:metallic = 0.0
                 token outputs:surface
             }
         }
@@ -87,8 +156,9 @@ def "World"
             def Shader "PBR"
             {
                 uniform token info:id = "UsdPreviewSurface"
-                color3f inputs:diffuseColor = (0.85, 0.85, 0.87)
-                float inputs:roughness = 0.8
+                color3f inputs:diffuseColor = (0.95, 0.95, 0.93)
+                float inputs:roughness = 0.6
+                float inputs:metallic = 0.0
                 token outputs:surface
             }
         }
@@ -108,8 +178,9 @@ def "World"
             def Shader "PBR"
             {
                 uniform token info:id = "UsdPreviewSurface"
-                color3f inputs:diffuseColor = (0.85, 0.85, 0.87)
-                float inputs:roughness = 0.8
+                color3f inputs:diffuseColor = (0.95, 0.95, 0.93)
+                float inputs:roughness = 0.6
+                float inputs:metallic = 0.0
                 token outputs:surface
             }
         }
@@ -129,8 +200,9 @@ def "World"
             def Shader "PBR"
             {
                 uniform token info:id = "UsdPreviewSurface"
-                color3f inputs:diffuseColor = (0.85, 0.85, 0.87)
-                float inputs:roughness = 0.8
+                color3f inputs:diffuseColor = (0.95, 0.95, 0.93)
+                float inputs:roughness = 0.6
+                float inputs:metallic = 0.0
                 token outputs:surface
             }
         }
