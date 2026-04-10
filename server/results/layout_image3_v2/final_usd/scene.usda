@@ -9,101 +9,267 @@ def Xform "World"
 {
     def Xform "Room"
     {
-        def Cube "Floor"
+        def Mesh "Floor"
         {
-            double size = 1
-            float3 xformOp:scale = (5.0, 4.5, 0.1)
-            double3 xformOp:translate = (2.5, 2.25, -0.05)
-            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
-            color3f[] primvars:displayColor = [(0.6, 0.5, 0.4)]
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            point3f[] points = [(0, 0, 0), (5.0, 0, 0), (5.0, 4.5, 0), (0, 4.5, 0)]
+            texCoord2f[] primvars:st = [(0, 0), (5.0, 0), (5.0, 4.5), (0, 4.5)] (
+                interpolation = "vertex"
+            )
+            rel material:binding = <FloorMaterial>
+
+            def Material "FloorMaterial"
+            {
+                token outputs:surface.connect = <PBRShader.outputs:surface>
+
+                def Shader "PBRShader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor.connect = <../DiffuseTexture.outputs:rgb>
+                    float inputs:roughness = 0.4
+                    token outputs:surface
+                }
+
+                def Shader "DiffuseTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    asset inputs:file = @./textures/wood_floor.png@
+                    float2 inputs:st.connect = <../PrimvarReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float3 outputs:rgb
+                }
+
+                def Shader "PrimvarReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+            }
         }
-        def Cube "Ceiling"
+
+        def Mesh "Ceiling"
         {
-            double size = 1
-            float3 xformOp:scale = (5.0, 4.5, 0.1)
-            double3 xformOp:translate = (2.5, 2.25, 2.75)
-            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            point3f[] points = [(0, 0, 2.7), (5.0, 0, 2.7), (5.0, 4.5, 2.7), (0, 4.5, 2.7)]
             color3f[] primvars:displayColor = [(0.95, 0.95, 0.95)]
         }
-        def Cube "Wall_0"
+
+        def Mesh "Wall_0"
         {
-            double size = 1
-            float3 xformOp:scale = (5.0, 0.1, 2.7)
-            double3 xformOp:translate = (2.5, 4.5, 1.35)
-            float xformOp:rotateZ = 0.0
-            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZ", "xformOp:scale"]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.88)]
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            point3f[] points = [(0.0, 4.5, 0), (5.0, 4.5, 0), (5.0, 4.5, 2.7), (0.0, 4.5, 2.7)]
+            texCoord2f[] primvars:st = [(0, 0), (5.0, 0), (5.0, 2.7), (0, 2.7)] (
+                interpolation = "vertex"
+            )
+            rel material:binding = <WallMaterial_0>
+
+            def Material "WallMaterial_0"
+            {
+                token outputs:surface.connect = <PBRShader.outputs:surface>
+
+                def Shader "PBRShader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor.connect = <../DiffuseTexture.outputs:rgb>
+                    float inputs:roughness = 0.8
+                    token outputs:surface
+                }
+
+                def Shader "DiffuseTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    asset inputs:file = @./textures/brick_wall.png@
+                    float2 inputs:st.connect = <../PrimvarReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float3 outputs:rgb
+                }
+
+                def Shader "PrimvarReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+            }
         }
-        def Cube "Wall_1"
+
+        def Mesh "Wall_1"
         {
-            double size = 1
-            float3 xformOp:scale = (5.0, 0.1, 2.7)
-            double3 xformOp:translate = (2.5, 0.0, 1.35)
-            float xformOp:rotateZ = 0.0
-            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZ", "xformOp:scale"]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.88)]
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            point3f[] points = [(0.0, 0.0, 0), (5.0, 0.0, 0), (5.0, 0.0, 2.7), (0.0, 0.0, 2.7)]
+            texCoord2f[] primvars:st = [(0, 0), (5.0, 0), (5.0, 2.7), (0, 2.7)] (
+                interpolation = "vertex"
+            )
+            rel material:binding = <WallMaterial_1>
+
+            def Material "WallMaterial_1"
+            {
+                token outputs:surface.connect = <PBRShader.outputs:surface>
+
+                def Shader "PBRShader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor.connect = <../DiffuseTexture.outputs:rgb>
+                    float inputs:roughness = 0.8
+                    token outputs:surface
+                }
+
+                def Shader "DiffuseTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    asset inputs:file = @./textures/brick_wall.png@
+                    float2 inputs:st.connect = <../PrimvarReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float3 outputs:rgb
+                }
+
+                def Shader "PrimvarReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+            }
         }
-        def Cube "Wall_2"
+
+        def Mesh "Wall_2"
         {
-            double size = 1
-            float3 xformOp:scale = (4.5, 0.1, 2.7)
-            double3 xformOp:translate = (5.0, 2.25, 1.35)
-            float xformOp:rotateZ = 90.0
-            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZ", "xformOp:scale"]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.88)]
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            point3f[] points = [(5.0, 0.0, 0), (5.0, 4.5, 0), (5.0, 4.5, 2.7), (5.0, 0.0, 2.7)]
+            texCoord2f[] primvars:st = [(0, 0), (4.5, 0), (4.5, 2.7), (0, 2.7)] (
+                interpolation = "vertex"
+            )
+            rel material:binding = <WallMaterial_2>
+
+            def Material "WallMaterial_2"
+            {
+                token outputs:surface.connect = <PBRShader.outputs:surface>
+
+                def Shader "PBRShader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor.connect = <../DiffuseTexture.outputs:rgb>
+                    float inputs:roughness = 0.8
+                    token outputs:surface
+                }
+
+                def Shader "DiffuseTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    asset inputs:file = @./textures/brick_wall.png@
+                    float2 inputs:st.connect = <../PrimvarReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float3 outputs:rgb
+                }
+
+                def Shader "PrimvarReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+            }
         }
-        def Cube "Wall_3"
+
+        def Mesh "Wall_3"
         {
-            double size = 1
-            float3 xformOp:scale = (4.5, 0.1, 2.7)
-            double3 xformOp:translate = (0.0, 2.25, 1.35)
-            float xformOp:rotateZ = 90.0
-            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZ", "xformOp:scale"]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.88)]
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            point3f[] points = [(0.0, 0.0, 0), (0.0, 4.5, 0), (0.0, 4.5, 2.7), (0.0, 0.0, 2.7)]
+            texCoord2f[] primvars:st = [(0, 0), (4.5, 0), (4.5, 2.7), (0, 2.7)] (
+                interpolation = "vertex"
+            )
+            rel material:binding = <WallMaterial_3>
+
+            def Material "WallMaterial_3"
+            {
+                token outputs:surface.connect = <PBRShader.outputs:surface>
+
+                def Shader "PBRShader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor.connect = <../DiffuseTexture.outputs:rgb>
+                    float inputs:roughness = 0.8
+                    token outputs:surface
+                }
+
+                def Shader "DiffuseTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    asset inputs:file = @./textures/brick_wall.png@
+                    float2 inputs:st.connect = <../PrimvarReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float3 outputs:rgb
+                }
+
+                def Shader "PrimvarReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+            }
         }
     }
 
     def Xform "Lights"
     {
-        def RectLight "Light_0"
+        def RectLight "CeilingLight_0"
         {
             float inputs:intensity = 30000
-            float inputs:width = 0.5
-            float inputs:height = 0.5
+            float inputs:width = 0.6
+            float inputs:height = 0.6
             color3f inputs:color = (1.0, 0.98, 0.95)
-            double3 xformOp:translate = (1.25, 1.125, 2.6)
+            double3 xformOp:translate = (1.25, 1.125, 2.6500000000000004)
             float3 xformOp:rotateXYZ = (180, 0, 0)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
         }
-        def RectLight "Light_1"
+        def RectLight "CeilingLight_1"
         {
             float inputs:intensity = 30000
-            float inputs:width = 0.5
-            float inputs:height = 0.5
+            float inputs:width = 0.6
+            float inputs:height = 0.6
             color3f inputs:color = (1.0, 0.98, 0.95)
-            double3 xformOp:translate = (3.75, 1.125, 2.6)
+            double3 xformOp:translate = (3.75, 1.125, 2.6500000000000004)
             float3 xformOp:rotateXYZ = (180, 0, 0)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
         }
-        def RectLight "Light_2"
+        def RectLight "CeilingLight_2"
         {
             float inputs:intensity = 30000
-            float inputs:width = 0.5
-            float inputs:height = 0.5
+            float inputs:width = 0.6
+            float inputs:height = 0.6
             color3f inputs:color = (1.0, 0.98, 0.95)
-            double3 xformOp:translate = (1.25, 3.375, 2.6)
+            double3 xformOp:translate = (1.25, 3.375, 2.6500000000000004)
             float3 xformOp:rotateXYZ = (180, 0, 0)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
         }
-        def RectLight "Light_3"
+        def RectLight "CeilingLight_3"
         {
             float inputs:intensity = 30000
-            float inputs:width = 0.5
-            float inputs:height = 0.5
+            float inputs:width = 0.6
+            float inputs:height = 0.6
             color3f inputs:color = (1.0, 0.98, 0.95)
-            double3 xformOp:translate = (3.75, 3.375, 2.6)
+            double3 xformOp:translate = (3.75, 3.375, 2.6500000000000004)
             float3 xformOp:rotateXYZ = (180, 0, 0)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+        }
+
+        def DomeLight "AmbientDome"
+        {
+            float inputs:intensity = 500
+            color3f inputs:color = (0.9, 0.95, 1.0)
         }
     }
 
@@ -630,6 +796,18 @@ def Xform "World"
             float3 xformOp:rotateXYZ = (0, 0, 19.514365706471878)
             float3 xformOp:scale = (1.0, 1.0, 1.0)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+    }
+
+    def Xform "Cameras"
+    {
+        def Camera "MainCamera"
+        {
+            double3 xformOp:translate = (-0.5, -0.5, 1.6)
+            float3 xformOp:rotateXYZ = (99.75952777665432, 0, 132.51044707800085)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+            float focalLength = 24
+            float horizontalAperture = 36
         }
     }
 }
