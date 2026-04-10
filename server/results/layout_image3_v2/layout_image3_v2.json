@@ -1,0 +1,3976 @@
+{
+  "id": "layout_ec8b8760",
+  "rooms": [
+    {
+      "id": "room_a59efbc4",
+      "room_type": "children's playroom",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "dimensions": {
+        "width": 5.0,
+        "length": 4.5,
+        "height": 2.7
+      },
+      "walls": [
+        {
+          "id": "wall_room_a59efbc4_north_7f9f8d7e",
+          "start_point": {
+            "x": 0.0,
+            "y": 4.5,
+            "z": 0.0
+          },
+          "end_point": {
+            "x": 5.0,
+            "y": 4.5,
+            "z": 0.0
+          },
+          "height": 2.7,
+          "thickness": 0.1,
+          "material": "drywall"
+        },
+        {
+          "id": "wall_room_a59efbc4_south_2cb6f66e",
+          "start_point": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "end_point": {
+            "x": 5.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "height": 2.7,
+          "thickness": 0.1,
+          "material": "drywall"
+        },
+        {
+          "id": "wall_room_a59efbc4_east_174792eb",
+          "start_point": {
+            "x": 5.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "end_point": {
+            "x": 5.0,
+            "y": 4.5,
+            "z": 0.0
+          },
+          "height": 2.7,
+          "thickness": 0.1,
+          "material": "drywall"
+        },
+        {
+          "id": "wall_room_a59efbc4_west_8b273dcb",
+          "start_point": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "end_point": {
+            "x": 0.0,
+            "y": 4.5,
+            "z": 0.0
+          },
+          "height": 2.7,
+          "thickness": 0.1,
+          "material": "drywall"
+        }
+      ],
+      "doors": [],
+      "objects": [
+        {
+          "id": "room_a59efbc4_shelving_f7ff31c1",
+          "room_id": "room_a59efbc4",
+          "type": "shelving",
+          "description": "A black metal open shelving unit with four levels, industrial style, black powder-coated steel frame with rectangular open shelves, angular straight-edged design with exposed bolted joints and cross-brace supports on the back, minimalist industrial aesthetic with matte black finish",
+          "position": {
+            "x": 0.34186222657665805,
+            "y": 3.3075032265668,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 258.75146591845595
+          },
+          "dimensions": {
+            "width": 1.0342149128342386,
+            "length": 0.46506837407858587,
+            "height": 1.4519646793655847
+          },
+          "source": "generation",
+          "source_id": "b9002d19",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              30.00341870392929,
+              345.0
+            ],
+            270,
+            [
+              [
+                55.00683740785859,
+                291.5392543582881
+              ],
+              [
+                55.00683740785859,
+                398.4607456417119
+              ],
+              [
+                5.0,
+                398.4607456417119
+              ],
+              [
+                5.0,
+                291.5392543582881
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "edge"
+              }
+            ]
+          ],
+          "mass": 18.0
+        },
+        {
+          "id": "room_a59efbc4_tiger_7690f66d",
+          "room_id": "room_a59efbc4",
+          "type": "tiger",
+          "description": "A large plush tiger stuffed animal with orange and black striped soft fabric body, elongated oblong shape in a lying-down pose with outstretched front paws, white belly and inner ears, embroidered facial features with friendly expression, streamlined feline form",
+          "position": {
+            "x": 0.9209413642492037,
+            "y": 4.215692093845449,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": -1.2492508850356732,
+            "y": -7.5232444889908745,
+            "z": 199.60897838524227
+          },
+          "dimensions": {
+            "width": 0.4972116999958963,
+            "length": 0.5396355047628477,
+            "height": 0.2103682295763921
+          },
+          "source": "generation",
+          "source_id": "a5e0c75c",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              85.0,
+              416.2682247618576
+            ],
+            180,
+            [
+              [
+                111.61058499979481,
+                387.5364495237152
+              ],
+              [
+                111.61058499979481,
+                445.0
+              ],
+              [
+                58.38941500020518,
+                445.0
+              ],
+              [
+                58.38941500020518,
+                387.5364495237152
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "edge"
+              },
+              {
+                "type": "distance",
+                "constraint": "close to",
+                "target": "room_a59efbc4_shelving_f7ff31c1"
+              },
+              {
+                "type": "relative",
+                "constraint": "in front of",
+                "target": "room_a59efbc4_shelving_f7ff31c1"
+              },
+              {
+                "type": "direction",
+                "constraint": "face to",
+                "target": "room_a59efbc4_shelving_f7ff31c1"
+              }
+            ]
+          ],
+          "mass": 0.8
+        },
+        {
+          "id": "room_a59efbc4_teddy_758fe7ef",
+          "room_id": "room_a59efbc4",
+          "type": "teddy",
+          "description": "A white teddy bear plush toy in cream and white soft fabric, compact sitting pose with rounded spherical head and chunky squat body, small rounded ears, embroidered black bead eyes and stitched nose, stubby arms and legs in a seated upright position",
+          "position": {
+            "x": 0.2,
+            "y": 4.3,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 2.3981510044723713,
+            "y": 0.7190636896514668,
+            "z": 156.32679848419318
+          },
+          "dimensions": {
+            "width": 0.2632560869073041,
+            "length": 0.1902747082413878,
+            "height": 0.28561789878062455
+          },
+          "source": "generation",
+          "source_id": "b45f36b5",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              25.0,
+              433.73626458793063
+            ],
+            180,
+            [
+              [
+                39.9128043453652,
+                422.47252917586127
+              ],
+              [
+                39.9128043453652,
+                445.0
+              ],
+              [
+                10.087195654634794,
+                445.0
+              ],
+              [
+                10.087195654634794,
+                422.47252917586127
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "edge"
+              },
+              {
+                "type": "distance",
+                "constraint": "close to",
+                "target": "room_a59efbc4_tiger_7690f66d"
+              },
+              {
+                "type": "relative",
+                "constraint": "right of",
+                "target": "room_a59efbc4_tiger_7690f66d"
+              },
+              {
+                "type": "distance",
+                "constraint": "close to",
+                "target": "room_a59efbc4_shelving_f7ff31c1"
+              },
+              {
+                "type": "alignment",
+                "constraint": "center aligned",
+                "target": "room_a59efbc4_shelving_f7ff31c1"
+              }
+            ]
+          ],
+          "mass": 0.25
+        },
+        {
+          "id": "room_a59efbc4_table_fbdf6f92",
+          "room_id": "room_a59efbc4",
+          "type": "table",
+          "description": "A small round children's table in bright sunny yellow, contemporary style with smooth circular top made of molded plastic, simple cylindrical tapered legs in matching yellow, cheerful and compact with a glossy finish and rounded edges for child safety",
+          "position": {
+            "x": 1.25,
+            "y": 2.45,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "dimensions": {
+            "width": 0.47741237729985514,
+            "length": 0.47757903715793615,
+            "height": 0.5164948062566628
+          },
+          "source": "generation",
+          "source_id": "a5d0dbd8",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              125,
+              245
+            ],
+            0,
+            [
+              [
+                150.62061886499276,
+                219.37104814210318
+              ],
+              [
+                150.62061886499276,
+                270.6289518578968
+              ],
+              [
+                99.37938113500724,
+                270.6289518578968
+              ],
+              [
+                99.37938113500724,
+                219.37104814210318
+              ],
+              [
+                150.62061886499276,
+                219.37104814210318
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_shelving_f7ff31c1"
+              }
+            ]
+          ],
+          "mass": 3.0
+        },
+        {
+          "id": "room_a59efbc4_desk_7c12edb3",
+          "room_id": "room_a59efbc4",
+          "type": "desk",
+          "description": "A small round children's table in bright vivid blue, contemporary style with smooth circular top made of molded plastic and wood composite, simple straight legs in matching blue, playful and compact with a satin finish and softly rounded edges",
+          "position": {
+            "x": 0.65,
+            "y": 2.45,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "dimensions": {
+            "width": 0.5090017690688867,
+            "length": 0.5090399924529057,
+            "height": 0.390177453562527
+          },
+          "source": "generation",
+          "source_id": "fb245623",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              65,
+              245
+            ],
+            0,
+            [
+              [
+                92.20008845344434,
+                217.79800037735473
+              ],
+              [
+                92.20008845344434,
+                272.2019996226453
+              ],
+              [
+                37.79991154655566,
+                272.2019996226453
+              ],
+              [
+                37.79991154655566,
+                217.79800037735473
+              ],
+              [
+                92.20008845344434,
+                217.79800037735473
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "close to",
+                "target": "room_a59efbc4_table_fbdf6f92"
+              },
+              {
+                "type": "relative",
+                "constraint": "left of",
+                "target": "room_a59efbc4_table_fbdf6f92"
+              },
+              {
+                "type": "direction",
+                "constraint": "face same as",
+                "target": "room_a59efbc4_table_fbdf6f92"
+              }
+            ]
+          ],
+          "mass": 3.5
+        },
+        {
+          "id": "room_a59efbc4_mat_61ed6c92",
+          "room_id": "room_a59efbc4",
+          "type": "mat",
+          "description": "A colorful foam puzzle play mat made of interlocking multicolor square puzzle pieces in red, blue, green, yellow, and orange, flat rectangular shape with textured surface, soft EVA foam material with visible jigsaw-style interlocking edges",
+          "position": {
+            "x": 2.45,
+            "y": 1.25,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "dimensions": {
+            "width": 0.8126217724386269,
+            "length": 1.296953853698746,
+            "height": 0.021763217437871903
+          },
+          "source": "generation",
+          "source_id": "1890a9e3",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              245,
+              125
+            ],
+            0,
+            [
+              [
+                287.3810886219313,
+                58.4023073150627
+              ],
+              [
+                287.3810886219313,
+                191.5976926849373
+              ],
+              [
+                202.61891137806867,
+                191.5976926849373
+              ],
+              [
+                202.61891137806867,
+                58.4023073150627
+              ],
+              [
+                287.3810886219313,
+                58.4023073150627
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "room_a59efbc4_shelving_f7ff31c1"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_table_fbdf6f92"
+              }
+            ]
+          ],
+          "mass": 1.2
+        },
+        {
+          "id": "room_a59efbc4_stool_0cb45076",
+          "room_id": "room_a59efbc4",
+          "type": "stool",
+          "description": "A small pink wooden children's stool in bright bubblegum pink, simple cubic form with a flat square seat and four straight sturdy legs, smooth painted wood finish with slightly rounded top edges, chunky and squat proportions",
+          "position": {
+            "x": 1.9661321866122088,
+            "y": 2.2767797051627725,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 4.893108029324926,
+            "y": 3.1702303198116297,
+            "z": 105.47152283389133
+          },
+          "dimensions": {
+            "width": 0.2723316309603308,
+            "length": 0.2721823676141618,
+            "height": 0.3858703509132852
+          },
+          "source": "generation",
+          "source_id": "dbcde44a",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              205,
+              225
+            ],
+            90,
+            [
+              [
+                220.35911838070808,
+                209.63341845198346
+              ],
+              [
+                220.35911838070808,
+                240.36658154801654
+              ],
+              [
+                189.64088161929192,
+                240.36658154801654
+              ],
+              [
+                189.64088161929192,
+                209.63341845198346
+              ],
+              [
+                220.35911838070808,
+                209.63341845198346
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "close to",
+                "target": "room_a59efbc4_mat_61ed6c92"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_table_fbdf6f92"
+              },
+              {
+                "type": "direction",
+                "constraint": "face to",
+                "target": "room_a59efbc4_table_fbdf6f92"
+              }
+            ]
+          ],
+          "mass": 1.5
+        },
+        {
+          "id": "room_a59efbc4_plant_fb792a28",
+          "room_id": "room_a59efbc4",
+          "type": "plant",
+          "description": "A large leafy tropical houseplant in a white ceramic pot, lush green broad oval leaves spreading outward from a central stem, cylindrical white glossy ceramic planter with a smooth rounded rim, towering and sprawling foliage with deep green coloring",
+          "position": {
+            "x": 4.519530636259057,
+            "y": 3.946643849943534,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 112.86065361033906
+          },
+          "dimensions": {
+            "width": 0.7371005045533653,
+            "length": 0.7300890373926819,
+            "height": 0.9202457133647358
+          },
+          "source": "generation",
+          "source_id": "d0f4f063",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              456.74554813036593,
+              405.0
+            ],
+            90,
+            [
+              [
+                495.0,
+                366.39497477233175
+              ],
+              [
+                495.0,
+                443.60502522766825
+              ],
+              [
+                418.49109626073187,
+                443.60502522766825
+              ],
+              [
+                418.49109626073187,
+                366.39497477233175
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "edge"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "room_a59efbc4_shelving_f7ff31c1"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "room_a59efbc4_table_fbdf6f92"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "room_a59efbc4_mat_61ed6c92"
+              }
+            ]
+          ],
+          "mass": 7.0
+        },
+        {
+          "id": "room_a59efbc4_xylophone_2f99fca7",
+          "room_id": "room_a59efbc4",
+          "type": "xylophone",
+          "description": "A colorful children's toy xylophone, rectangular wooden base with rainbow colored metal bars arranged in ascending size order, two small mallets resting on top, flat elongated shape with rounded edges, bright multicolored bars in red orange yellow green blue purple on natural wood frame",
+          "position": {
+            "x": 3.7278237530140443,
+            "y": 1.5290149130500392,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 197.37471831737298
+          },
+          "dimensions": {
+            "width": 0.5422921976321303,
+            "length": 0.320652943377699,
+            "height": 0.3004381836308778
+          },
+          "source": "generation",
+          "source_id": "76ba6c6c",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              385,
+              165
+            ],
+            180,
+            [
+              [
+                413.8646098816065,
+                147.21735283111505
+              ],
+              [
+                413.8646098816065,
+                182.78264716888495
+              ],
+              [
+                356.1353901183935,
+                182.78264716888495
+              ],
+              [
+                356.1353901183935,
+                147.21735283111505
+              ],
+              [
+                413.8646098816065,
+                147.21735283111505
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              },
+              {
+                "type": "relative",
+                "constraint": "right of",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              }
+            ]
+          ],
+          "mass": 2.0
+        },
+        {
+          "id": "room_a59efbc4_tablet_4c8d83f1",
+          "room_id": "room_a59efbc4",
+          "type": "tablet",
+          "description": "A small tablet electronic device, flat thin rectangular slab shape with dark black screen, slim bezels around the display, rounded corners, matte dark gray back panel, very flat and compact streamlined profile, smooth glass front surface",
+          "position": {
+            "x": 2.45,
+            "y": 0.45,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "dimensions": {
+            "width": 0.11100733208121358,
+            "length": 0.1969118529395746,
+            "height": 0.02096281262903585
+          },
+          "source": "generation",
+          "source_id": "6a537923",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              245,
+              45
+            ],
+            0,
+            [
+              [
+                252.30036660406068,
+                33.40440735302127
+              ],
+              [
+                252.30036660406068,
+                56.59559264697873
+              ],
+              [
+                237.69963339593932,
+                56.59559264697873
+              ],
+              [
+                237.69963339593932,
+                33.40440735302127
+              ],
+              [
+                252.30036660406068,
+                33.40440735302127
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "close to",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              },
+              {
+                "type": "alignment",
+                "constraint": "center aligned",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              }
+            ]
+          ],
+          "mass": 0.15
+        },
+        {
+          "id": "room_a59efbc4_hamburger_38f5a63b",
+          "room_id": "room_a59efbc4",
+          "type": "hamburger",
+          "description": "A plush toy hamburger, soft round fabric food toy with brown bun top and bottom, green lettuce layer peeking out, red and yellow felt condiment details, squat cylindrical puffy shape with stitched seams, stuffed cotton filling giving it a chunky squeezable form",
+          "position": {
+            "x": 1.742138481982314,
+            "y": 2.3189195360081456,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 181.81140457273503
+          },
+          "dimensions": {
+            "width": 0.1485524159634356,
+            "length": 0.155229362622305,
+            "height": 0.1367418070692723
+          },
+          "source": "generation",
+          "source_id": "62fa2ddf",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              165,
+              225
+            ],
+            180,
+            [
+              [
+                174.17762079817177,
+                215.48853186888476
+              ],
+              [
+                174.17762079817177,
+                234.51146813111524
+              ],
+              [
+                155.82237920182823,
+                234.51146813111524
+              ],
+              [
+                155.82237920182823,
+                215.48853186888476
+              ],
+              [
+                174.17762079817177,
+                215.48853186888476
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_stool_0cb45076"
+              },
+              {
+                "type": "relative",
+                "constraint": "in front of",
+                "target": "existing-room_a59efbc4_stool_0cb45076"
+              },
+              {
+                "type": "alignment",
+                "constraint": "center aligned",
+                "target": "existing-room_a59efbc4_stool_0cb45076"
+              }
+            ]
+          ],
+          "mass": 0.08
+        },
+        {
+          "id": "room_a59efbc4_duck_d7429510",
+          "room_id": "room_a59efbc4",
+          "type": "duck",
+          "description": "A bright yellow classic rubber duck toy, squat rounded body with smooth glossy surface, small orange flat beak, beady black painted eyes, compact spherical chunky shape with a tiny upturned tail, waterproof squeezable rubber material",
+          "position": {
+            "x": 1.2135603131625061,
+            "y": 3.2656121893819683,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 286.47023321264976
+          },
+          "dimensions": {
+            "width": 0.07367032657740866,
+            "length": 0.07799022579773622,
+            "height": 0.08194269746398476
+          },
+          "source": "generation",
+          "source_id": "9ed3a577",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              125,
+              325
+            ],
+            270,
+            [
+              [
+                130.64951128988682,
+                319.56648367112956
+              ],
+              [
+                130.64951128988682,
+                330.43351632887044
+              ],
+              [
+                119.35048871011318,
+                330.43351632887044
+              ],
+              [
+                119.35048871011318,
+                319.56648367112956
+              ],
+              [
+                130.64951128988682,
+                319.56648367112956
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_table_fbdf6f92"
+              },
+              {
+                "type": "relative",
+                "constraint": "in front of",
+                "target": "existing-room_a59efbc4_table_fbdf6f92"
+              },
+              {
+                "type": "alignment",
+                "constraint": "center aligned",
+                "target": "existing-room_a59efbc4_table_fbdf6f92"
+              }
+            ]
+          ],
+          "mass": 0.04
+        },
+        {
+          "id": "room_a59efbc4_block_8_fb92abd8",
+          "room_id": "room_a59efbc4",
+          "type": "block_8",
+          "description": "A colorful plastic building block, small cubic and rectangular shape with smooth rounded edges, bright primary colors including red, blue, green, yellow, and orange, glossy plastic finish, lightweight chunky toy brick with interlocking studs on top surface",
+          "position": {
+            "x": 3.5585120700932333,
+            "y": 0.6732056435770286,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": -4.35362758957525,
+            "y": -3.3697925823662853,
+            "z": 10.228591810746174
+          },
+          "dimensions": {
+            "width": 0.20399876575874581,
+            "length": 0.20494110522322234,
+            "height": 0.21117012463901455
+          },
+          "source": "generation",
+          "source_id": "69d1642b",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              345,
+              65
+            ],
+            0,
+            [
+              [
+                356.9499382879373,
+                53.002944738838885
+              ],
+              [
+                356.9499382879373,
+                76.99705526116112
+              ],
+              [
+                333.0500617120627,
+                76.99705526116112
+              ],
+              [
+                333.0500617120627,
+                53.002944738838885
+              ],
+              [
+                356.9499382879373,
+                53.002944738838885
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              },
+              {
+                "type": "relative",
+                "constraint": "right of",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "existing-room_a59efbc4_shelving_f7ff31c1"
+              }
+            ]
+          ],
+          "mass": 0.3
+        },
+        {
+          "id": "room_a59efbc4_block_5_7d6a7b35",
+          "room_id": "room_a59efbc4",
+          "type": "block_5",
+          "description": "A colorful plastic building block, small cubic and rectangular shape with smooth rounded edges, bright primary colors including red, blue, green, yellow, and orange, glossy plastic finish, lightweight chunky toy brick with interlocking studs on top surface",
+          "position": {
+            "x": 1.3239375930770882,
+            "y": 0.5698372659083091,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": -19.949928529513542
+          },
+          "dimensions": {
+            "width": 0.2374961521419613,
+            "length": 0.12246537037788062,
+            "height": 0.19000342043524646
+          },
+          "source": "generation",
+          "source_id": "7c35f76f",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              145,
+              65
+            ],
+            0,
+            [
+              [
+                158.62480760709806,
+                57.12673148110597
+              ],
+              [
+                158.62480760709806,
+                72.87326851889404
+              ],
+              [
+                131.37519239290194,
+                72.87326851889404
+              ],
+              [
+                131.37519239290194,
+                57.12673148110597
+              ],
+              [
+                158.62480760709806,
+                57.12673148110597
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              },
+              {
+                "type": "relative",
+                "constraint": "left of",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "existing-room_a59efbc4_plant_fb792a28"
+              }
+            ]
+          ],
+          "mass": 0.3
+        },
+        {
+          "id": "room_a59efbc4_block_7_80ae9ca9",
+          "room_id": "room_a59efbc4",
+          "type": "block_7",
+          "description": "A colorful plastic building block, small cubic and rectangular shape with smooth rounded edges, bright primary colors including red, blue, green, yellow, and orange, glossy plastic finish, lightweight chunky toy brick with interlocking studs on top surface",
+          "position": {
+            "x": 3.4907053332793203,
+            "y": 1.2094496536910253,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 83.50904835584413
+          },
+          "dimensions": {
+            "width": 0.1578372849821296,
+            "length": 0.1582014464702238,
+            "height": 0.18881323816488527
+          },
+          "source": "generation",
+          "source_id": "ee2796c0",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              345,
+              125
+            ],
+            90,
+            [
+              [
+                354.6600723235112,
+                115.35813575089352
+              ],
+              [
+                354.6600723235112,
+                134.64186424910648
+              ],
+              [
+                335.3399276764888,
+                134.64186424910648
+              ],
+              [
+                335.3399276764888,
+                115.35813575089352
+              ],
+              [
+                354.6600723235112,
+                115.35813575089352
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_block_8_fb92abd8"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              }
+            ]
+          ],
+          "mass": 0.15
+        },
+        {
+          "id": "room_a59efbc4_block_1_12d0f889",
+          "room_id": "room_a59efbc4",
+          "type": "block_1",
+          "description": "A colorful plastic building block, small cubic and rectangular shape with smooth rounded edges, bright primary colors including red, blue, green, yellow, and orange, glossy plastic finish, lightweight chunky toy brick with interlocking studs on top surface",
+          "position": {
+            "x": 1.380093346614734,
+            "y": 1.3809963763137483,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 7.40176926232968
+          },
+          "dimensions": {
+            "width": 0.13236892410726878,
+            "length": 0.13223456549585066,
+            "height": 0.13718138594032261
+          },
+          "source": "generation",
+          "source_id": "072a1a84",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              145,
+              125
+            ],
+            0,
+            [
+              [
+                153.36844620536343,
+                116.63827172520746
+              ],
+              [
+                153.36844620536343,
+                133.36172827479254
+              ],
+              [
+                136.63155379463657,
+                133.36172827479254
+              ],
+              [
+                136.63155379463657,
+                116.63827172520746
+              ],
+              [
+                153.36844620536343,
+                116.63827172520746
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_block_5_7d6a7b35"
+              }
+            ]
+          ],
+          "mass": 0.15
+        },
+        {
+          "id": "room_a59efbc4_block_2_edd2bba3",
+          "room_id": "room_a59efbc4",
+          "type": "block_2",
+          "description": "A colorful plastic building block, small cubic and rectangular shape with smooth rounded edges, bright primary colors including red, blue, green, yellow, and orange, glossy plastic finish, lightweight chunky toy brick with interlocking studs on top surface",
+          "position": {
+            "x": 3.151341594459429,
+            "y": 2.3187380393851047,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 253.17012468809642
+          },
+          "dimensions": {
+            "width": 0.10388441711472016,
+            "length": 0.10388032153618645,
+            "height": 0.11936678568878407
+          },
+          "source": "generation",
+          "source_id": "450f2daa",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              325,
+              225
+            ],
+            270,
+            [
+              [
+                331.9440160768093,
+                218.055779144264
+              ],
+              [
+                331.9440160768093,
+                231.944220855736
+              ],
+              [
+                318.0559839231907,
+                231.944220855736
+              ],
+              [
+                318.0559839231907,
+                218.055779144264
+              ],
+              [
+                331.9440160768093,
+                218.055779144264
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_xylophone_2f99fca7"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              }
+            ]
+          ],
+          "mass": 0.15
+        },
+        {
+          "id": "room_a59efbc4_block_3_3018e61f",
+          "room_id": "room_a59efbc4",
+          "type": "block_3",
+          "description": "A colorful plastic building block, small cubic and rectangular shape with smooth rounded edges, bright primary colors including red, blue, green, yellow, and orange, glossy plastic finish, lightweight chunky toy brick with interlocking studs on top surface",
+          "position": {
+            "x": 4.196857005190979,
+            "y": 0.6919999279562279,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 182.84748718873232
+          },
+          "dimensions": {
+            "width": 0.09665410737962524,
+            "length": 0.09670408293365607,
+            "height": 0.0966206556048837
+          },
+          "source": "generation",
+          "source_id": "050469ea",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              405,
+              65
+            ],
+            180,
+            [
+              [
+                411.58270536898124,
+                58.414795853317194
+              ],
+              [
+                411.58270536898124,
+                71.5852041466828
+              ],
+              [
+                398.41729463101876,
+                71.5852041466828
+              ],
+              [
+                398.41729463101876,
+                58.414795853317194
+              ],
+              [
+                411.58270536898124,
+                58.414795853317194
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_block_7_80ae9ca9"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "existing-room_a59efbc4_shelving_f7ff31c1"
+              }
+            ]
+          ],
+          "mass": 0.08
+        },
+        {
+          "id": "room_a59efbc4_block_4_be596764",
+          "room_id": "room_a59efbc4",
+          "type": "block_4",
+          "description": "A colorful plastic building block, small cubic and rectangular shape with smooth rounded edges, bright primary colors including red, blue, green, yellow, and orange, glossy plastic finish, lightweight chunky toy brick with interlocking studs on top surface",
+          "position": {
+            "x": 1.552855576056943,
+            "y": 1.9327999734638734,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": -2.9527512310546893,
+            "y": -3.7161459843887563,
+            "z": 256.4524035982052
+          },
+          "dimensions": {
+            "width": 0.09915139609818492,
+            "length": 0.09995465125417304,
+            "height": 0.10003971392090807
+          },
+          "source": "generation",
+          "source_id": "6a2cbf6c",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              145,
+              185
+            ],
+            270,
+            [
+              [
+                151.74773256270865,
+                178.29243019509076
+              ],
+              [
+                151.74773256270865,
+                191.70756980490924
+              ],
+              [
+                138.25226743729135,
+                191.70756980490924
+              ],
+              [
+                138.25226743729135,
+                178.29243019509076
+              ],
+              [
+                151.74773256270865,
+                178.29243019509076
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_block_1_12d0f889"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              }
+            ]
+          ],
+          "mass": 0.08
+        },
+        {
+          "id": "room_a59efbc4_block_6_e3b3a694",
+          "room_id": "room_a59efbc4",
+          "type": "block_6",
+          "description": "A colorful plastic building block, small cubic and rectangular shape with smooth rounded edges, bright primary colors including red, blue, green, yellow, and orange, glossy plastic finish, lightweight chunky toy brick with interlocking studs on top surface",
+          "position": {
+            "x": 3.963294853075898,
+            "y": 1.1828729143005163,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 18.818381323633446
+          },
+          "dimensions": {
+            "width": 0.12864529102781808,
+            "length": 0.0661587152735209,
+            "height": 0.11117069137821114
+          },
+          "source": "generation",
+          "source_id": "a56a7978",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              405,
+              105
+            ],
+            0,
+            [
+              [
+                413.1822645513909,
+                99.94206423632396
+              ],
+              [
+                413.1822645513909,
+                110.05793576367604
+              ],
+              [
+                396.8177354486091,
+                110.05793576367604
+              ],
+              [
+                396.8177354486091,
+                99.94206423632396
+              ],
+              [
+                413.1822645513909,
+                99.94206423632396
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_block_8_fb92abd8"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_xylophone_2f99fca7"
+              }
+            ]
+          ],
+          "mass": 0.15
+        },
+        {
+          "id": "room_a59efbc4_cube_4_a99edb8f",
+          "room_id": "room_a59efbc4",
+          "type": "cube_4",
+          "description": "A colorful wooden alphabet letter block, small cubic shape with painted capital letters on each face, bright primary colored surfaces in red blue yellow green, smooth sanded edges, chunky solid wood construction with slightly worn painted finish",
+          "position": {
+            "x": 3.496631599588464,
+            "y": 1.8186895703181993,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 20.72737948702718
+          },
+          "dimensions": {
+            "width": 0.15978803394458935,
+            "length": 0.20146899526731435,
+            "height": 0.16980947038966318
+          },
+          "source": "generation",
+          "source_id": "3647be5f",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              345,
+              185
+            ],
+            0,
+            [
+              [
+                354.7394016972295,
+                173.17655023663428
+              ],
+              [
+                354.7394016972295,
+                196.82344976336572
+              ],
+              [
+                335.2605983027705,
+                196.82344976336572
+              ],
+              [
+                335.2605983027705,
+                173.17655023663428
+              ],
+              [
+                354.7394016972295,
+                173.17655023663428
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_block_7_80ae9ca9"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "existing-room_a59efbc4_table_fbdf6f92"
+              }
+            ]
+          ],
+          "mass": 1.0
+        },
+        {
+          "id": "room_a59efbc4_cube_3_2afe5a23",
+          "room_id": "room_a59efbc4",
+          "type": "cube_3",
+          "description": "A colorful wooden alphabet letter block, small cubic shape with painted capital letters on each face, bright primary colored surfaces in red blue yellow green, smooth sanded edges, chunky solid wood construction with slightly worn painted finish",
+          "position": {
+            "x": 2.7794640499494156,
+            "y": 2.3739882523081954,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 93.06840670815754
+          },
+          "dimensions": {
+            "width": 0.13803824271263346,
+            "length": 0.13744220992696227,
+            "height": 0.13860897118717574
+          },
+          "source": "generation",
+          "source_id": "918fcd08",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              285,
+              245
+            ],
+            90,
+            [
+              [
+                293.6221104963481,
+                236.34808786436832
+              ],
+              [
+                293.6221104963481,
+                253.65191213563168
+              ],
+              [
+                276.3778895036519,
+                253.65191213563168
+              ],
+              [
+                276.3778895036519,
+                236.34808786436832
+              ],
+              [
+                293.6221104963481,
+                236.34808786436832
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_cube_4_a99edb8f"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              }
+            ]
+          ],
+          "mass": 0.6
+        },
+        {
+          "id": "room_a59efbc4_cube_1_ed164a48",
+          "room_id": "room_a59efbc4",
+          "type": "cube_1",
+          "description": "A colorful wooden alphabet letter block, small cubic shape with painted capital letters on each face, bright primary colored surfaces in red blue yellow green, smooth sanded edges, chunky solid wood construction with slightly worn painted finish",
+          "position": {
+            "x": 1.8753757970670621,
+            "y": 1.569346865080743,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 264.97002525701987
+          },
+          "dimensions": {
+            "width": 0.13320616254322482,
+            "length": 0.038766487422749414,
+            "height": 0.16015289660786663
+          },
+          "source": "generation",
+          "source_id": "6f36ae8a",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              185,
+              145
+            ],
+            270,
+            [
+              [
+                188.68832437113747,
+                136.58969187283876
+              ],
+              [
+                188.68832437113747,
+                153.41030812716124
+              ],
+              [
+                181.31167562886253,
+                153.41030812716124
+              ],
+              [
+                181.31167562886253,
+                136.58969187283876
+              ],
+              [
+                188.68832437113747,
+                136.58969187283876
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_cube_3_2afe5a23"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_block_5_7d6a7b35"
+              }
+            ]
+          ],
+          "mass": 0.05
+        },
+        {
+          "id": "room_a59efbc4_cube_2_c5bd3bb7",
+          "room_id": "room_a59efbc4",
+          "type": "cube_2",
+          "description": "A colorful wooden alphabet letter block, small cubic shape with painted capital letters on each face, bright primary colored surfaces in red blue yellow green, smooth sanded edges, chunky solid wood construction with slightly worn painted finish",
+          "position": {
+            "x": 3.999261281948533,
+            "y": 1.2528578881029393,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": -6.245613914389454,
+            "y": 2.0391366672494406,
+            "z": 249.5454706086897
+          },
+          "dimensions": {
+            "width": 0.0488998829591015,
+            "length": 0.04908162377691139,
+            "height": 0.04246116616380426
+          },
+          "source": "generation",
+          "source_id": "61ba648a",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              385,
+              125
+            ],
+            270,
+            [
+              [
+                389.2040811888456,
+                120.80500585204493
+              ],
+              [
+                389.2040811888456,
+                129.19499414795507
+              ],
+              [
+                380.7959188111544,
+                129.19499414795507
+              ],
+              [
+                380.7959188111544,
+                120.80500585204493
+              ],
+              [
+                389.2040811888456,
+                120.80500585204493
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_cube_4_a99edb8f"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_block_3_3018e61f"
+              }
+            ]
+          ],
+          "mass": 0.06
+        },
+        {
+          "id": "room_a59efbc4_ball_5_80ebf735",
+          "room_id": "room_a59efbc4",
+          "type": "ball_5",
+          "description": "A small colorful smooth plastic ball, perfectly spherical with a glossy shiny surface, lightweight hollow toy ball in bright vivid color, seamless round shape with slight reflective finish",
+          "position": {
+            "x": 1.3376238093088892,
+            "y": 2.8266479900399055,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 158.17638530759785
+          },
+          "dimensions": {
+            "width": 0.18343700569217702,
+            "length": 0.18342750726826185,
+            "height": 0.18321783693828128
+          },
+          "source": "generation",
+          "source_id": "6aa829dd",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              125,
+              285
+            ],
+            180,
+            [
+              [
+                135.92185028460887,
+                274.0786246365869
+              ],
+              [
+                135.92185028460887,
+                295.9213753634131
+              ],
+              [
+                114.07814971539115,
+                295.9213753634131
+              ],
+              [
+                114.07814971539115,
+                274.0786246365869
+              ],
+              [
+                135.92185028460887,
+                274.0786246365869
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_stool_0cb45076"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "existing-room_a59efbc4_plant_fb792a28"
+              }
+            ]
+          ],
+          "mass": 0.08
+        },
+        {
+          "id": "room_a59efbc4_ball_1_2bcfce54",
+          "room_id": "room_a59efbc4",
+          "type": "ball_1",
+          "description": "A small colorful smooth plastic ball, perfectly spherical with a glossy shiny surface, lightweight hollow toy ball in bright vivid color, seamless round shape with slight reflective finish",
+          "position": {
+            "x": 0.598836414072029,
+            "y": 1.8587343035297412,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 203.5539188806809
+          },
+          "dimensions": {
+            "width": 0.08799478043994646,
+            "length": 0.08800779124404332,
+            "height": 0.08799120509196583
+          },
+          "source": "generation",
+          "source_id": "732c82f5",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              45,
+              185
+            ],
+            180,
+            [
+              [
+                51.14973902199732,
+                178.84961043779782
+              ],
+              [
+                51.14973902199732,
+                191.15038956220218
+              ],
+              [
+                38.85026097800268,
+                191.15038956220218
+              ],
+              [
+                38.85026097800268,
+                178.84961043779782
+              ],
+              [
+                51.14973902199732,
+                178.84961043779782
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_table_fbdf6f92"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "existing-room_a59efbc4_plant_fb792a28"
+              }
+            ]
+          ],
+          "mass": 0.04
+        },
+        {
+          "id": "room_a59efbc4_ball_4_868bbfe1",
+          "room_id": "room_a59efbc4",
+          "type": "ball_4",
+          "description": "A small colorful smooth plastic ball, perfectly spherical with a glossy shiny surface, lightweight hollow toy ball in bright vivid color, seamless round shape with slight reflective finish",
+          "position": {
+            "x": 4.503444306582846,
+            "y": 1.1162165458080584,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 279.08551845132877
+          },
+          "dimensions": {
+            "width": 0.06867625101369079,
+            "length": 0.06866778685452969,
+            "height": 0.06865651017912014
+          },
+          "source": "generation",
+          "source_id": "a2fc3d24",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              465,
+              105
+            ],
+            270,
+            [
+              [
+                470.18338934272646,
+                99.81618744931546
+              ],
+              [
+                470.18338934272646,
+                110.18381255068454
+              ],
+              [
+                459.81661065727354,
+                110.18381255068454
+              ],
+              [
+                459.81661065727354,
+                99.81618744931546
+              ],
+              [
+                470.18338934272646,
+                99.81618744931546
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_xylophone_2f99fca7"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "existing-room_a59efbc4_shelving_f7ff31c1"
+              }
+            ]
+          ],
+          "mass": 0.03
+        },
+        {
+          "id": "room_a59efbc4_ball_6_fdae3c77",
+          "room_id": "room_a59efbc4",
+          "type": "ball_6",
+          "description": "A small colorful smooth plastic ball, perfectly spherical with a glossy shiny surface, lightweight hollow toy ball in bright vivid color, seamless round shape with slight reflective finish",
+          "position": {
+            "x": 0.9800475569857628,
+            "y": 2.8922885395739426,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 160.57760867979383
+          },
+          "dimensions": {
+            "width": 0.0786742779750465,
+            "length": 0.07868229569639194,
+            "height": 0.07864877195108251
+          },
+          "source": "generation",
+          "source_id": "da986277",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              105,
+              285
+            ],
+            180,
+            [
+              [
+                110.68371389875233,
+                279.3158852151804
+              ],
+              [
+                110.68371389875233,
+                290.6841147848196
+              ],
+              [
+                99.31628610124767,
+                290.6841147848196
+              ],
+              [
+                99.31628610124767,
+                279.3158852151804
+              ],
+              [
+                110.68371389875233,
+                279.3158852151804
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_hamburger_38f5a63b"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              }
+            ]
+          ],
+          "mass": 0.03
+        },
+        {
+          "id": "room_a59efbc4_ball_2_50462150",
+          "room_id": "room_a59efbc4",
+          "type": "ball_2",
+          "description": "A small colorful smooth plastic ball, perfectly spherical with a glossy shiny surface, lightweight hollow toy ball in bright vivid color, seamless round shape with slight reflective finish",
+          "position": {
+            "x": 4.636117111898763,
+            "y": 0.386144778256324,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 18.792647018909705
+          },
+          "dimensions": {
+            "width": 0.04065848544923182,
+            "length": 0.04067400717568395,
+            "height": 0.04065908425695282
+          },
+          "source": "generation",
+          "source_id": "1d886148",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              465,
+              25
+            ],
+            0,
+            [
+              [
+                468.78292427246157,
+                21.2162996412158
+              ],
+              [
+                468.78292427246157,
+                28.7837003587842
+              ],
+              [
+                461.21707572753843,
+                28.7837003587842
+              ],
+              [
+                461.21707572753843,
+                21.2162996412158
+              ],
+              [
+                468.78292427246157,
+                21.2162996412158
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "existing-room_a59efbc4_shelving_f7ff31c1"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_block_3_3018e61f"
+              }
+            ]
+          ],
+          "mass": 0.008
+        },
+        {
+          "id": "room_a59efbc4_ball_3_90886de4",
+          "room_id": "room_a59efbc4",
+          "type": "ball_3",
+          "description": "A small colorful smooth plastic ball, perfectly spherical with a glossy shiny surface, lightweight hollow toy ball in bright vivid color, seamless round shape with slight reflective finish",
+          "position": {
+            "x": 4.050175833915089,
+            "y": 2.1535955641590396,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 20.631391967241022
+          },
+          "dimensions": {
+            "width": 0.04550805691084014,
+            "length": 0.045509829999182676,
+            "height": 0.04548965721903457
+          },
+          "source": "generation",
+          "source_id": "e68e2246",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              405,
+              225
+            ],
+            0,
+            [
+              [
+                409.02540284554203,
+                220.97450850004086
+              ],
+              [
+                409.02540284554203,
+                229.02549149995914
+              ],
+              [
+                400.97459715445797,
+                229.02549149995914
+              ],
+              [
+                400.97459715445797,
+                220.97450850004086
+              ],
+              [
+                409.02540284554203,
+                220.97450850004086
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "existing-room_a59efbc4_table_fbdf6f92"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_cube_4_a99edb8f"
+              }
+            ]
+          ],
+          "mass": 0.004
+        },
+        {
+          "id": "room_a59efbc4_car_1_8cb4ad3b",
+          "room_id": "room_a59efbc4",
+          "type": "car_1",
+          "description": "A small colorful toy car, bright plastic vehicle with chunky rounded body, visible wheels on underside, streamlined compact shape with simplified windshield and bumper details, glossy smooth plastic finish in vivid primary color",
+          "position": {
+            "x": 2.78953343743459,
+            "y": 2.2916848484598016,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 4.20017280120242,
+            "y": 0.6300644819140118,
+            "z": 95.44851057190861
+          },
+          "dimensions": {
+            "width": 0.06182981190915534,
+            "length": 0.1084605575475343,
+            "height": 0.08952481195962042
+          },
+          "source": "generation",
+          "source_id": "dd493bb2",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              285,
+              225
+            ],
+            90,
+            [
+              [
+                292.17302787737674,
+                220.15850940454223
+              ],
+              [
+                292.17302787737674,
+                229.84149059545777
+              ],
+              [
+                277.82697212262326,
+                229.84149059545777
+              ],
+              [
+                277.82697212262326,
+                220.15850940454223
+              ],
+              [
+                292.17302787737674,
+                220.15850940454223
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_stool_0cb45076"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "existing-room_a59efbc4_shelving_f7ff31c1"
+              }
+            ]
+          ],
+          "mass": 0.05
+        },
+        {
+          "id": "room_a59efbc4_car_2_bd966ca0",
+          "room_id": "room_a59efbc4",
+          "type": "car_2",
+          "description": "A small colorful toy car, bright plastic vehicle with chunky rounded body, visible wheels on underside, streamlined compact shape with simplified windshield and bumper details, glossy smooth plastic finish in vivid primary color",
+          "position": {
+            "x": 3.133587943589167,
+            "y": 1.4591061016585531,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": -24.971405193602823
+          },
+          "dimensions": {
+            "width": 0.07952256924442601,
+            "length": 0.09563653569442024,
+            "height": 0.0838245359681088
+          },
+          "source": "generation",
+          "source_id": "e555bed0",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              305,
+              145
+            ],
+            0,
+            [
+              [
+                310.7261284622213,
+                138.468173215279
+              ],
+              [
+                310.7261284622213,
+                151.531826784721
+              ],
+              [
+                299.2738715377787,
+                151.531826784721
+              ],
+              [
+                299.2738715377787,
+                138.468173215279
+              ],
+              [
+                310.7261284622213,
+                138.468173215279
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_block_8_fb92abd8"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_hamburger_38f5a63b"
+              }
+            ]
+          ],
+          "mass": 0.07
+        },
+        {
+          "id": "room_a59efbc4_car_3_2c151b7d",
+          "room_id": "room_a59efbc4",
+          "type": "car_3",
+          "description": "A small colorful toy car, bright plastic vehicle with chunky rounded body, visible wheels on underside, streamlined compact shape with simplified windshield and bumper details, glossy smooth plastic finish in vivid primary color",
+          "position": {
+            "x": 2.9058430227157497,
+            "y": 1.978729584879385,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 108.9360938911592
+          },
+          "dimensions": {
+            "width": 0.05831679806386318,
+            "length": 0.09394153219679924,
+            "height": 0.057958099404715406
+          },
+          "source": "generation",
+          "source_id": "40f49c5e",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              305,
+              185
+            ],
+            90,
+            [
+              [
+                311.44707660983994,
+                180.33416009680684
+              ],
+              [
+                311.44707660983994,
+                189.66583990319316
+              ],
+              [
+                298.55292339016006,
+                189.66583990319316
+              ],
+              [
+                298.55292339016006,
+                180.33416009680684
+              ],
+              [
+                311.44707660983994,
+                180.33416009680684
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_car_1_8cb4ad3b"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_xylophone_2f99fca7"
+              }
+            ]
+          ],
+          "mass": 0.06
+        },
+        {
+          "id": "room_a59efbc4_crayon_1_f00bf6d5",
+          "room_id": "room_a59efbc4",
+          "type": "crayon_1",
+          "description": "A bright colored wax crayon, thin elongated cylindrical stick shape with a pointed tip and flat base, with paper wrapper partially peeled, in vivid red blue green yellow or purple waxy finish",
+          "position": {
+            "x": 2.992254237620798,
+            "y": 0.5173775499482562,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 18.900479960202027
+          },
+          "dimensions": {
+            "width": 0.01590223740052237,
+            "length": 0.015853454717598046,
+            "height": 0.07751905386726869
+          },
+          "source": "generation",
+          "source_id": "b3d4c618",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              305,
+              65
+            ],
+            0,
+            [
+              [
+                307.5451118700261,
+                62.457327264120096
+              ],
+              [
+                307.5451118700261,
+                67.5426727358799
+              ],
+              [
+                302.4548881299739,
+                67.5426727358799
+              ],
+              [
+                302.4548881299739,
+                62.457327264120096
+              ],
+              [
+                307.5451118700261,
+                62.457327264120096
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "close to",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              },
+              {
+                "type": "relative",
+                "constraint": "side of",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              }
+            ]
+          ],
+          "mass": 0.005
+        },
+        {
+          "id": "room_a59efbc4_crayon_2_cc40a560",
+          "room_id": "room_a59efbc4",
+          "type": "crayon_2",
+          "description": "A bright colored wax crayon, thin elongated cylindrical stick shape with a pointed tip and flat base, with paper wrapper partially peeled, in vivid red blue green yellow or purple waxy finish",
+          "position": {
+            "x": 2.3256960356203638,
+            "y": 2.045797138994984,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": -21.53937407658082
+          },
+          "dimensions": {
+            "width": 0.03661862952132134,
+            "length": 0.03686442051041139,
+            "height": 0.24995999494099286
+          },
+          "source": "generation",
+          "source_id": "67ac28df",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              245,
+              205
+            ],
+            0,
+            [
+              [
+                248.58093147606607,
+                201.40677897447944
+              ],
+              [
+                248.58093147606607,
+                208.59322102552056
+              ],
+              [
+                241.41906852393393,
+                208.59322102552056
+              ],
+              [
+                241.41906852393393,
+                201.40677897447944
+              ],
+              [
+                248.58093147606607,
+                201.40677897447944
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "close to",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              },
+              {
+                "type": "relative",
+                "constraint": "in front of",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              },
+              {
+                "type": "alignment",
+                "constraint": "center aligned",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              }
+            ]
+          ],
+          "mass": 0.03
+        },
+        {
+          "id": "room_a59efbc4_crayon_3_8028da7e",
+          "room_id": "room_a59efbc4",
+          "type": "crayon_3",
+          "description": "A bright colored wax crayon, thin elongated cylindrical stick shape with a pointed tip and flat base, with paper wrapper partially peeled, in vivid red blue green yellow or purple waxy finish",
+          "position": {
+            "x": 3.1297503287920962,
+            "y": 0.9385174393499289,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 268.7641189049366
+          },
+          "dimensions": {
+            "width": 0.01495895903509582,
+            "length": 0.014967653639872413,
+            "height": 0.07928088845144726
+          },
+          "source": "generation",
+          "source_id": "4e919d25",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              305,
+              105
+            ],
+            270,
+            [
+              [
+                307.49838268199363,
+                102.5020520482452
+              ],
+              [
+                307.49838268199363,
+                107.4979479517548
+              ],
+              [
+                302.50161731800637,
+                107.4979479517548
+              ],
+              [
+                302.50161731800637,
+                102.5020520482452
+              ],
+              [
+                307.49838268199363,
+                102.5020520482452
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "close to",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              },
+              {
+                "type": "relative",
+                "constraint": "right of",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              }
+            ]
+          ],
+          "mass": 0.005
+        },
+        {
+          "id": "room_a59efbc4_crayon_4_9f69f201",
+          "room_id": "room_a59efbc4",
+          "type": "crayon_4",
+          "description": "A bright colored wax crayon, thin elongated cylindrical stick shape with a pointed tip and flat base, with paper wrapper partially peeled, in vivid red blue green yellow or purple waxy finish",
+          "position": {
+            "x": 1.5795169886820177,
+            "y": 1.7617299123255772,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 176.15689701004436
+          },
+          "dimensions": {
+            "width": 0.005153649597465434,
+            "length": 0.1281492156637054,
+            "height": 0.12847176915574993
+          },
+          "source": "generation",
+          "source_id": "ae6cd0d3",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              165,
+              165
+            ],
+            180,
+            [
+              [
+                167.00768247987327,
+                156.84253921681474
+              ],
+              [
+                167.00768247987327,
+                173.15746078318526
+              ],
+              [
+                162.99231752012673,
+                173.15746078318526
+              ],
+              [
+                162.99231752012673,
+                156.84253921681474
+              ],
+              [
+                167.00768247987327,
+                156.84253921681474
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              },
+              {
+                "type": "relative",
+                "constraint": "left of",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              }
+            ]
+          ],
+          "mass": 0.01
+        },
+        {
+          "id": "room_a59efbc4_crayon_5_a3944b8f",
+          "room_id": "room_a59efbc4",
+          "type": "crayon_5",
+          "description": "A bright colored wax crayon, thin elongated cylindrical stick shape with a pointed tip and flat base, with paper wrapper partially peeled, in vivid red blue green yellow or purple waxy finish",
+          "position": {
+            "x": 1.6617888266338374,
+            "y": 1.118979320726993,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 165.0575531694848
+          },
+          "dimensions": {
+            "width": 0.013492131002542313,
+            "length": 0.013481032378992288,
+            "height": 0.10213128379666817
+          },
+          "source": "generation",
+          "source_id": "d4d7cfa2",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              165,
+              105
+            ],
+            180,
+            [
+              [
+                167.42460655012712,
+                102.57594838105038
+              ],
+              [
+                167.42460655012712,
+                107.42405161894962
+              ],
+              [
+                162.57539344987288,
+                107.42405161894962
+              ],
+              [
+                162.57539344987288,
+                102.57594838105038
+              ],
+              [
+                167.42460655012712,
+                102.57594838105038
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              },
+              {
+                "type": "relative",
+                "constraint": "side of",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              }
+            ]
+          ],
+          "mass": 0.006
+        },
+        {
+          "id": "room_a59efbc4_fruit_1_fbd9de1e",
+          "room_id": "room_a59efbc4",
+          "type": "fruit_1",
+          "description": "A colorful plastic toy play food item shaped like a small fruit or vegetable, bright glossy plastic in vivid colors, chunky and cartoonish with molded surface details, compact rounded organic shape like a toy apple banana or carrot",
+          "position": {
+            "x": 2.1985448069982683,
+            "y": 2.694963417291836,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 86.9050041957252
+          },
+          "dimensions": {
+            "width": 0.07518650983860234,
+            "length": 0.07515392445799121,
+            "height": 0.07478797574472965
+          },
+          "source": "generation",
+          "source_id": "5e8c6bb3",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              205,
+              265
+            ],
+            90,
+            [
+              [
+                210.50769622289957,
+                259.4906745080699
+              ],
+              [
+                210.50769622289957,
+                270.5093254919301
+              ],
+              [
+                199.49230377710043,
+                270.5093254919301
+              ],
+              [
+                199.49230377710043,
+                259.4906745080699
+              ],
+              [
+                210.50769622289957,
+                259.4906745080699
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "close to",
+                "target": "existing-room_a59efbc4_stool_0cb45076"
+              },
+              {
+                "type": "alignment",
+                "constraint": "center aligned",
+                "target": "existing-room_a59efbc4_stool_0cb45076"
+              }
+            ]
+          ],
+          "mass": 0.18
+        },
+        {
+          "id": "room_a59efbc4_fruit_2_fd2ef5d1",
+          "room_id": "room_a59efbc4",
+          "type": "fruit_2",
+          "description": "A colorful plastic toy play food item shaped like a small fruit or vegetable, bright glossy plastic in vivid colors, chunky and cartoonish with molded surface details, compact rounded organic shape like a toy apple banana or carrot",
+          "position": {
+            "x": 1.9363012587604795,
+            "y": 1.967409201109467,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 171.90427810737276
+          },
+          "dimensions": {
+            "width": 0.07352789020011424,
+            "length": 0.04643111504017151,
+            "height": 0.07138043887524448
+          },
+          "source": "generation",
+          "source_id": "f3752c01",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              205,
+              205
+            ],
+            180,
+            [
+              [
+                210.4263945100057,
+                200.92844424799142
+              ],
+              [
+                210.4263945100057,
+                209.07155575200858
+              ],
+              [
+                199.5736054899943,
+                209.07155575200858
+              ],
+              [
+                199.5736054899943,
+                200.92844424799142
+              ],
+              [
+                210.4263945100057,
+                200.92844424799142
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "close to",
+                "target": "existing-room_a59efbc4_stool_0cb45076"
+              },
+              {
+                "type": "relative",
+                "constraint": "left of",
+                "target": "existing-room_a59efbc4_stool_0cb45076"
+              }
+            ]
+          ],
+          "mass": 0.03
+        },
+        {
+          "id": "room_a59efbc4_fruit_3_5619b5bf",
+          "room_id": "room_a59efbc4",
+          "type": "fruit_3",
+          "description": "A colorful plastic toy play food item shaped like a small fruit or vegetable, bright glossy plastic in vivid colors, chunky and cartoonish with molded surface details, compact rounded organic shape like a toy apple banana or carrot",
+          "position": {
+            "x": 1.9690344197789729,
+            "y": 2.766065215335468,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 68.54965430045164
+          },
+          "dimensions": {
+            "width": 0.10669200590805668,
+            "length": 0.06642926086651772,
+            "height": 0.05628589908507819
+          },
+          "source": "generation",
+          "source_id": "8a712854",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              205,
+              285
+            ],
+            90,
+            [
+              [
+                210.07146304332588,
+                277.9153997045972
+              ],
+              [
+                210.07146304332588,
+                292.0846002954028
+              ],
+              [
+                199.92853695667412,
+                292.0846002954028
+              ],
+              [
+                199.92853695667412,
+                277.9153997045972
+              ],
+              [
+                210.07146304332588,
+                277.9153997045972
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "close to",
+                "target": "existing-room_a59efbc4_stool_0cb45076"
+              },
+              {
+                "type": "relative",
+                "constraint": "right of",
+                "target": "existing-room_a59efbc4_stool_0cb45076"
+              }
+            ]
+          ],
+          "mass": 0.03
+        },
+        {
+          "id": "room_a59efbc4_block_1_5d0f57af",
+          "room_id": "room_a59efbc4",
+          "type": "block_1",
+          "description": "A small colorful plastic building block, cubic shape with smooth glossy surface in bright primary colors like red blue yellow or green, with slightly rounded edges, solid and chunky toy block",
+          "position": {
+            "x": 3.9686825351433463,
+            "y": 0.2200226285664324,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": -4.1919258500960765,
+            "y": 2.7036444527404893,
+            "z": 17.981770012687328
+          },
+          "dimensions": {
+            "width": 0.06176779827760229,
+            "length": 0.06179324932918799,
+            "height": 0.051278010869501366
+          },
+          "source": "generation",
+          "source_id": "f6bf6a95",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              405.0,
+              9.839662466459401
+            ],
+            0,
+            [
+              [
+                409.8383899138801,
+                5.0
+              ],
+              [
+                409.8383899138801,
+                14.679324932918803
+              ],
+              [
+                400.1616100861199,
+                14.679324932918803
+              ],
+              [
+                400.1616100861199,
+                5.0
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "edge"
+              },
+              {
+                "type": "distance",
+                "constraint": "close to",
+                "target": "existing-room_a59efbc4_block_3_3018e61f"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_ball_4_868bbfe1"
+              }
+            ]
+          ],
+          "mass": 0.06
+        },
+        {
+          "id": "room_a59efbc4_block_2_e77a34a4",
+          "room_id": "room_a59efbc4",
+          "type": "block_2",
+          "description": "A small colorful plastic building block, cubic shape with smooth glossy surface in bright primary colors like red blue yellow or green, with slightly rounded edges, solid and chunky toy block",
+          "position": {
+            "x": 4.364271042211132,
+            "y": 0.2,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 21.77571202903355
+          },
+          "dimensions": {
+            "width": 0.04695078460533581,
+            "length": 0.038663572293107316,
+            "height": 0.05495147655832788
+          },
+          "source": "generation",
+          "source_id": "aa216b9d",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              445.0,
+              8.683178614655365
+            ],
+            0,
+            [
+              [
+                449.0975392302668,
+                5.0
+              ],
+              [
+                449.0975392302668,
+                12.36635722931073
+              ],
+              [
+                440.9024607697332,
+                12.36635722931073
+              ],
+              [
+                440.9024607697332,
+                5.0
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "edge"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_block_1_5d0f57af"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_block_6_e3b3a694"
+              }
+            ]
+          ],
+          "mass": 0.04
+        },
+        {
+          "id": "room_a59efbc4_block_3_bba2a420",
+          "room_id": "room_a59efbc4",
+          "type": "block_3",
+          "description": "A small colorful plastic building block, cubic shape with smooth glossy surface in bright primary colors like red blue yellow or green, with slightly rounded edges, solid and chunky toy block",
+          "position": {
+            "x": 4.8,
+            "y": 0.735385827287226,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": -6.449106972338827,
+            "y": -1.1031810814979597,
+            "z": 105.37484988833216
+          },
+          "dimensions": {
+            "width": 0.052170710693672115,
+            "length": 0.052012673826451,
+            "height": 0.05760325294599933
+          },
+          "source": "generation",
+          "source_id": "960747fb",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              490.64936630867743,
+              65.0
+            ],
+            90,
+            [
+              [
+                495.0,
+                60.641464465316396
+              ],
+              [
+                495.0,
+                69.35853553468361
+              ],
+              [
+                486.29873261735486,
+                69.35853553468361
+              ],
+              [
+                486.29873261735486,
+                60.641464465316396
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "edge"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_block_2_e77a34a4"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_xylophone_2f99fca7"
+              }
+            ]
+          ],
+          "mass": 0.03
+        },
+        {
+          "id": "room_a59efbc4_block_4_fdcca49e",
+          "room_id": "room_a59efbc4",
+          "type": "block_4",
+          "description": "A small colorful plastic building block, cubic shape with smooth glossy surface in bright primary colors like red blue yellow or green, with slightly rounded edges, solid and chunky toy block",
+          "position": {
+            "x": 3.627073586905976,
+            "y": 0.2,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 11.453792472992532
+          },
+          "dimensions": {
+            "width": 0.05205121767690158,
+            "length": 0.05204909110855599,
+            "height": 0.04442766714860629
+          },
+          "source": "generation",
+          "source_id": "0bcf13fc",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              365.0,
+              9.352454555427798
+            ],
+            0,
+            [
+              [
+                369.35256088384506,
+                5.0
+              ],
+              [
+                369.35256088384506,
+                13.704909110855596
+              ],
+              [
+                360.64743911615494,
+                13.704909110855596
+              ],
+              [
+                360.64743911615494,
+                5.0
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "edge"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "room_a59efbc4_block_1_5d0f57af"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_ball_3_90886de4"
+              }
+            ]
+          ],
+          "mass": 0.04
+        },
+        {
+          "id": "room_a59efbc4_pompom_1_f4c10ffc",
+          "room_id": "room_a59efbc4",
+          "type": "pompom_1",
+          "description": "A small fluffy round yarn craft pom pom ball, soft and spherical with fuzzy fibrous texture, in bright pink green orange purple yellow or red yarn material, lightweight and slightly irregular round shape",
+          "position": {
+            "x": 0.5952495634097899,
+            "y": 4.292102114520817,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 175.13106410511344
+          },
+          "dimensions": {
+            "width": 0.03993049690770422,
+            "length": 0.039846493649541084,
+            "height": 0.03701576630739093
+          },
+          "source": "generation",
+          "source_id": "efffdbf4",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              45.0,
+              441.25767531752297
+            ],
+            180,
+            [
+              [
+                48.74652484538521,
+                437.51535063504593
+              ],
+              [
+                48.74652484538521,
+                445.0
+              ],
+              [
+                41.25347515461479,
+                445.0
+              ],
+              [
+                41.25347515461479,
+                437.51535063504593
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "edge"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "existing-room_a59efbc4_mat_61ed6c92"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_shelving_f7ff31c1"
+              }
+            ]
+          ],
+          "mass": 0.005
+        },
+        {
+          "id": "room_a59efbc4_pompom_2_c9529b5d",
+          "room_id": "room_a59efbc4",
+          "type": "pompom_2",
+          "description": "A small fluffy round yarn craft pom pom ball, soft and spherical with fuzzy fibrous texture, in bright pink green orange purple yellow or red yarn material, lightweight and slightly irregular round shape",
+          "position": {
+            "x": 4.8,
+            "y": 2.9745969001760857,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 74.51044542204058
+          },
+          "dimensions": {
+            "width": 0.04421705596598426,
+            "length": 0.0429536886093988,
+            "height": 0.03473469270397207
+          },
+          "source": "generation",
+          "source_id": "63217c0b",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              491.10231556953005,
+              305.0
+            ],
+            90,
+            [
+              [
+                495.0,
+                301.0391472017008
+              ],
+              [
+                495.0,
+                308.9608527982992
+              ],
+              [
+                487.2046311390601,
+                308.9608527982992
+              ],
+              [
+                487.2046311390601,
+                301.0391472017008
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "edge"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "room_a59efbc4_pompom_1_f4c10ffc"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_plant_fb792a28"
+              }
+            ]
+          ],
+          "mass": 0.004
+        },
+        {
+          "id": "room_a59efbc4_pompom_3_ae7fb25f",
+          "room_id": "room_a59efbc4",
+          "type": "pompom_3",
+          "description": "A small fluffy round yarn craft pom pom ball, soft and spherical with fuzzy fibrous texture, in bright pink green orange purple yellow or red yarn material, lightweight and slightly irregular round shape",
+          "position": {
+            "x": 1.8265644919503212,
+            "y": 0.2,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 257.490322394105
+          },
+          "dimensions": {
+            "width": 0.049524166864521435,
+            "length": 0.04954317329101657,
+            "height": 0.03287889398175914
+          },
+          "source": "generation",
+          "source_id": "e2e88967",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              185,
+              25
+            ],
+            270,
+            [
+              [
+                189.2271586645508,
+                20.77379165677393
+              ],
+              [
+                189.2271586645508,
+                29.22620834322607
+              ],
+              [
+                180.7728413354492,
+                29.22620834322607
+              ],
+              [
+                180.7728413354492,
+                20.77379165677393
+              ],
+              [
+                189.2271586645508,
+                20.77379165677393
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "room_a59efbc4_pompom_1_f4c10ffc"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "room_a59efbc4_pompom_2_c9529b5d"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_tablet_4c8d83f1"
+              }
+            ]
+          ],
+          "mass": 0.005
+        },
+        {
+          "id": "room_a59efbc4_pompom_4_50969e76",
+          "room_id": "room_a59efbc4",
+          "type": "pompom_4",
+          "description": "A small fluffy round yarn craft pom pom ball, soft and spherical with fuzzy fibrous texture, in bright pink green orange purple yellow or red yarn material, lightweight and slightly irregular round shape",
+          "position": {
+            "x": 1.832939223516037,
+            "y": 3.758404731428549,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 7.988519494603626,
+            "y": 5.37644136127923,
+            "z": 272.5162656224924
+          },
+          "dimensions": {
+            "width": 0.058405292154366996,
+            "length": 0.05883949661837697,
+            "height": 0.05774346087415753
+          },
+          "source": "generation",
+          "source_id": "0b7d8d80",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              185,
+              365
+            ],
+            270,
+            [
+              [
+                189.69197483091884,
+                360.32973539228163
+              ],
+              [
+                189.69197483091884,
+                369.67026460771837
+              ],
+              [
+                180.30802516908116,
+                369.67026460771837
+              ],
+              [
+                180.30802516908116,
+                360.32973539228163
+              ],
+              [
+                189.69197483091884,
+                360.32973539228163
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "room_a59efbc4_pompom_3_ae7fb25f"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "room_a59efbc4_pompom_1_f4c10ffc"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_duck_d7429510"
+              }
+            ]
+          ],
+          "mass": 0.008
+        },
+        {
+          "id": "room_a59efbc4_pompom_5_c034b538",
+          "room_id": "room_a59efbc4",
+          "type": "pompom_5",
+          "description": "A small fluffy round yarn craft pom pom ball, soft and spherical with fuzzy fibrous texture, in bright pink green orange purple yellow or red yarn material, lightweight and slightly irregular round shape",
+          "position": {
+            "x": 4.390698877185425,
+            "y": 0.2195117713251613,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": -0.2297419927885045,
+            "y": -4.580043212813093,
+            "z": 17.434786720715273
+          },
+          "dimensions": {
+            "width": 0.04826762641733085,
+            "length": 0.04820335284544598,
+            "height": 0.03590278325790803
+          },
+          "source": "generation",
+          "source_id": "848107c1",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              425.0,
+              9.1601676422723
+            ],
+            0,
+            [
+              [
+                429.16338132086656,
+                5.000000000000002
+              ],
+              [
+                429.16338132086656,
+                13.3203352845446
+              ],
+              [
+                420.83661867913344,
+                13.3203352845446
+              ],
+              [
+                420.83661867913344,
+                5.000000000000002
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "edge"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "room_a59efbc4_pompom_4_50969e76"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "room_a59efbc4_pompom_1_f4c10ffc"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_ball_2_50462150"
+              }
+            ]
+          ],
+          "mass": 0.004
+        },
+        {
+          "id": "room_a59efbc4_pompom_6_953c95c1",
+          "room_id": "room_a59efbc4",
+          "type": "pompom_6",
+          "description": "A small fluffy round yarn craft pom pom ball, soft and spherical with fuzzy fibrous texture, in bright pink green orange purple yellow or red yarn material, lightweight and slightly irregular round shape",
+          "position": {
+            "x": 1.0203120877648357,
+            "y": 1.9175906199916535,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": -6.051344051154196
+          },
+          "dimensions": {
+            "width": 0.037244139216731136,
+            "length": 0.039691681088555794,
+            "height": 0.03560994595015455
+          },
+          "source": "generation",
+          "source_id": "bf1a7c62",
+          "place_id": "floor",
+          "place_guidance": "Standard placement for the object",
+          "placement_constraints": [
+            [
+              105,
+              205
+            ],
+            0,
+            [
+              [
+                108.61220696083656,
+                201.26541594557222
+              ],
+              [
+                108.61220696083656,
+                208.73458405442778
+              ],
+              [
+                101.38779303916344,
+                208.73458405442778
+              ],
+              [
+                101.38779303916344,
+                201.26541594557222
+              ],
+              [
+                108.61220696083656,
+                201.26541594557222
+              ]
+            ],
+            [
+              {
+                "type": "global",
+                "constraint": "middle"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "room_a59efbc4_pompom_5_c034b538"
+              },
+              {
+                "type": "distance",
+                "constraint": "far",
+                "target": "room_a59efbc4_pompom_2_c9529b5d"
+              },
+              {
+                "type": "distance",
+                "constraint": "near",
+                "target": "existing-room_a59efbc4_hamburger_38f5a63b"
+              }
+            ]
+          ],
+          "mass": 0.003
+        },
+        {
+          "id": "room_a59efbc4_drawing_3753c8d7",
+          "room_id": "room_a59efbc4",
+          "type": "drawing",
+          "description": "A child's crayon drawing artwork on flat white rectangular paper featuring colorful stick figures in red blue yellow and green crayon, with a slightly crumpled edge, the paper is flat and thin with visible waxy crayon texture on the surface",
+          "position": {
+            "x": 0.2295951044909385,
+            "y": 3.535221180584571,
+            "z": 0.12226568139707764
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": -2.249581633042837
+          },
+          "dimensions": {
+            "width": 0.9807631158410501,
+            "length": 0.8139619195639214,
+            "height": 0.044531362794155246
+          },
+          "source": "generation",
+          "source_id": "7c1cd89f",
+          "place_id": "room_a59efbc4_shelving_f7ff31c1",
+          "place_guidance": "Place leaning upright against the back of the top shelf level of the shelving unit, slightly angled forward as if propped up for display.",
+          "placement_constraints": null,
+          "mass": 0.8
+        },
+        {
+          "id": "room_a59efbc4_donut_1_a3ae386b",
+          "room_id": "room_a59efbc4",
+          "type": "donut_1",
+          "description": "A colorful plastic toy play food item shaped like a round donut with bright pink yellow or blue glossy plastic finish, with molded frosting detail on top, chunky and cartoonish in style, small spherical-toroidal shape",
+          "position": {
+            "x": 0.4372294792971949,
+            "y": 3.598626806847814,
+            "z": 0.12319365664148707
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 2.788416170280911
+          },
+          "dimensions": {
+            "width": 0.11432148139767259,
+            "length": 0.1148167411425016,
+            "height": 0.04638731328297412
+          },
+          "source": "generation",
+          "source_id": "b17ca260",
+          "place_id": "room_a59efbc4_shelving_f7ff31c1",
+          "place_guidance": "Scatter across different shelf levels of the shelving unit in a chaotic manner, one on the top shelf, one on a middle shelf, and one on the bottom shelf, placed casually as if tossed there by a child.",
+          "placement_constraints": null,
+          "mass": 0.08
+        },
+        {
+          "id": "room_a59efbc4_donut_2_c9a272a9",
+          "room_id": "room_a59efbc4",
+          "type": "donut_2",
+          "description": "A colorful plastic toy play food item shaped like a round donut with bright pink yellow or blue glossy plastic finish, with molded frosting detail on top, chunky and cartoonish in style, small spherical-toroidal shape",
+          "position": {
+            "x": 0.2,
+            "y": 3.3890123476483693,
+            "z": 0.16747663229428714
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 23.435468248457944
+          },
+          "dimensions": {
+            "width": 0.18351828480922067,
+            "length": 0.1835299854569747,
+            "height": 0.13495326458857426
+          },
+          "source": "generation",
+          "source_id": "2a79629b",
+          "place_id": "room_a59efbc4_shelving_f7ff31c1",
+          "place_guidance": "Scatter across different shelf levels of the shelving unit in a chaotic manner, one on the top shelf, one on a middle shelf, and one on the bottom shelf, placed casually as if tossed there by a child.",
+          "placement_constraints": null,
+          "mass": 0.2
+        },
+        {
+          "id": "room_a59efbc4_donut_3_7cf34d3d",
+          "room_id": "room_a59efbc4",
+          "type": "donut_3",
+          "description": "A colorful plastic toy play food item shaped like a round donut with bright pink yellow or blue glossy plastic finish, with molded frosting detail on top, chunky and cartoonish in style, small spherical-toroidal shape",
+          "position": {
+            "x": 0.31269274745157516,
+            "y": 3.524392668113719,
+            "z": 0.1269642704976217
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": -22.141736354625845
+          },
+          "dimensions": {
+            "width": 0.06078392984549089,
+            "length": 0.06042516421184756,
+            "height": 0.05392854099524344
+          },
+          "source": "generation",
+          "source_id": "df33a79f",
+          "place_id": "room_a59efbc4_shelving_f7ff31c1",
+          "place_guidance": "Scatter across different shelf levels of the shelving unit in a chaotic manner, one on the top shelf, one on a middle shelf, and one on the bottom shelf, placed casually as if tossed there by a child.",
+          "placement_constraints": null,
+          "mass": 0.04
+        },
+        {
+          "id": "room_a59efbc4_storybook_1_4e07462d",
+          "room_id": "room_a59efbc4",
+          "type": "storybook_1",
+          "description": "A small children's picture storybook with bright illustrated cover featuring cartoon animals and bold lettering, rectangular with a thick colorful spine, glossy laminated cardboard cover in vivid primary colors",
+          "position": {
+            "x": 0.30088930191514696,
+            "y": 3.555815967614486,
+            "z": 0.21631021254398752
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": -17.128363603025836
+          },
+          "dimensions": {
+            "width": 0.19117972983874648,
+            "length": 0.1837965260366778,
+            "height": 0.23262042508797506
+          },
+          "source": "generation",
+          "source_id": "cc7fffd8",
+          "place_id": "room_a59efbc4_shelving_f7ff31c1",
+          "place_guidance": "Place both standing upright next to each other on one of the middle shelf levels of the shelving unit, leaning slightly against each other as if casually placed.",
+          "placement_constraints": null,
+          "mass": 0.3
+        },
+        {
+          "id": "room_a59efbc4_storybook_2_769ef064",
+          "room_id": "room_a59efbc4",
+          "type": "storybook_2",
+          "description": "A small children's picture storybook with bright illustrated cover featuring cartoon animals and bold lettering, rectangular with a thick colorful spine, glossy laminated cardboard cover in vivid primary colors",
+          "position": {
+            "x": 0.2,
+            "y": 3.355747488294217,
+            "z": 0.12878986571429646
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 4.751755322501381
+          },
+          "dimensions": {
+            "width": 0.17387704264914292,
+            "length": 0.20684724045009223,
+            "height": 0.05757973142859289
+          },
+          "source": "generation",
+          "source_id": "40a0216e",
+          "place_id": "room_a59efbc4_shelving_f7ff31c1",
+          "place_guidance": "Place both standing upright next to each other on one of the middle shelf levels of the shelving unit, leaning slightly against each other as if casually placed.",
+          "placement_constraints": null,
+          "mass": 0.5
+        },
+        {
+          "id": "room_a59efbc4_bin_fd302e8f",
+          "room_id": "room_a59efbc4",
+          "type": "bin",
+          "description": "A small colorful open-top rectangular plastic storage bin in bright green with smooth glossy finish, slightly tapered sides wider at the top than the bottom, with rounded rim edges, compact and boxy shape",
+          "position": {
+            "x": 0.22059535553957227,
+            "y": 3.3359659841841376,
+            "z": 0.21848127164137865
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 19.514365706471878
+          },
+          "dimensions": {
+            "width": 0.22857785034417846,
+            "length": 0.22892246875452557,
+            "height": 0.2369625432827573
+          },
+          "source": "generation",
+          "source_id": "9f97b13d",
+          "place_id": "room_a59efbc4_shelving_f7ff31c1",
+          "place_guidance": "Place on a middle shelf of the shelving unit, positioned slightly off-center to add to the chaotic feel of the playroom.",
+          "placement_constraints": null,
+          "mass": 0.25
+        }
+      ],
+      "windows": [],
+      "floor_material": "hardwood",
+      "ceiling_height": 2.7
+    }
+  ],
+  "total_area": 22.5,
+  "building_style": "Industrial loft with exposed brick walls, hardwood flooring, high ceilings, and contemporary furnishings",
+  "description": "Room structure generated from: A single room: an industrial loft style children's playroom, 5.0m x 4.5m with 3.2m ceiling height. Contemporary style with exposed brick walls and hardwood flooring. The room has a large window on the back wall and a standard entry door. The playroom contains: a black metal open shelving unit with 4 levels against the left wall, a small round yellow children's table, a small round blue children's table, a small pink wooden stool, a colorful foam puzzle play mat on the floor, a large plush tiger, a white teddy bear, a large green potted plant near the window, scattered colorful building blocks and balls everywhere on the floor, toy food items, a xylophone, crayons, alphabet blocks, a rubber duck, a toy hamburger, pompoms, a tablet, toy vehicles, and children's artwork. The room is chaotic and energetic with toys scattered everywhere.",
+  "created_from_text": "A single room: an industrial loft style children's playroom, 5.0m x 4.5m with 3.2m ceiling height. Contemporary style with exposed brick walls and hardwood flooring. The room has a large window on the back wall and a standard entry door. The playroom contains: a black metal open shelving unit with 4 levels against the left wall, a small round yellow children's table, a small round blue children's table, a small pink wooden stool, a colorful foam puzzle play mat on the floor, a large plush tiger, a white teddy bear, a large green potted plant near the window, scattered colorful building blocks and balls everywhere on the floor, toy food items, a xylophone, crayons, alphabet blocks, a rubber duck, a toy hamburger, pompoms, a tablet, toy vehicles, and children's artwork. The room is chaotic and energetic with toys scattered everywhere.",
+  "policy_analysis": null,
+  "environment": {
+    "flooring": {
+      "type": "hardwood",
+      "color": "medium brown",
+      "material": "engineered hardwood or laminate with natural wood grain",
+      "pattern": "wood_grain"
+    },
+    "walls": {
+      "type": "brick",
+      "color": "reddish-brown",
+      "material": "exposed brick",
+      "finish": "textured",
+      "features": [
+        "exposed brick",
+        "large floor-to-ceiling windows/glass doors",
+        "children's artwork pinned to shelf"
+      ]
+    },
+    "ceiling": {
+      "type": "drywall",
+      "color": "white",
+      "features": [
+        "appears smooth and plain"
+      ]
+    },
+    "lighting": {
+      "type": "natural",
+      "brightness": "bright",
+      "color_temperature": "warm",
+      "sources": [
+        {
+          "type": "window",
+          "description": "Large floor-to-ceiling glass doors/windows allowing abundant natural light",
+          "location": "right wall / back-right corner"
+        }
+      ],
+      "natural_light": true
+    }
+  }
+}

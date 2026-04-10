@@ -1,0 +1,363 @@
+{
+  "room_type": "children's playroom",
+  "room_dimensions": {
+    "width_m": 5.0,
+    "depth_m": 4.5,
+    "height_m": 3.5
+  },
+  "style": "industrial-loft converted playroom",
+  "environment": {
+    "flooring": {
+      "type": "hardwood",
+      "color": "medium brown",
+      "material": "engineered hardwood or laminate with natural wood grain",
+      "pattern": "wood_grain"
+    },
+    "walls": {
+      "type": "brick",
+      "color": "reddish-brown",
+      "material": "exposed brick",
+      "finish": "textured",
+      "features": [
+        "exposed brick",
+        "large floor-to-ceiling windows/glass doors",
+        "children's artwork pinned to shelf"
+      ]
+    },
+    "ceiling": {
+      "type": "drywall",
+      "color": "white",
+      "features": [
+        "appears smooth and plain"
+      ]
+    },
+    "lighting": {
+      "type": "natural",
+      "brightness": "bright",
+      "color_temperature": "warm",
+      "sources": [
+        {
+          "type": "window",
+          "description": "Large floor-to-ceiling glass doors/windows allowing abundant natural light",
+          "location": "right wall / back-right corner"
+        }
+      ],
+      "natural_light": true
+    }
+  },
+  "vibe": {
+    "clutter_level": "cluttered",
+    "mood": "casual",
+    "era": "contemporary"
+  },
+  "objects": [
+    {
+      "name": "open shelving unit",
+      "category": "storage",
+      "description": "Black metal frame open shelving unit with multiple tiers holding toys and stuffed animals",
+      "estimated_size": {
+        "width_m": 1.2,
+        "height_m": 1.5,
+        "depth_m": 0.4
+      },
+      "material": "metal frame with wood shelves",
+      "style": "industrial",
+      "location": "left wall, back corner",
+      "quantity": 1
+    },
+    {
+      "name": "children's round table",
+      "category": "furniture",
+      "description": "Small round table with light blue top and wooden legs",
+      "estimated_size": {
+        "width_m": 0.5,
+        "height_m": 0.4,
+        "depth_m": 0.5
+      },
+      "material": "wood with painted top",
+      "style": "modern children's furniture",
+      "location": "left foreground",
+      "quantity": 1
+    },
+    {
+      "name": "children's round table",
+      "category": "furniture",
+      "description": "Small round table with yellow top and wooden legs",
+      "estimated_size": {
+        "width_m": 0.5,
+        "height_m": 0.4,
+        "depth_m": 0.5
+      },
+      "material": "wood with painted top",
+      "style": "modern children's furniture",
+      "location": "center-left foreground",
+      "quantity": 1
+    },
+    {
+      "name": "children's stool",
+      "category": "furniture",
+      "description": "Small pink/natural wood stool, overturned on floor",
+      "estimated_size": {
+        "width_m": 0.25,
+        "height_m": 0.3,
+        "depth_m": 0.25
+      },
+      "material": "wood",
+      "style": "simple children's stool",
+      "location": "center of room",
+      "quantity": 1
+    },
+    {
+      "name": "foam play mat / puzzle mat",
+      "category": "decor",
+      "description": "Colorful interlocking foam puzzle mat pieces in red, blue, green, yellow scattered on floor",
+      "estimated_size": {
+        "width_m": 1.0,
+        "height_m": 0.02,
+        "depth_m": 1.0
+      },
+      "material": "EVA foam",
+      "style": "children's play mat",
+      "location": "center of room",
+      "quantity": 1
+    },
+    {
+      "name": "stuffed tiger toy",
+      "category": "decor",
+      "description": "Large plush tiger stuffed animal with orange and black stripes",
+      "estimated_size": {
+        "width_m": 0.4,
+        "height_m": 0.35,
+        "depth_m": 0.25
+      },
+      "material": "plush fabric",
+      "style": "children's stuffed animal",
+      "location": "on lower shelf of shelving unit",
+      "quantity": 1
+    },
+    {
+      "name": "stuffed bear/animal toys",
+      "category": "decor",
+      "description": "Various small stuffed animals in white and pastel colors",
+      "estimated_size": {
+        "width_m": 0.2,
+        "height_m": 0.25,
+        "depth_m": 0.15
+      },
+      "material": "plush fabric",
+      "style": "children's stuffed animals",
+      "location": "on shelving unit, lower shelf",
+      "quantity": 3
+    },
+    {
+      "name": "potted plant",
+      "category": "decor",
+      "description": "Large green leafy houseplant in a pot, appears to be a monstera or similar tropical plant",
+      "estimated_size": {
+        "width_m": 0.5,
+        "height_m": 0.8,
+        "depth_m": 0.5
+      },
+      "material": "live plant in ceramic/plastic pot",
+      "style": "tropical houseplant",
+      "location": "back-right area near window",
+      "quantity": 1
+    },
+    {
+      "name": "building blocks",
+      "category": "decor",
+      "description": "Colorful plastic and wooden building blocks scattered across the floor in various colors",
+      "estimated_size": {
+        "width_m": 0.05,
+        "height_m": 0.05,
+        "depth_m": 0.05
+      },
+      "material": "plastic and wood",
+      "style": "children's toy blocks",
+      "location": "scattered across entire floor",
+      "quantity": 50
+    },
+    {
+      "name": "toy balls",
+      "category": "decor",
+      "description": "Various colorful small balls in blue, green, yellow, red scattered on floor",
+      "estimated_size": {
+        "width_m": 0.08,
+        "height_m": 0.08,
+        "depth_m": 0.08
+      },
+      "material": "plastic/rubber",
+      "style": "children's play balls",
+      "location": "scattered across floor, especially right side",
+      "quantity": 15
+    },
+    {
+      "name": "children's artwork",
+      "category": "decor",
+      "description": "Child's drawing on white paper showing stick figures, pinned/displayed on shelf",
+      "estimated_size": {
+        "width_m": 0.3,
+        "height_m": 0.4,
+        "depth_m": 0.01
+      },
+      "material": "paper",
+      "style": "children's drawing",
+      "location": "left side, attached to shelving unit",
+      "quantity": 1
+    },
+    {
+      "name": "alphabet/number blocks",
+      "category": "decor",
+      "description": "Colorful letter and number blocks visible on top of shelving unit",
+      "estimated_size": {
+        "width_m": 0.05,
+        "height_m": 0.05,
+        "depth_m": 0.05
+      },
+      "material": "wood or plastic",
+      "style": "educational toy",
+      "location": "top shelf of shelving unit",
+      "quantity": 5
+    },
+    {
+      "name": "toy musical instruments",
+      "category": "decor",
+      "description": "Small colorful toy instruments and noise makers scattered on floor",
+      "estimated_size": {
+        "width_m": 0.15,
+        "height_m": 0.1,
+        "depth_m": 0.1
+      },
+      "material": "plastic",
+      "style": "children's toy",
+      "location": "center-right floor area",
+      "quantity": 3
+    },
+    {
+      "name": "toy ice cream cone",
+      "category": "decor",
+      "description": "Plastic toy ice cream cone in brown/yellow",
+      "estimated_size": {
+        "width_m": 0.08,
+        "height_m": 0.15,
+        "depth_m": 0.08
+      },
+      "material": "plastic",
+      "style": "pretend play food toy",
+      "location": "right-center floor",
+      "quantity": 1
+    },
+    {
+      "name": "toy donuts/rings",
+      "category": "decor",
+      "description": "Colorful plastic ring/donut shaped toys",
+      "estimated_size": {
+        "width_m": 0.1,
+        "height_m": 0.03,
+        "depth_m": 0.1
+      },
+      "material": "plastic",
+      "style": "children's stacking toy pieces",
+      "location": "center-right floor",
+      "quantity": 4
+    },
+    {
+      "name": "rubber duck",
+      "category": "decor",
+      "description": "Yellow rubber duck toy",
+      "estimated_size": {
+        "width_m": 0.08,
+        "height_m": 0.08,
+        "depth_m": 0.08
+      },
+      "material": "rubber",
+      "style": "classic bath/play toy",
+      "location": "left foreground floor",
+      "quantity": 1
+    },
+    {
+      "name": "toy hamburger",
+      "category": "decor",
+      "description": "Plush or plastic toy hamburger on shelf",
+      "estimated_size": {
+        "width_m": 0.15,
+        "height_m": 0.1,
+        "depth_m": 0.15
+      },
+      "material": "plush/plastic",
+      "style": "pretend play food",
+      "location": "middle shelf of shelving unit",
+      "quantity": 1
+    },
+    {
+      "name": "tablet/iPad",
+      "category": "appliance",
+      "description": "Small tablet device with pink/red case lying on floor among toys",
+      "estimated_size": {
+        "width_m": 0.2,
+        "height_m": 0.01,
+        "depth_m": 0.15
+      },
+      "material": "electronic device with plastic case",
+      "style": "modern tablet",
+      "location": "center floor area on foam mat",
+      "quantity": 1
+    },
+    {
+      "name": "toy telephone",
+      "category": "decor",
+      "description": "Red plastic toy telephone",
+      "estimated_size": {
+        "width_m": 0.15,
+        "height_m": 0.1,
+        "depth_m": 0.1
+      },
+      "material": "plastic",
+      "style": "children's toy",
+      "location": "right side floor",
+      "quantity": 1
+    },
+    {
+      "name": "crayons/markers",
+      "category": "decor",
+      "description": "Scattered colorful crayons or markers on the floor",
+      "estimated_size": {
+        "width_m": 0.01,
+        "height_m": 0.1,
+        "depth_m": 0.01
+      },
+      "material": "wax/plastic",
+      "style": "children's art supplies",
+      "location": "scattered on floor, center-right",
+      "quantity": 10
+    },
+    {
+      "name": "pom pom balls",
+      "category": "decor",
+      "description": "Small fuzzy craft pom pom balls in various bright colors",
+      "estimated_size": {
+        "width_m": 0.03,
+        "height_m": 0.03,
+        "depth_m": 0.03
+      },
+      "material": "yarn/felt",
+      "style": "craft supplies",
+      "location": "scattered on floor, right side",
+      "quantity": 20
+    },
+    {
+      "name": "toy car/vehicle",
+      "category": "decor",
+      "description": "Small colorful toy vehicles",
+      "estimated_size": {
+        "width_m": 0.1,
+        "height_m": 0.05,
+        "depth_m": 0.05
+      },
+      "material": "plastic",
+      "style": "children's toy vehicle",
+      "location": "scattered on floor",
+      "quantity": 2
+    }
+  ]
+}

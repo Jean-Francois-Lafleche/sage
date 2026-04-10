@@ -1,0 +1,635 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "World"
+{
+    def Xform "Room"
+    {
+        def Cube "Floor"
+        {
+            double size = 1
+            float3 xformOp:scale = (5.0, 4.5, 0.1)
+            double3 xformOp:translate = (2.5, 2.25, -0.05)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            color3f[] primvars:displayColor = [(0.6, 0.5, 0.4)]
+        }
+        def Cube "Ceiling"
+        {
+            double size = 1
+            float3 xformOp:scale = (5.0, 4.5, 0.1)
+            double3 xformOp:translate = (2.5, 2.25, 2.75)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            color3f[] primvars:displayColor = [(0.95, 0.95, 0.95)]
+        }
+        def Cube "Wall_0"
+        {
+            double size = 1
+            float3 xformOp:scale = (5.0, 0.1, 2.7)
+            double3 xformOp:translate = (2.5, 4.5, 1.35)
+            float xformOp:rotateZ = 0.0
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZ", "xformOp:scale"]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.88)]
+        }
+        def Cube "Wall_1"
+        {
+            double size = 1
+            float3 xformOp:scale = (5.0, 0.1, 2.7)
+            double3 xformOp:translate = (2.5, 0.0, 1.35)
+            float xformOp:rotateZ = 0.0
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZ", "xformOp:scale"]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.88)]
+        }
+        def Cube "Wall_2"
+        {
+            double size = 1
+            float3 xformOp:scale = (4.5, 0.1, 2.7)
+            double3 xformOp:translate = (5.0, 2.25, 1.35)
+            float xformOp:rotateZ = 90.0
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZ", "xformOp:scale"]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.88)]
+        }
+        def Cube "Wall_3"
+        {
+            double size = 1
+            float3 xformOp:scale = (4.5, 0.1, 2.7)
+            double3 xformOp:translate = (0.0, 2.25, 1.35)
+            float xformOp:rotateZ = 90.0
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZ", "xformOp:scale"]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.88)]
+        }
+    }
+
+    def Xform "Lights"
+    {
+        def RectLight "Light_0"
+        {
+            float inputs:intensity = 30000
+            float inputs:width = 0.5
+            float inputs:height = 0.5
+            color3f inputs:color = (1.0, 0.98, 0.95)
+            double3 xformOp:translate = (1.25, 1.125, 2.6)
+            float3 xformOp:rotateXYZ = (180, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+        }
+        def RectLight "Light_1"
+        {
+            float inputs:intensity = 30000
+            float inputs:width = 0.5
+            float inputs:height = 0.5
+            color3f inputs:color = (1.0, 0.98, 0.95)
+            double3 xformOp:translate = (3.75, 1.125, 2.6)
+            float3 xformOp:rotateXYZ = (180, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+        }
+        def RectLight "Light_2"
+        {
+            float inputs:intensity = 30000
+            float inputs:width = 0.5
+            float inputs:height = 0.5
+            color3f inputs:color = (1.0, 0.98, 0.95)
+            double3 xformOp:translate = (1.25, 3.375, 2.6)
+            float3 xformOp:rotateXYZ = (180, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+        }
+        def RectLight "Light_3"
+        {
+            float inputs:intensity = 30000
+            float inputs:width = 0.5
+            float inputs:height = 0.5
+            color3f inputs:color = (1.0, 0.98, 0.95)
+            double3 xformOp:translate = (3.75, 3.375, 2.6)
+            float3 xformOp:rotateXYZ = (180, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+        }
+    }
+
+    def Xform "Objects"
+    {
+        def Mesh "obj_0_b9002d19" (
+            references = @./meshes/b9002d19.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (0.34186222657665805, 3.3075032265668, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 258.75146591845595)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_1_a5e0c75c" (
+            references = @./meshes/a5e0c75c.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (0.9209413642492037, 4.215692093845449, 0.0)
+            float3 xformOp:rotateXYZ = (-1.2492508850356732, -7.5232444889908745, 199.60897838524227)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_2_b45f36b5" (
+            references = @./meshes/b45f36b5.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (0.2, 4.3, 0.0)
+            float3 xformOp:rotateXYZ = (2.3981510044723713, 0.7190636896514668, 156.32679848419318)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_3_a5d0dbd8" (
+            references = @./meshes/a5d0dbd8.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (1.25, 2.45, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 0)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_4_fb245623" (
+            references = @./meshes/fb245623.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (0.65, 2.45, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 0)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_5_1890a9e3" (
+            references = @./meshes/1890a9e3.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (2.45, 1.25, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 0)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_6_dbcde44a" (
+            references = @./meshes/dbcde44a.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (1.9661321866122088, 2.2767797051627725, 0.0)
+            float3 xformOp:rotateXYZ = (4.893108029324926, 3.1702303198116297, 105.47152283389133)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_7_d0f4f063" (
+            references = @./meshes/d0f4f063.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (4.519530636259057, 3.946643849943534, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 112.86065361033906)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_8_76ba6c6c" (
+            references = @./meshes/76ba6c6c.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (3.7278237530140443, 1.5290149130500392, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 197.37471831737298)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_9_6a537923" (
+            references = @./meshes/6a537923.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (2.45, 0.45, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 0)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_10_62fa2ddf" (
+            references = @./meshes/62fa2ddf.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (1.742138481982314, 2.3189195360081456, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 181.81140457273503)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_11_9ed3a577" (
+            references = @./meshes/9ed3a577.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (1.2135603131625061, 3.2656121893819683, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 286.47023321264976)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_12_69d1642b" (
+            references = @./meshes/69d1642b.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (3.5585120700932333, 0.6732056435770286, 0.0)
+            float3 xformOp:rotateXYZ = (-4.35362758957525, -3.3697925823662853, 10.228591810746174)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_13_7c35f76f" (
+            references = @./meshes/7c35f76f.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (1.3239375930770882, 0.5698372659083091, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, -19.949928529513542)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_14_ee2796c0" (
+            references = @./meshes/ee2796c0.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (3.4907053332793203, 1.2094496536910253, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 83.50904835584413)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_15_072a1a84" (
+            references = @./meshes/072a1a84.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (1.380093346614734, 1.3809963763137483, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 7.40176926232968)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_16_450f2daa" (
+            references = @./meshes/450f2daa.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (3.151341594459429, 2.3187380393851047, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 253.17012468809642)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_17_050469ea" (
+            references = @./meshes/050469ea.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (4.196857005190979, 0.6919999279562279, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 182.84748718873232)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_18_6a2cbf6c" (
+            references = @./meshes/6a2cbf6c.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (1.552855576056943, 1.9327999734638734, 0.0)
+            float3 xformOp:rotateXYZ = (-2.9527512310546893, -3.7161459843887563, 256.4524035982052)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_19_a56a7978" (
+            references = @./meshes/a56a7978.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (3.963294853075898, 1.1828729143005163, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 18.818381323633446)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_20_3647be5f" (
+            references = @./meshes/3647be5f.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (3.496631599588464, 1.8186895703181993, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 20.72737948702718)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_21_918fcd08" (
+            references = @./meshes/918fcd08.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (2.7794640499494156, 2.3739882523081954, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 93.06840670815754)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_22_6f36ae8a" (
+            references = @./meshes/6f36ae8a.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (1.8753757970670621, 1.569346865080743, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 264.97002525701987)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_23_61ba648a" (
+            references = @./meshes/61ba648a.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (3.999261281948533, 1.2528578881029393, 0.0)
+            float3 xformOp:rotateXYZ = (-6.245613914389454, 2.0391366672494406, 249.5454706086897)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_24_6aa829dd" (
+            references = @./meshes/6aa829dd.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (1.3376238093088892, 2.8266479900399055, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 158.17638530759785)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_25_732c82f5" (
+            references = @./meshes/732c82f5.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (0.598836414072029, 1.8587343035297412, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 203.5539188806809)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_26_a2fc3d24" (
+            references = @./meshes/a2fc3d24.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (4.503444306582846, 1.1162165458080584, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 279.08551845132877)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_27_da986277" (
+            references = @./meshes/da986277.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (0.9800475569857628, 2.8922885395739426, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 160.57760867979383)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_28_1d886148" (
+            references = @./meshes/1d886148.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (4.636117111898763, 0.386144778256324, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 18.792647018909705)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_29_e68e2246" (
+            references = @./meshes/e68e2246.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (4.050175833915089, 2.1535955641590396, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 20.631391967241022)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_30_dd493bb2" (
+            references = @./meshes/dd493bb2.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (2.78953343743459, 2.2916848484598016, 0.0)
+            float3 xformOp:rotateXYZ = (4.20017280120242, 0.6300644819140118, 95.44851057190861)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_31_e555bed0" (
+            references = @./meshes/e555bed0.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (3.133587943589167, 1.4591061016585531, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, -24.971405193602823)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_32_40f49c5e" (
+            references = @./meshes/40f49c5e.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (2.9058430227157497, 1.978729584879385, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 108.9360938911592)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_33_b3d4c618" (
+            references = @./meshes/b3d4c618.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (2.992254237620798, 0.5173775499482562, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 18.900479960202027)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_34_67ac28df" (
+            references = @./meshes/67ac28df.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (2.3256960356203638, 2.045797138994984, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, -21.53937407658082)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_35_4e919d25" (
+            references = @./meshes/4e919d25.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (3.1297503287920962, 0.9385174393499289, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 268.7641189049366)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_36_ae6cd0d3" (
+            references = @./meshes/ae6cd0d3.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (1.5795169886820177, 1.7617299123255772, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 176.15689701004436)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_37_d4d7cfa2" (
+            references = @./meshes/d4d7cfa2.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (1.6617888266338374, 1.118979320726993, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 165.0575531694848)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_38_5e8c6bb3" (
+            references = @./meshes/5e8c6bb3.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (2.1985448069982683, 2.694963417291836, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 86.9050041957252)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_39_f3752c01" (
+            references = @./meshes/f3752c01.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (1.9363012587604795, 1.967409201109467, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 171.90427810737276)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_40_8a712854" (
+            references = @./meshes/8a712854.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (1.9690344197789729, 2.766065215335468, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 68.54965430045164)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_41_f6bf6a95" (
+            references = @./meshes/f6bf6a95.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (3.9686825351433463, 0.2200226285664324, 0.0)
+            float3 xformOp:rotateXYZ = (-4.1919258500960765, 2.7036444527404893, 17.981770012687328)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_42_aa216b9d" (
+            references = @./meshes/aa216b9d.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (4.364271042211132, 0.2, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 21.77571202903355)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_43_960747fb" (
+            references = @./meshes/960747fb.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (4.8, 0.735385827287226, 0.0)
+            float3 xformOp:rotateXYZ = (-6.449106972338827, -1.1031810814979597, 105.37484988833216)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_44_0bcf13fc" (
+            references = @./meshes/0bcf13fc.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (3.627073586905976, 0.2, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 11.453792472992532)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_45_efffdbf4" (
+            references = @./meshes/efffdbf4.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (0.5952495634097899, 4.292102114520817, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 175.13106410511344)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_46_63217c0b" (
+            references = @./meshes/63217c0b.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (4.8, 2.9745969001760857, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 74.51044542204058)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_47_e2e88967" (
+            references = @./meshes/e2e88967.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (1.8265644919503212, 0.2, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, 257.490322394105)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_48_0b7d8d80" (
+            references = @./meshes/0b7d8d80.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (1.832939223516037, 3.758404731428549, 0.0)
+            float3 xformOp:rotateXYZ = (7.988519494603626, 5.37644136127923, 272.5162656224924)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_49_848107c1" (
+            references = @./meshes/848107c1.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (4.390698877185425, 0.2195117713251613, 0.0)
+            float3 xformOp:rotateXYZ = (-0.2297419927885045, -4.580043212813093, 17.434786720715273)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_50_bf1a7c62" (
+            references = @./meshes/bf1a7c62.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (1.0203120877648357, 1.9175906199916535, 0.0)
+            float3 xformOp:rotateXYZ = (0, 0, -6.051344051154196)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_51_7c1cd89f" (
+            references = @./meshes/7c1cd89f.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (0.2295951044909385, 3.535221180584571, 0.12226568139707764)
+            float3 xformOp:rotateXYZ = (0, 0, -2.249581633042837)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_52_b17ca260" (
+            references = @./meshes/b17ca260.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (0.4372294792971949, 3.598626806847814, 0.12319365664148707)
+            float3 xformOp:rotateXYZ = (0, 0, 2.788416170280911)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_53_2a79629b" (
+            references = @./meshes/2a79629b.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (0.2, 3.3890123476483693, 0.16747663229428714)
+            float3 xformOp:rotateXYZ = (0, 0, 23.435468248457944)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_54_df33a79f" (
+            references = @./meshes/df33a79f.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (0.31269274745157516, 3.524392668113719, 0.1269642704976217)
+            float3 xformOp:rotateXYZ = (0, 0, -22.141736354625845)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_55_cc7fffd8" (
+            references = @./meshes/cc7fffd8.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (0.30088930191514696, 3.555815967614486, 0.21631021254398752)
+            float3 xformOp:rotateXYZ = (0, 0, -17.128363603025836)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_56_40a0216e" (
+            references = @./meshes/40a0216e.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (0.2, 3.355747488294217, 0.12878986571429646)
+            float3 xformOp:rotateXYZ = (0, 0, 4.751755322501381)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+        def Mesh "obj_57_9f97b13d" (
+            references = @./meshes/9f97b13d.usda@</Mesh>
+        )
+        {
+            double3 xformOp:translate = (0.22059535553957227, 3.3359659841841376, 0.21848127164137865)
+            float3 xformOp:rotateXYZ = (0, 0, 19.514365706471878)
+            float3 xformOp:scale = (1.0, 1.0, 1.0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+    }
+}
